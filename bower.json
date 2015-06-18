@@ -1,0 +1,11 @@
+{
+  "name": "kzstats-local",
+  "version": "0.1",
+  "dependencies": {
+    "angular": "~1.2.x",
+    "angular-ui-router": "~0.2.11",
+    "angular-ui-router-title": "",
+    "angular-bootstrap": "~0.11"
+  },
+  "private": true
+}
