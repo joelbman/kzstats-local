@@ -1,0 +1,156 @@
+/* Base tags */
+body {
+  font-family: 'Oxygen', sans-serif;
+  background-color: #F5F8FA;
+}
+
+a, a:visited {
+  color: #CF8338;
+}
+
+a:hover, a:visited:hover {
+  color: #A16A33;
+}
+
+h1 {
+  margin-top: 5px;
+}
+
+h1 small {
+  font-size: 19px;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 35px;
+  color: #ddd;
+  background-color: #413D45;
+  border-top: 1px solid #000;
+  line-height: 35px;
+  font-size: 13px;
+  z-index: 99;
+}
+
+.footer a, .footer a:visited {
+  text-decoration: none;
+}
+
+/* Content blocks */
+.content {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -35px;
+  padding: 0 0 35px;
+}
+
+.inner-content {
+  margin-top: 15px;
+}
+
+/* Flag icons */
+.flagico {
+  width: 16px;
+  height: 11px;
+  display: inline;
+  margin-left: 3px;
+  border: 1px solid #000;
+}
+
+/* Player detail view */
+.avatar {
+  width: 130px;
+  height: 130px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: inline;
+  float: left;
+  margin-right: 15px;
+}
+
+.player-info {
+  margin-bottom: 25px;
+  min-height: 130px;
+}
+
+.player-info h3 {
+  margin-bottom: 3px;
+  margin-top: 3px;
+  font-size: 20px;
+  color: #6E6D6D;
+}
+
+/* Latest records (front page) */
+.latest {
+  max-width: 700px;
+}
+
+.latest-entry {
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.latest-entry:first-child {
+  padding-top: 0;
+}
+
+.latest-entry:last-child {
+  border-bottom: 0;
+}
+
+.latest-footer {
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* Maplist view */
+.maplist {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.maplist-map {
+  display: inline-block;
+  width: 33%;
+  min-width: 186px;
+  background-color: #fff;
+  padding: 5px 10px 5px 10px;
+}
+
+.maplist-map:nth-child(even) {
+  background-color: #F7FAF5;
+}
+
+.maplist-error {
+  padding-top: 40px;
+  width: 100%;
+  min-height: 100px;
+  text-align: center;
+  font-size: 17px;
+}
+
+/* About view */
+.question {
+  margin-top: 25px;
+  max-width: 768px;
+}
+
+/* Tooltips */
+.tooltip-wide {
+  max-width: 400px;
+}
+
+/* Misc */
+.inline-header {
+  display: inline-block;
+  vertical-align: baseline;
+}
+

@@ -1,0 +1,76 @@
+/* Filter menu */
+.filters {
+  max-width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.filters .filter-group {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.filters label {
+  display: inline;
+  margin-right: 5px;
+}
+
+.filters input {
+  background: #FAF5F9;
+  border: 1px solid #C9C5C8;
+  border-radius: 3px;
+  padding-left: 5px;
+}
+
+.filters select {
+  background: #FAF5F9;
+  border: 1px solid #C9C5C8;
+  border-radius: 3px;
+  padding-left: 2px;
+}
+
+.dropdown {
+  width: 75px;
+  display: inline;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  max-width: 150px;
+}
+
+.checkbox-group {
+  display: block;
+}
+
+.checkbox {
+  display: inline;
+}
+
+.dropdown-inline {
+  width: 50px;
+  display: inline;
+  background: #EBEBEB;
+  margin-left: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.arrow {
+  font-size: 16px;
+  background: #F2F2F2;
+}
+
+.arrow:hover {
+  background: #D4793D;
+  color: #fff;
+}
+
+.maplist-search {
+  max-width: 200px;
+  margin-bottom: 25px;
+  margin-left: 5px;
+  display: inline;
+}

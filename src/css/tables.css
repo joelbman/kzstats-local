@@ -1,0 +1,46 @@
+/**
+ * Tables
+ * ---------
+ */
+.table-striped {
+  border: 1px solid #DDD;
+}
+
+.table-striped tr {
+  margin: 0px;
+}
+
+.table-striped th {
+  background-color: #5B5C5E;
+  color: #fff;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td {
+   background-color: #fff;
+ }
+
+.table-striped > tbody > tr:nth-child(odd) > td {
+   background-color: #F7FAF5;
+ }
+
+.special {
+  color: #CF8338;
+ }
+
+.ban-player {
+  font-weight: bold;
+  color: #D92323;
+}
+
+.record-headers th {
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.record-headers th:hover {
+  font-weight: bold;
+}
+
+.record-headers .current {
+  text-decoration: underline;
+}

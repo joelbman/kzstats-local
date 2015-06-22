@@ -1,33 +1,56 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html ng-app='kzApp'>
   <head>
+    <base href='/'>
+    <!-- Meta -->
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Stylesheets etc. -->
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' href='css/bundle.css'>
-    <title>KZStats Local</title>
+    <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link rel='shortcut icon' href='favicon.png'>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <title ng-bind="($title || 'Latest') + ' - KZStats'">KZStats Local</title>
   </head>
   <body>
-    <nav class='navbar' role='navigation'>
-      <ul class='navbar__menu'>
-        <li><a href=''>Maps</a></li>
-        <li><a href=''>Maps</a></li>
-        <li><a href=''>Maps</a></li>
-        <li><a href=''>Maps</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class='navbar navbar-default' role='navigation'>
+      <div class='container'>
+        <ul class='nav navbar-nav'>
+          <li ng-class='{navActive: isActive("maps")}'><a ui-sref='maps.list'>Maps</a></li>
+          <li ng-class='{navActive: isActive("players")}'><a ui-sref='players.list'>Players</a></li>
+          <li ui-sref-active='navActive'><a ui-sref='servers'>Servers</a></li>
+          <li ui-sref-active='navActive'><a ui-sref='banlist'>Bans</a></li>
+        </ul>
+        <!-- Map and player search -->
+        <form class='form-inline' ng-submit='search()'>
+          <div class='input-group'>
+            <input type='text' class='form-control' ng-model='searchField' placeholder='Map or player name' maxlength='20' autofocus>
+            <div class='input-group-addon' ng-click='search()'>
+              <span class='glyphicon glyphicon-search'></span>
+            </div>
+            <!-- Hidden submit button to allow submitting by enter keypress -->
+            <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+          </div>
+        </form>
+      </div>
     </nav>
-    <div class='content'>
-      <h1>Content</h1>
-      Content Content Content
-      Content Content Content
-      Content Content Content
-      Content Content Contents
+    <div class='container content'>
+      <!-- Views -->
+      <div class='col-md-11 inner-content' ui-view>
+      </div>
     </div>
-    <footer>
-      &copy; Footer - 2015
+    <footer class='footer'>
+      <div class='container'>
+        Placeholder
+      </div>
     </footer>
+    <script src='js/bundle.js'></script>
   </body>
 </html>
