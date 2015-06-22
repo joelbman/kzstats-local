@@ -1,9 +1,7 @@
-/* global process, require */
-
 'use strict';
 
+var browserify  = require('browserify');
 var gulp        = require('gulp');
-var browserify  = require('gulp-browserify');
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
 var livereload  = require('gulp-livereload');
@@ -16,7 +14,6 @@ var streamify   = require('gulp-streamify');
 var production = process.env.NODE_ENV === 'production';
 
 var config = {
-  destination: './public',
   scripts: {
     src: './src/js/main.js',
     dest: './public/js/',
@@ -24,14 +21,13 @@ var config = {
     filename: 'bundle.js'
   },
   templates: {
-    src: './src/**/*.html',
-    watch: './src/**/*.html',
-    dest: './public/',
-    filename: 'bundle.css'
+    src: './src/templates/**/*.html',
+    watch: './src/templates/**/*.html',
+    dest: './public/'
   },
   styles: {
-    src: './src/**/*.css',
-    watch: './src/**/*.css',
+    src: './src/css/**/*.css',
+    watch: './src/css/**/*.css',
     dest: './public/css/'
   },
   api: {
@@ -79,7 +75,7 @@ gulp.task('scripts', function() {
  * ---------
  */
 gulp.task('templates', function() {
-  return gulp.src('src/**/*.html').pipe(gulp.dest(config.templates.dest));
+  return gulp.src(config.templates.src).pipe(gulp.dest(config.templates.dest));
 });
 
 /**
@@ -101,7 +97,7 @@ gulp.task('styles', function() {
  * ---------
  */
 gulp.task('api', function() {
-  return gulp.src('api/**/*.php').pipe(gulp.dest(config.api.dest));
+  return gulp.src(config.api.src).pipe(gulp.dest(config.api.dest));
 });
 
 /**

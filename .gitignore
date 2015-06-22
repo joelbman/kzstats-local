@@ -1,5 +1,6 @@
-# Node packages
+# Node/bower packages
 node_modules/
+bower_components/
 
 # Public folder
 public/

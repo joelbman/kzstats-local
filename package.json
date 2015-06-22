@@ -1,6 +1,6 @@
 {
   "name": "kzstats-local",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "KZStats for KZ server owners",
   "author": "Joel Bergman",
   "main": "gulpfile.js",
@@ -9,26 +9,24 @@
     "start": "gulp",
     "build": "gulp build"
   },
-  "keywords": [
-    "kzstats",
-  ],
+  "keywords": ["kzstats"],
   "devDependencies": {
     "bower": "~1.3.5",
     "browserify": "^10.2.1",
     "debowerify": "~0.9.1",
     "gulp": "~3.8.1",
+    "gulp-concat": "",
     "gulp-replace": "^0.5.3",
     "gulp-sourcemaps": "^1.3.0",
+    "gulp-livereload": "",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "~1.0.1",
     "gulp-util": "~3.0.1",
     "node-notifier": "^4.2.1",
     "gulp-minify-css": "",
-    "vinyl-source-stream": "~1.0.0",
+    "vinyl-source-stream": "~1.0.0"
   },
   "browserify": {
-    "transform": [
-      "debowerify"
-    ]
+    "transform": ["debowerify"]
   }
 }
