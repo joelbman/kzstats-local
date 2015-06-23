@@ -68,7 +68,7 @@ gulp.task('scripts', function() {
   if (production)
     pipeline = pipeline.pipe(streamify(uglify()));
 
-  return pipeline.pipe(gulp.dest(config.scripts.destination));
+  return pipeline.pipe(gulp.dest(config.scripts.dest));
 });
 
 /**
