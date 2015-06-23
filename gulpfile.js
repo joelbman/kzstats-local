@@ -62,7 +62,8 @@ gulp.task('scripts', function() {
   var pipeline = browserify(browserifyConfig)
     .bundle()
     .on('error', handleError)
-    .pipe(source(config.scripts.filename));
+    .pipe(source(config.scripts.filename))
+    .pipe(livereload());
 
   if (production)
     pipeline = pipeline.pipe(streamify(uglify()));
@@ -75,7 +76,9 @@ gulp.task('scripts', function() {
  * ---------
  */
 gulp.task('templates', function() {
-  return gulp.src(config.templates.src).pipe(gulp.dest(config.templates.dest));
+  return gulp.src(config.templates.src)
+    .pipe(gulp.dest(config.templates.dest))
+    .pipe(livereload());
 });
 
 /**
@@ -83,7 +86,9 @@ gulp.task('templates', function() {
  * ---------
  */
 gulp.task('styles', function() {
-  var src = gulp.src(config.styles.src).pipe(concat('bundle.css'));
+  var src = gulp.src(config.styles.src)
+    .pipe(concat('bundle.css'))
+    .pipe(livereload());
 
   if (production)
     src.pipe(minifyCss());
