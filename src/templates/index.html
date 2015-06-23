@@ -16,41 +16,27 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <title ng-bind="($title || 'Latest') + ' - KZStats'">KZStats Local</title>
+    <title>KZStats Local</title>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class='navbar navbar-default' role='navigation'>
-      <div class='container'>
-        <ul class='nav navbar-nav'>
-          <li ng-class='{navActive: isActive("maps")}'><a ui-sref='maps.list'>Maps</a></li>
-          <li ng-class='{navActive: isActive("players")}'><a ui-sref='players.list'>Players</a></li>
-          <li ui-sref-active='navActive'><a ui-sref='servers'>Servers</a></li>
-          <li ui-sref-active='navActive'><a ui-sref='banlist'>Bans</a></li>
-        </ul>
-        <!-- Map and player search -->
-        <form class='form-inline' ng-submit='search()'>
-          <div class='input-group'>
-            <input type='text' class='form-control' ng-model='searchField' placeholder='Map or player name' maxlength='20' autofocus>
-            <div class='input-group-addon' ng-click='search()'>
-              <span class='glyphicon glyphicon-search'></span>
-            </div>
-            <!-- Hidden submit button to allow submitting by enter keypress -->
-            <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
-          </div>
-        </form>
+    <nav class='navbar'>
+      <div class='navbar__brand'>
+        <a href=''>Server name</a>
+      </div>
+      <ul class='navbar__menu'>
+        <li><a href=''>Players</a></li>
+        <li><a href=''>Maps</a></li>
+        <li><a href=''>Jumpstats</a></li>
+        <li><a href=''>Bans</a></li>
+      </ul>
+      <div class='navbar__footer'>
+        Stats provided by<br>
+        <a href='https://www.github.com/joelbman/kzstats-local/'>KZStats Local</a>
       </div>
     </nav>
-    <div class='container content'>
-      <!-- Views -->
-      <div class='col-md-11 inner-content' ui-view>
-      </div>
+    <div class='content'>
+      <h1>Test</h1>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     </div>
-    <footer class='footer'>
-      <div class='container'>
-        Placeholder
-      </div>
-    </footer>
-    <script src='js/bundle.js'></script>
   </body>
 </html>

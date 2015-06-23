@@ -24,34 +24,15 @@ h4 {
   font-weight: bold;
 }
 
-/* Footer */
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 35px;
-  color: #ddd;
-  background-color: #413D45;
-  border-top: 1px solid #000;
-  line-height: 35px;
-  font-size: 13px;
-  z-index: 99;
-}
-
 .footer a, .footer a:visited {
   text-decoration: none;
 }
 
 /* Content blocks */
 .content {
-  min-height: 100%;
-  height: auto;
-  margin: 0 auto -35px;
-  padding: 0 0 35px;
-}
-
-.inner-content {
-  margin-top: 15px;
+  padding-left: 250px;
+  width: 100%;
+  padding-top: 25px;
 }
 
 /* Flag icons */
