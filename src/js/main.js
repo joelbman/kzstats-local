@@ -24,7 +24,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
     templateUrl: 'templates/front.html',
     controller: 'FrontPageCtrl',
     resolve: { $title: function() { return 'Latest'; } }
-  });
+  })
   // .state('banlist', {
   //   url: '/bans/',
   //   templateUrl: 'templates/banlist.html',
@@ -70,18 +70,18 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
   //   resolve: { $title: function($stateParams) { return $stateParams.mapName; } }
   // })
 
-  // // Player states
-  // .state('players', {
-  //   abstract: true,
-  //   url: '/players/',
-  //   template: '<div ui-view></div>'
-  // })
-  // .state('players.list', {
-  //   url: '',
-  //   templateUrl: 'templates/players-list.html',
-  //   controller: 'PlayerListCtrl',
-  //   resolve: { $title: function() { return 'Players'; } }
-  // })
+  // Player states
+  .state('players', {
+    abstract: true,
+    url: '/players/',
+    template: '<div ui-view></div>'
+  })
+  .state('players.list', {
+    url: '',
+    templateUrl: 'templates/players-list.html',
+    controller: 'PlayerListCtrl',
+    resolve: { $title: function() { return 'Players'; } }
+  });
   // .state('players.detail', {
   //   url: ':steamId/',
   //   templateUrl: 'templates/players-detail.html',
