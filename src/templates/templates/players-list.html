@@ -1,2 +1,11 @@
 <h1>Players</h1>
-asd
+<table class='table table-striped'>
+  <tr>
+    <th>Player</th>
+    <th>Points</th>
+  </tr>
+  <tr ng-repeat='p in players'>
+    <td>{{ p.playername }}</td>
+    <td>{{ p.points }}</td>
+  </tr>
+</table>

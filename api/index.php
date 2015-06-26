@@ -3,25 +3,19 @@
   header('Content-type: application/json');
   error_reporting(E_ALL & ~E_NOTICE);
 
-  $req = rtrim($_REQUEST['request'], '/');
+  spl_autoload_extensions('.php, .class.php');
 
-  if ($req) {
-    include_once('settings.php');
+  function classLoader($class) {
+    require('./class/'.$class.'.class.php');
+  }
 
-    $route = explode('/', $req);
-    $endpoint = array_shift($route);
+  spl_autoload_register('classLoader');
+
+  $request = rtrim($_REQUEST['request'], '/');
+
+  if ($request) {
     
-    if (file_exists('endpoint/'.$endpoint.'.php')) {
-      $pdo = new PDO(
-        'mysql:host='.DB_HOST.';
-        dbname='.DB_NAME.';
-        port='.DB_PORT.';
-        charset='.DB_CHARSET, 
-        DB_USER, DB_PASS);
+    $api = new KzApi($request);
+    $api->_process();
 
-      include_once('endpoint/'.$endpoint.'.php');
-      
-    }
-    else
-      http_response_code(404);
   }
