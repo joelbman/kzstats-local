@@ -6,7 +6,7 @@
       <th>Points</th>
     </tr>
     <tr ng-repeat='p in players'>
-      <td><a ui-sref='players.detail({steamId: p.steamid})'>{{ p.name }}</td>
+      <td><a ui-sref='players.detail({steamId: (p.steamid|numOnly)})'>{{ p.name }}</td>
       <td>{{ p.points }}</td>
     </tr>
   </table>

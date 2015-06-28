@@ -2,10 +2,10 @@
 
   class Player {
 
-    private $pdo;
+    private $db;
 
-    public function __construct($pdo) {
-      $this->pdo = $pdo;
+    public function __construct($db) {
+      $this->db = $db;
     }
 
     // Converts SteamID back to STEAM_X:Y:ZZZZZZZZ format
@@ -19,21 +19,15 @@
     }
 
     public function getList() {
-      $stmt = $this->pdo->prepare('SELECT * From playerrank ORDER BY points DESC LIMIT 25');
-      if ($stmt->execute())
-        return $stmt->fetchAll(2);
+      return $this->db->fetchAll('SELECT * From playerrank ORDER BY points DESC LIMIT 25');
     }
 
     public function getDetail($id) {
       $steamid = $this->convertId($id);
       $player = [];
-      $stmt = $this->pdo->prepare('SELECT points, name From playerrank WHERE steamid = '.$steamid);
-      $stmt->execute();
-      $rank = $stmt->fetchAll(2);
-      $stmt = $this->pdo->prepare('SELECT multibhoprecord, bhoprecord, ljrecord FROM playerjumpstats3 WHERE steamid = '.$steamid);
-      $stmt->execute();
-      $jumpstats = $stmt->fetchAll(2);
-      array_merge($player, $rank, $jumpstats);
+      $rank = $this->db->fetch('SELECT name, points From `playerrank` WHERE steamid = "'.$steamid.'"');
+      $jumpstats = $this->db->fetch('SELECT multibhoprecord, bhoprecord, ljrecord FROM `playerjumpstats3` WHERE steamid = "'.$steamid.'"');
+      return array_merge($player, $rank, $jumpstats);
     }
 
   }

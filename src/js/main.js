@@ -9,7 +9,7 @@ var app = angular.module('kzApp', ['ui.router', 'ui.router.title', 'ui.bootstrap
 
 // require('./services');
 require('./controllers');
-// require('./filters');
+require('./filters');
 
 app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function($stateProvider, $urlRouterProvider, $compileProvider) {
 
