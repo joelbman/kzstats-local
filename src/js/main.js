@@ -81,18 +81,18 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
     templateUrl: 'templates/players-list.html',
     controller: 'PlayerListCtrl',
     resolve: { $title: function() { return 'Players'; } }
+  })
+  .state('players.detail', {
+    url: ':steamId/',
+    templateUrl: 'templates/players-detail.html',
+    controller: 'PlayerDetailCtrl',
+    // resolve: {
+    //   player: function(PlayerService, $stateParams) {
+    //     return PlayerService.getPlayerName($stateParams.steamId);
+    //   },
+    //   $title: function(player) { return player; }
+    // }
   });
-  // .state('players.detail', {
-  //   url: ':steamId/',
-  //   templateUrl: 'templates/players-detail.html',
-  //   controller: 'PlayerDetailCtrl',
-  //   resolve: {
-  //     player: function(PlayerService, $stateParams) {
-  //       return PlayerService.getPlayerName($stateParams.steamId);
-  //     },
-  //     $title: function(player) { return player; }
-  //   }
-  // });
 
   // Add Steam URLs to whitelist
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|steam):/);

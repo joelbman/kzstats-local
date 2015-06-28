@@ -1,11 +1,13 @@
 <h1>Players</h1>
-<table class='table table-striped'>
-  <tr>
-    <th>Player</th>
-    <th>Points</th>
-  </tr>
-  <tr ng-repeat='p in players'>
-    <td>{{ p.playername }}</td>
-    <td>{{ p.points }}</td>
-  </tr>
-</table>
+<div class='col-lg-4'>
+  <table class='table table-striped'>
+    <tr>
+      <th>Player</th>
+      <th>Points</th>
+    </tr>
+    <tr ng-repeat='p in players'>
+      <td><a ui-sref='players.detail({steamId: p.steamid})'>{{ p.name }}</td>
+      <td>{{ p.points }}</td>
+    </tr>
+  </table>
+</div>

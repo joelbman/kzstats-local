@@ -6,4 +6,5 @@ var app = angular.module('kzApp');
 app
   .controller('FrontPageCtrl', require('./misc/front'))
 
-  .controller('PlayerListCtrl', require('./player/list'));
+  .controller('PlayerListCtrl', require('./player/list'))
+  .controller('PlayerDetailCtrl', require('./player/detail'));

@@ -26,7 +26,10 @@
     protected function player() {
       $this->dbConnect();
       $player = new Player($this->pdo);
-      return $player->getList();
+      if (count($this->args) < 1)
+        return $player->getList();
+      else
+        return $player->getDetail($this->args[0]);
     }
 
   }
