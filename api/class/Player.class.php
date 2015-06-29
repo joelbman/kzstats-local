@@ -25,9 +25,15 @@
     public function getDetail($id) {
       $steamid = $this->convertId($id);
       $player = [];
-      $rank = $this->db->fetch('SELECT name, points From `playerrank` WHERE steamid = "'.$steamid.'"');
+      $rank = $this->db->fetch('SELECT name, points, lastseen, country From `playerrank` WHERE steamid = "'.$steamid.'"');
+      $rank['countrycode'] = $this->countryCode($rank['country']);
       $jumpstats = $this->db->fetch('SELECT multibhoprecord, bhoprecord, ljrecord FROM `playerjumpstats3` WHERE steamid = "'.$steamid.'"');
       return array_merge($player, $rank, $jumpstats);
+    }
+
+    private function countryCode($country) {
+      include(__DIR__.'/../utils/countrycodes.php');
+      return array_search($country, $countrycodes);
     }
 
   }
