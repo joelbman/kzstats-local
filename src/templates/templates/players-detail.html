@@ -1,4 +1,7 @@
-<h1>{{ player.name }}</h1>
+<h1>
+  {{ player.name }} 
+  <img src='{{ player.countrycode | imgPath }}' class='flagico' alt='{{ player.countrycode }}'>
+</h1>
 <b>{{ player.points }}</b> points<br>
 Last seen: {{ player.lastseen }}
 <h2>Jumpstats</h2>
