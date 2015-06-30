@@ -13,7 +13,7 @@
       return $this->db->fetchAll('SELECT * From playerrank ORDER BY points DESC LIMIT 25');
     }
 
-    // Returns given SteamID's player data
+    // Get jumpstats + rank etc. by given SteamID
     public function getDetail($id) {
       $steamid = $this->convertId($id);
       $player = [];
@@ -21,6 +21,12 @@
       $rank['countrycode'] = $this->countryCode($rank['country']);
       $jumpstats = $this->db->fetch('SELECT multibhoprecord, bhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');
       return array_merge($player, $rank, $jumpstats);
+    }
+
+    // Get map records by given SteamID
+    public function getRecords($id) {
+      $steamid = $this->convertId($id);
+      return $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
     }
 
     // Searches for a countrycode with given country name

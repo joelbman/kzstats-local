@@ -135,3 +135,6 @@ h4 {
   vertical-align: baseline;
 }
 
+.col-md-6 {
+  padding-left: 0;
+}

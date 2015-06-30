@@ -16,8 +16,12 @@
       $player = new Player($this->db);
       if (count($this->args) < 1)
         return $player->getList();
-      else
-        return $player->getDetail($this->args[0]);
+      else {
+        if ($this->args[1] == 'records')
+          return $player->getRecords($this->args[0]);
+        else if (!$this->args[1])
+          return $player->getDetail($this->args[0]);
+      }
     }
 
     /**
