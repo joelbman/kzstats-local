@@ -1,0 +1,21 @@
+<h1>Jumpstats</h1>
+<div class='col-md-6'>
+  <table class='table table-striped'>
+    <tr>
+      <th>Player</th>
+      <th>Length</th>
+      <th>Strafes</th>
+      <th>Sync</th>
+      <th>Pre</th>
+      <th>Max</th>
+    </tr>
+    <tr ng-repeat='j in jumps'>
+      <td><a ui-sref='players.detail({steamId: (j.steamid|numOnly)})'>{{ j.name }}</a></td>
+      <td>{{ j.ljrecord }}</td>
+      <td>{{ j.ljstrafes }}</td>
+      <td>{{ j.ljsync }}%</td>
+      <td>{{ j.ljpre }}</td>
+      <td>{{ j.ljmax }}</td>
+    </tr>
+  </table>
+</div>

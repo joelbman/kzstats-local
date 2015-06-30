@@ -51,24 +51,24 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
   //   resolve: { $title: function($stateParams) { return $stateParams.mapName; } }
   // })
 
-  // // Jump states
-  // .state('jump', {
-  //   abstract: true,
-  //   url: '/jumps/',
-  //   template: '<div ui-view></div>'
-  // })
+  // Jump states
+  .state('jumps', {
+    abstract: true,
+    url: '/jump/',
+    template: '<div ui-view></div>'
+  })
   // .state('jumps.list', {
   //   url: '',
   //   templateUrl: 'templates/jumps-list.html',
   //   controller: 'JumpListCtrl',
   //   resolve: { $title: function() { return 'Maps'; } }
   // })
-  // .state('maps.detail', {
-  //   url: ':jumpName/',
-  //   templateUrl: 'templates/jumps-detail.html',
-  //   controller: 'JumpDetailCtrl',
-  //   resolve: { $title: function($stateParams) { return $stateParams.mapName; } }
-  // })
+  .state('jumps.detail', {
+    url: ':jumpName/',
+    templateUrl: 'templates/jumps-detail.html',
+    controller: 'JumpDetailCtrl',
+    resolve: { $title: function($stateParams) { return $stateParams.jumpName; } }
+  })
 
   // Player states
   .state('players', {

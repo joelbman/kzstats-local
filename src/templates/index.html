@@ -18,6 +18,7 @@
     <title>KZStats Local</title>
   </head>
   <body>
+    <!-- Navbar -->
     <nav class='navbar'>
       <div class='navbar__brand'>
         <a href=''>Server name</a>
@@ -25,7 +26,17 @@
       <ul class='navbar__menu'>
         <li><a ui-sref='players.list'>Players</a></li>
         <li><a href=''>Maps</a></li>
-        <li><a href=''>Jumpstats</a></li>
+        <!-- Jumpstats dropdown -->
+        <li ng-class='{navbar__menu__dropdown: toggled}'>
+          <a href='' ng-click='toggled = !toggled'>Jumpstats</a>
+          <ul class='navbar__menu__dropdown__list' ng-show='toggled'>
+            <li><a ui-sref='jumps.detail({jumpName: "lj"})'>Longjump</a></li>
+            <li><a ui-sref='jumps.detail({jumpName: "lj"})'>Bunnyhop</a></li>
+            <li><a ui-sref='jumps.detail({jumpName: "lj"})'>Multibhop</a></li>
+            <li><a ui-sref='jumps.detail({jumpName: "lj"})'>Weirdjump</a></li>
+            <li><a ui-sref='jumps.detail({jumpName: "lj"})'>Ladderjump</a></li>
+          </ul>
+        </li>
         <li><a href=''>Bans</a></li>
       </ul>
       <div class='navbar__footer'>
@@ -33,6 +44,7 @@
         <a href='https://www.github.com/joelbman/kzstats-local/'>KZStats Local</a>
       </div>
     </nav>
+    <!-- Main content -->
     <div class='content'>
       <div ui-view></div>
     </div>

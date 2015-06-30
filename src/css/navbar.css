@@ -23,10 +23,12 @@
 
 .navbar a {
   color: #F0F0F0;
+  text-decoration: none;
 }
 
 .navbar a:hover {
   color: #F0F0F0;
+  text-decoration: none;
 }
 
 .navbar__menu li {
@@ -50,4 +52,28 @@
 
 .navbar__footer a {
   color: #CF8338;
+}
+
+.navbar__menu__dropdown__list {
+  padding: 0;
+  margin: 0;
+  padding-left: 7px;
+}
+
+.navbar__menu__dropdown__list li {
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+.navbar__menu__dropdown__list li:hover {
+  background: #363636 !important;
+}
+
+.navbar__menu__dropdown {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.navbar__menu__dropdown:hover {
+  background: #363636 !important;
 }
