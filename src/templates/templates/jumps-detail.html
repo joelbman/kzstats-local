@@ -1,5 +1,5 @@
-<h1>Jumpstats</h1>
-<div class='col-md-6'>
+<h1>Jumpstats <small>{{ jumpType }}</small></h1>
+<div class='col-md-6' ng-show='jumpType'>
   <table class='table table-striped'>
     <tr>
       <th>Player</th>
@@ -11,11 +11,14 @@
     </tr>
     <tr ng-repeat='j in jumps'>
       <td><a ui-sref='players.detail({steamId: (j.steamid|numOnly)})'>{{ j.name }}</a></td>
-      <td>{{ j.ljrecord }}</td>
-      <td>{{ j.ljstrafes }}</td>
-      <td>{{ j.ljsync }}%</td>
-      <td>{{ j.ljpre }}</td>
-      <td>{{ j.ljmax }}</td>
+      <td>{{ j.record }}</td>
+      <td>{{ j.strafes }}</td>
+      <td>{{ j.sync }}%</td>
+      <td>{{ j.pre }}</td>
+      <td>{{ j.max }}</td>
     </tr>
   </table>
+</div>
+<div ng-hide='jumpType'>
+  <b>404</b>: Jump type not found!
 </div>
