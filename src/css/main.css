@@ -135,6 +135,6 @@ h4 {
   vertical-align: baseline;
 }
 
-.col-md-6 {
+.col-md-6, .col-md-4 {
   padding-left: 0;
 }

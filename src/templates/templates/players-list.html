@@ -1,12 +1,12 @@
 <h1>Players</h1>
-<div class='col-lg-4'>
+<div class='col-md-4'>
   <table class='table table-striped'>
     <tr>
       <th>Player</th>
       <th>Points</th>
     </tr>
     <tr ng-repeat='p in players'>
-      <td><a ui-sref='players.detail({steamId: (p.steamid|numOnly)})'>{{ p.name }}</td>
+      <td><a ui-sref='players.detail({steamId: (p.steamid|numOnly)})'>{{ p.name }}</a> <img class='flagico' ng-src='{{ p.countrycode | imgPath }}' alt='{{ p.country }}'></td>
       <td>{{ p.points }}</td>
     </tr>
   </table>
