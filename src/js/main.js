@@ -7,7 +7,7 @@ require('angular-bootstrap');
 
 var app = angular.module('kzApp', ['ui.router', 'ui.router.title', 'ui.bootstrap']);
 
-// require('./services');
+require('./services');
 require('./controllers');
 require('./filters');
 

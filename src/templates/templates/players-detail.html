@@ -1,10 +1,12 @@
 <h1>
-  {{ player.name }} 
-  <img src='{{ player.countrycode | imgPath }}' class='flagico' alt='{{ player.countrycode }}'>
+  {{ p.name }} 
+  <img src='{{ p.countrycode | imgPath }}' class='flagico' alt='{{ p.countrycode }}'>
 </h1>
-<b>{{ player.points }}</b> points<br>
-Last seen: {{ player.lastseen }}
+<b>{{ p.points }}</b> points<br>
+Last seen: {{ p.lastseen }}
 <h2>Jumpstats</h2>
-Multibhop: {{ player.multibhoprecord }}
-Bhop: {{ player.bhoprecord }}
-LJ: {{ player.ljrecord }}
+Longjump: <a ui-sref='jumps.detail({jumpName: "lj"})'>{{ p.ljrecord }}</a><br>
+Bunnyhop: <a ui-sref='jumps.detail({jumpName: "bhop"})'>{{ p.bhoprecord }}</a><br>
+Multi-bunnyhop: <a ui-sref='jumps.detail({jumpName: "mbhop"})'>{{ p.multibhoprecord }}</a><br>
+Weirdjump: <a ui-sref='jumps.detail({jumpName: "wj"})'>{{ p.wjrecord }}</a><br>
+Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.ladderjumprecord }}</a><br>

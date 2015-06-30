@@ -1,11 +1,11 @@
 'use strict';
 
 // Player detail controller
-module.exports = function($scope, $http, $stateParams) {
+module.exports = function($scope, $stateParams, PlayerSvc) {
 
-  $http.get('api/player/' + $stateParams.steamId)
-  .success(function(data) {
-    $scope.player = data;
+  var promise = PlayerSvc.getDetail($stateParams.steamId);
+  promise.then(function(data) {
+    $scope.p = data;
   });
-
+  
 };

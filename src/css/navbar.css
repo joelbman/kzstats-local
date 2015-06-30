@@ -61,6 +61,10 @@
   padding-left: 7px;
 }
 
+.navbar__menu__dropdown__list a:hover {
+  color: #C9C9C9;
+}
+
 .navbar__menu__dropdown__list li {
   padding-top: 5px;
   padding-bottom: 2px;
@@ -77,4 +81,8 @@
 
 .navbar__menu__dropdown:hover {
   background: #363636 !important;
+}
+
+.navbar__menu__dropdown__arrow {
+  font-size: 12px;
 }
