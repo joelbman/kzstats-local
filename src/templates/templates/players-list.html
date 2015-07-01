@@ -2,10 +2,12 @@
 <div class='col-md-4'>
   <table class='table table-striped'>
     <tr>
+      <th>#</th>
       <th>Player</th>
       <th>Points</th>
     </tr>
     <tr ng-repeat='p in players'>
+      <td>{{ $index + 1 }}.</td>
       <td><a ui-sref='players.detail({steamId: (p.steamid|numOnly)})'>{{ p.name }}</a> <img class='flagico' ng-src='{{ p.countrycode | imgPath }}' alt='{{ p.country }}'></td>
       <td>{{ p.points }}</td>
     </tr>

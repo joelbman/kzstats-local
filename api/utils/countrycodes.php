@@ -231,7 +231,7 @@
     'UG' => 'Uganda',
     'UA' => 'Ukraine',
     'AE' => 'United Arab Emirates',
-    'GB' => 'United Kingdom',
+    'GB' => 'The United Kingdom',
     'US' => 'United States',
     'UM' => 'United States Minor Outlying Islands',
     'UY' => 'Uruguay',
@@ -246,4 +246,5 @@
     'YE' => 'Yemen',
     'ZM' => 'Zambia',
     'ZW' => 'Zimbabwe',
+    'AX' => 'The Aland Islands',
   );
