@@ -23,6 +23,12 @@
       return $this->db->fetchAll($q);
     }
     
+    // Drop-bunnyhops
+    public function getDropBhop() {
+      $q = 'SELECT steamid, name, dropbhoprecord AS record, dropbhoppre AS pre, dropbhopmax AS max, dropbhopstrafes AS strafes, dropbhopsync AS sync, dropbhopheight AS height FROM playerjumpstats3 ORDER BY dropbhoprecord DESC LIMIT 20';
+      return $this->db->fetchAll($q);
+    }
+
     // Multi-bunnyhops
     public function getMbhop() {
       $q = 'SELECT steamid, name, multibhoprecord AS record, multibhoppre AS pre, multibhopmax AS max, multibhopstrafes AS strafes, multibhopsync AS sync, multibhopheight AS height FROM playerjumpstats3 ORDER BY multibhoprecord DESC LIMIT 20';

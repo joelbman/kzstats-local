@@ -9,6 +9,7 @@ module.exports = function($scope, $http, $stateParams) {
   switch ($stateParams.jumpName) {
     case 'lj': $scope.jumpType = 'Longjump'; break;
     case 'bhop': $scope.jumpType = 'Bunnyhop'; break;
+    case 'dropbhop': $scope.jumpType = 'Drop-bunnyhop'; break;
     case 'mbhop': $scope.jumpType = 'Multi-bunnyhop'; break;
     case 'wj': $scope.jumpType = 'Weirdjump'; break;
     case 'ladderjump': $scope.jumpType = 'Ladderjump'; break;

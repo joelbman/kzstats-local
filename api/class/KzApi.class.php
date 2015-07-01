@@ -32,6 +32,7 @@
       switch ($this->args[0]) {
         case 'lj': return $jump->getLj(); break;
         case 'bhop': return $jump->getBhop(); break;
+        case 'dropbhop': return $jump->getDropBhop(); break;
         case 'mbhop': return $jump->getMbhop(); break;
         case 'wj': return $jump->getWj(); break;
         case 'ladderjump': return $jump->getLadderjump(); break;
