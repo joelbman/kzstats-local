@@ -3,6 +3,7 @@
  * ---------
  */
 .table-striped {
+  margin-top: 15px;
   border: 1px solid #DDD;
 }
 

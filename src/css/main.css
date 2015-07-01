@@ -28,9 +28,9 @@ h4 {
   text-decoration: none;
 }
 
-/* Content blocks */
+/* Content block */
 .content {
-  padding-left: 230px;
+  padding-left: 250px;
   width: 100%;
   padding-top: 25px;
 }
@@ -116,12 +116,6 @@ h4 {
   min-height: 100px;
   text-align: center;
   font-size: 17px;
-}
-
-/* About view */
-.question {
-  margin-top: 25px;
-  max-width: 768px;
 }
 
 /* Tooltips */
