@@ -7,16 +7,16 @@ Last seen: {{ p.lastseen }}
 
 <!-- Jumpstats -->
 <h2>Jumpstats</h2>
-Longjump: <a ui-sref='jumps.detail({jumpName: "lj"})'>{{ p.ljrecord }}</a><br>
-Bunnyhop: <a ui-sref='jumps.detail({jumpName: "bhop"})'>{{ p.bhoprecord }}</a><br>
-Multi-bunnyhop: <a ui-sref='jumps.detail({jumpName: "mbhop"})'>{{ p.multibhoprecord }}</a><br>
-Weirdjump: <a ui-sref='jumps.detail({jumpName: "wj"})'>{{ p.wjrecord }}</a><br>
-Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.ladderjumprecord }}</a><br>
+<span class='jumpstat' ng-show='p.ljrecord > 0'>Longjump: <a ui-sref='jumps.detail({jumpName: "lj"})'>{{ p.ljrecord }}</a></span>
+<span class='jumpstat' ng-show='p.bhoprecord > 0'>Bunnyhop: <a ui-sref='jumps.detail({jumpName: "bhop"})'>{{ p.bhoprecord }}</a></span>
+<span class='jumpstat' ng-show='p.multibhoprecord > 0'>Multi-bunnyhop: <a ui-sref='jumps.detail({jumpName: "mbhop"})'>{{ p.multibhoprecord }}</a></span>
+<span class='jumpstat' ng-show='p.wjrecord > 0'>Weirdjump: <a ui-sref='jumps.detail({jumpName: "wj"})'>{{ p.wjrecord }}</a></span>
+<span class='jumpstat' ng-show='p.ladderjumprecord > 0'>Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.ladderjumprecord }}</a></span>
 
 <!-- Records -->
 <h2>Runs</h2>
 <div class='col-md-6'>
-  <table class='table table-striped'>
+  <table class='table table-striped' ng-show='records'>
     <tr>
       <th>Map</th>
       <th>Time</th>
@@ -33,4 +33,5 @@ Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.ladderjumpr
       </td>
     </tr>
   </table>
+  <span ng-hide='records'>No runs available.</span>
 </div>
