@@ -10,7 +10,7 @@
     }
 
     /**
-     * Player endpoint
+     * Player endpoints
      */
     protected function player() {
       $player = new Player($this->db);
@@ -25,7 +25,7 @@
     }
 
     /**
-     * Jump endpoint
+     * Jump endpoints
      */
     protected function jump() {
       $jump = new Jump($this->db);
@@ -37,6 +37,19 @@
         case 'wj': return $jump->getWj(); break;
         case 'ladderjump': return $jump->getLadderjump(); break;
         default: return $jump->getAll(); break;
+      }
+    }
+
+    /**
+     * Map endpoints
+     */
+    protected function map() {
+      $map = new Map($this->db);
+      if (count($this->args) == 1) {
+        return $map->getDetail($this->args[0]);
+      }
+      elseif (count($this->args) == 0) {
+        return $map->getList();
       }
     }
 

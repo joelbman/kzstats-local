@@ -18,15 +18,21 @@ Last seen: {{ p.lastseen }}
 
 <!-- Records -->
 <h2>Runs</h2>
-<div class='col-md-6'>
-  <table class='table table-striped' ng-show='records'>
+<div class='col-md-6' ng-show='records'>
+  <div class='progressblock'>
+    TP times <progressbar value='tpcount' max='bothcount' ng-if='bothcount'>{{ tpcount }}</progressbar>
+  </div>
+  <div class='progressblock'>
+    Pro times <progressbar value='procount' max='bothcount' ng-if='bothcount'>{{ procount }}</progressbar>
+  </div>
+  <table class='table table-striped'>
     <tr>
       <th>Map</th>
       <th>Time</th>
       <th>TPs</th>
       <th>Pro time</th>
     </tr>
-    <tr ng-repeat='r in records'>
+    <tr ng-repeat='r in records | startFrom: (currentPage-1)*pageSize | limitTo: pageSize'>
       <td><a href=''>{{ r.mapname }}</a></td>
       <td>
         <span ng-show='r.teleports > 0'>{{ r.runtime | convertTime }}</span>
@@ -42,5 +48,6 @@ Last seen: {{ p.lastseen }}
       </td>
     </tr>
   </table>
-  <span ng-hide='records'>No runs available.</span>
+  <pagination total-items='records.length' max-size='5' ng-model='currentPage'></pagination>
 </div>
+<span ng-hide='records'>No runs available.</span>

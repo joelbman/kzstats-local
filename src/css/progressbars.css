@@ -1,0 +1,13 @@
+/**
+ * Progress bars
+ */
+.progress {
+  height: 20px;
+  border: 1px solid #ADADAD;
+}
+
+.progressblock {
+  display: inline-block;
+  margin-right: 20px;
+  width: 200px;
+}

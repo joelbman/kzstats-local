@@ -22,6 +22,15 @@ app.filter('imgPath', function() {
   };
 });
 
+// Pagination start point
+app.filter('startFrom', function() {
+  return function(input, startPoint) {
+    if (!input) return;
+    startPoint = parseInt(startPoint, 10);
+    return input.slice(startPoint);
+  };
+});
+
 // Time conversion from ss.ms to HH:mm:ss.ms
 app.filter('convertTime', function() {
   return function(time) {
