@@ -10,7 +10,7 @@
 
     // Returns top 25 players based on points
     public function getList() {
-      $players = $this->db->fetchAll('SELECT * From playerrank ORDER BY points DESC LIMIT 25');
+      $players = $this->db->fetchAll('SELECT * From playerrank ORDER BY points DESC LIMIT 50');
       for ($i = 0; $i < count($players); $i++) {
         $players[$i]['countrycode'] = $this->countryCode($players[$i]['country']);
       }
