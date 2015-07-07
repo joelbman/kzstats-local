@@ -3,32 +3,16 @@
 /**
  * Map service
  */
-module.exports = function($http, $q) {
+module.exports = function($http) {
 
   // API query for records by given map name
   this.getDetail = function(name) {
-    var deferred = $q.defer();
-    $http.get('api/map/' + name)
-    .success(function(data) {
-      deferred.resolve(data);
-    })
-    .error(function() {
-      deferred.reject();
-    });
-    return deferred.promise;
+    return $http.get('api/map/' + name).then(function(res) { return res.data; });
   };
 
   // API query for map list
   this.getList = function() {
-    var deferred = $q.defer();
-    $http.get('api/map/')
-    .success(function(data) {
-      deferred.resolve(data);
-    })
-    .error(function() {
-      deferred.reject();
-    });
-    return deferred.promise;
+    return $http.get('api/map/').then(function(res) { return res.data; });
   };
 
 };

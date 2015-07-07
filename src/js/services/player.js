@@ -3,45 +3,21 @@
 /**
  * Player service
  */
-module.exports = function($http, $q) {
+module.exports = function($http) {
 
   // API query for jumpstats, rank etc. by SteamID
   this.getDetail = function(id) {
-    var deferred = $q.defer();
-    $http.get('api/player/' + id)
-    .success(function(data) {
-      deferred.resolve(data);
-    })
-    .error(function() {
-      deferred.reject();
-    });
-    return deferred.promise;
+    return $http.get('api/player/' + id).then(function(res) { return res.data; });
   };
 
   // API query for records by SteamID
   this.getRecords = function(id) {
-    var deferred = $q.defer();
-    $http.get('api/player/' + id + '/records/')
-    .success(function(data) {
-      deferred.resolve(data);
-    })
-    .error(function() {
-      deferred.reject();
-    });
-    return deferred.promise;
+    return $http.get('api/player/' + id + '/records/').then(function(res) { return res.data; });
   };
 
   // API query for top players by points
   this.getList = function() {
-    var deferred = $q.defer();
-    $http.get('api/player/')
-    .success(function(data) {
-      deferred.resolve(data);
-    })
-    .error(function() {
-      deferred.reject();
-    });
-    return deferred.promise;
+    return $http.get('api/player/').then(function(res) { return res.data; });
   };
 
 };

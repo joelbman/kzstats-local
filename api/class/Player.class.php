@@ -21,9 +21,25 @@
     public function getDetail($id) {
       $steamid = $this->convertId($id);
       $player = [];
+
       $rank = $this->db->fetch('SELECT name, points, lastseen, country From playerrank WHERE steamid = "'.$steamid.'"');
       $rank['countrycode'] = $this->countryCode($rank['country']);
+
       $jumpstats = $this->db->fetch('SELECT multibhoprecord, bhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');
+
+      if (defined('API_KEY')) {
+        // Calculate 64-bit Steam ID (community ID)
+        $idnum = substr($id, 1, 1);
+        $accnum = substr($id, 2);
+        $comid = bcadd(bcadd(($accnum * 2), '76561197960265728'), $idnum);
+
+        $info = json_decode(file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key='.API_KEY.'&steamids='.$comid));
+        if ($info['response']) {
+          $rank['profileurl'] = '';
+          $rank['profilepic'] = '';
+        }
+      }
+
       return array_merge($player, $rank, $jumpstats);
     }
 

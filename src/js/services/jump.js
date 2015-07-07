@@ -3,19 +3,11 @@
 /**
  * Jump service
  */
-module.exports = function($http, $q) {
+module.exports = function($http) {
 
   // API query for jump
   this.getDetail = function(type) {
-    var deferred = $q.defer();
-    $http.get('api/jump/' + type)
-    .success(function(data) {
-      deferred.resolve(data);
-    })
-    .error(function() {
-      deferred.reject();
-    });
-    return deferred.promise;
+    return $http.get('api/jump/' + type).then(function(res) { return res.data; });
   };
 
 };
