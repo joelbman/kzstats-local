@@ -1,12 +1,14 @@
 'use strict';
 
 // Player detail controller
-module.exports = function($scope, $stateParams, PlayerService) {
+module.exports = function($scope, $stateParams, PlayerService, MapService) {
 
   // Pagination settings
   $scope.currentPage = 1;
   $scope.pageSize = 10;
   $scope.startPoint = ($scope.currentPage - 1) * $scope.pageSize;
+
+  $scope.mapCount = 0;
 
   var promise = PlayerService.getDetail($stateParams.steamId);
   promise.then(function(data) {
@@ -22,7 +24,6 @@ module.exports = function($scope, $stateParams, PlayerService) {
 
     $scope.tpcount = 0;
     $scope.procount = 0;
-    $scope.bothcount = 0;
 
     for (var i = 0; i < data.length; i++) {
       if ($scope.records[i].runtime > 0)
@@ -31,7 +32,8 @@ module.exports = function($scope, $stateParams, PlayerService) {
         $scope.procount++;
     }
 
-    $scope.bothcount = $scope.tpcount + $scope.procount;
+    var p = MapService.getCount();
+    p.then(function(data) { $scope.mapCount = data.count; });
 
   }, function() {
     $scope.records = [];

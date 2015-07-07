@@ -3,7 +3,7 @@
   <img src='{{ p.countrycode | imgPath }}' class='flagico' alt='{{ p.countrycode }}'>
 </h1>
 <b>{{ p.points }}</b> points<br>
-Last seen: {{ p.lastseen }}
+<i>Last seen: {{ p.lastseen }}</i>
 
 <!-- Jumpstats -->
 <h2>Jumpstats</h2>
@@ -20,10 +20,10 @@ Last seen: {{ p.lastseen }}
 <h2>Runs</h2>
 <div class='col-md-6' ng-show='records'>
   <div class='progressblock'>
-    TP times <progressbar value='tpcount' max='bothcount' ng-if='bothcount'>{{ tpcount }}</progressbar>
+    TP times <progressbar value='tpcount' max='mapCount' ng-if='mapCount'>{{ tpcount }} / {{ mapCount }}</progressbar>
   </div>
   <div class='progressblock'>
-    Pro times <progressbar value='procount' max='bothcount' ng-if='bothcount'>{{ procount }}</progressbar>
+    Pro times <progressbar value='procount' max='mapCount' ng-if='mapCount'>{{ procount }} / {{ mapCount }}</progressbar>
   </div>
   <table class='table table-striped'>
     <tr>

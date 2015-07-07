@@ -32,4 +32,9 @@
       return $both;
     }
 
+    // Count every unique map in playertimes table
+    public function getCount() {
+      return $this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes');
+    }
+
   }

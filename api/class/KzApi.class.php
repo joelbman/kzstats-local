@@ -46,7 +46,10 @@
     protected function map() {
       $map = new Map($this->db);
       if (count($this->args) == 1) {
-        return $map->getDetail($this->args[0]);
+        if ($this->args[0] == 'count')
+          return $map->getCount();
+        else
+          return $map->getDetail($this->args[0]);
       }
       elseif (count($this->args) == 0) {
         return $map->getList();

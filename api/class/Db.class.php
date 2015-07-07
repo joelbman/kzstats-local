@@ -32,4 +32,13 @@
       return $result; 
     }
 
+    public function count($q) {
+      $result = [];
+      $stmt = $this->pdo->prepare($q);
+      $stmt->execute();
+      $count = $stmt->fetch(PDO::FETCH_NUM);
+      $result['count'] = $count[0];
+      return $result;
+    }
+
   }
