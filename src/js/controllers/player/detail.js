@@ -1,21 +1,21 @@
 'use strict';
 
 // Player detail controller
-module.exports = function($scope, $stateParams, PlayerSvc) {
+module.exports = function($scope, $stateParams, PlayerService) {
 
   // Pagination settings
   $scope.currentPage = 1;
   $scope.pageSize = 10;
   $scope.startPoint = ($scope.currentPage - 1) * $scope.pageSize;
 
-  var promise = PlayerSvc.getDetail($stateParams.steamId);
+  var promise = PlayerService.getDetail($stateParams.steamId);
   promise.then(function(data) {
     $scope.p = data;
   }, function() {
     $scope.p = null;
   });
 
-  var prom = PlayerSvc.getRecords($stateParams.steamId);
+  var prom = PlayerService.getRecords($stateParams.steamId);
   prom.then(function(data) {
 
     $scope.records = data;

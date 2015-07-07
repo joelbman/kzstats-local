@@ -31,4 +31,17 @@ module.exports = function($http, $q) {
     return deferred.promise;
   };
 
+  // API query for top players by points
+  this.getList = function() {
+    var deferred = $q.defer();
+    $http.get('api/player/')
+    .success(function(data) {
+      deferred.resolve(data);
+    })
+    .error(function() {
+      deferred.reject();
+    });
+    return deferred.promise;
+  };
+
 };

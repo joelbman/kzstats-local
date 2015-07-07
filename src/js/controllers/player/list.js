@@ -1,11 +1,12 @@
 'use strict';
 
 // Player list controller
-module.exports = function($scope, $http) {
+module.exports = function($scope, PlayerService) {
   $scope.players = [];
 
-  $http.get('api/player/')
-  .success(function(data) {
+  var promise = PlayerService.getList();
+  promise.then(function(data) {
     $scope.players = data;
   });
+
 };
