@@ -1,7 +1,7 @@
 'use strict';
 
 // Jump detail controller
-module.exports = function($scope, $http, $stateParams) {
+module.exports = function($scope, $stateParams, JumpService) {
 
   $scope.jumps = [];
   $scope.jumpType = '';
@@ -17,8 +17,8 @@ module.exports = function($scope, $http, $stateParams) {
   }
 
   if ($scope.jumpType) {
-    $http.get('api/jump/' + $stateParams.jumpName)
-    .success(function(data) {
+    var promise = JumpService.getDetail($stateParams.jumpName);
+    promise.then(function(data) {
       $scope.jumps = data;
     });
   }

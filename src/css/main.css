@@ -100,8 +100,8 @@ h4 {
 
 .maplist-map {
   display: inline-block;
-  width: 33%;
-  min-width: 186px;
+  width: 20%;
+  min-width: 250px;
   background-color: #fff;
   padding: 5px 10px 5px 10px;
 }
@@ -129,7 +129,7 @@ h4 {
   vertical-align: baseline;
 }
 
-.col-md-6, .col-md-4 {
+.col-md-6, .col-md-4, .col-md-12, .col-md-10 {
   padding-left: 0;
 }
 

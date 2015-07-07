@@ -1,0 +1,25 @@
+<!-- Map list -->
+<h1>Maps</h1>
+<div class='col-md-10'>
+  <div class='panel panel-default'>
+    <div class='panel-heading'><h3>Map list</h3></div>
+    <div class='panel-body'>
+      <div class='filters'>
+        <h3>Filters</h3>
+        <div class='filter-group'>
+          <label>Name</label>
+          <input type='text' maxlength='10' ng-model='search.mapname'>
+        </div>
+        <div class='filter-group'>
+          <label>Order</label>
+          <select ng-model='orderField' ng-options='field.name for field in fields' ng-change='reloadResults()' class='dropdown'></select>
+        </div>
+      </div>
+      <div class='maplist'>
+        <div ng-repeat='m in maplist' class='maplist-map'>
+          <a ui-sref='maps.detail({mapName: m.mapname})'><b>{{ m.mapname }}</b> ({{ m.runtime | convertTime }})</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

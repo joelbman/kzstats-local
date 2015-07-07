@@ -1,0 +1,19 @@
+<!-- Map detail -->
+<h1>Maps &raquo; {{ mapname }}</h1>
+<div class='col-md-4'>
+  <h2>TP times</h2>
+  <table class='table table-striped'>
+    <tr>
+      <th>#</th>
+      <th>Player</th>
+      <th>Time</th>
+      <th>TPs</th>
+    </tr>
+    <tr ng-repeat='r in records | orderBy:"runtime"'>
+      <td>{{ $index + 1 }}.</td>
+      <td><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name }}</a></td>
+      <td>{{ r.runtime | convertTime }}</td>
+      <td>{{ r.teleports }}</td>
+    </tr>
+  </table>
+</div>

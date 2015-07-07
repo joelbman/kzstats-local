@@ -32,24 +32,24 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
   //   resolve: { $title: function() { return 'Bans'; } }
   // })
 
-  // // Map states
-  // .state('maps', {
-  //   abstract: true,
-  //   url: '/maps/',
-  //   template: '<div ui-view></div>'
-  // })
-  // .state('maps.list', {
-  //   url: '',
-  //   templateUrl: 'templates/maps-list.html',
-  //   controller: 'MapListCtrl',
-  //   resolve: { $title: function() { return 'Maps'; } }
-  // })
-  // .state('maps.detail', {
-  //   url: ':mapName/',
-  //   templateUrl: 'templates/maps-detail.html',
-  //   controller: 'MapDetailCtrl',
-  //   resolve: { $title: function($stateParams) { return $stateParams.mapName; } }
-  // })
+  // Map states
+  .state('maps', {
+    abstract: true,
+    url: '/maps/',
+    template: '<div ui-view></div>'
+  })
+  .state('maps.list', {
+    url: '',
+    templateUrl: 'templates/maps-list.html',
+    controller: 'MapListCtrl',
+    resolve: { $title: function() { return 'Maps'; } }
+  })
+  .state('maps.detail', {
+    url: ':mapName/',
+    templateUrl: 'templates/maps-detail.html',
+    controller: 'MapDetailCtrl',
+    resolve: { $title: function($stateParams) { return $stateParams.mapName; } }
+  })
 
   // Jump states
   .state('jumps', {

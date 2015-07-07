@@ -15,7 +15,21 @@
 
     // Get records by given map name
     public function getDetail($name) {
-      return $this->db->fetchAll('SELECT * FROM playertimes WHERE mapname = "'.$name.'"');
+      $protimes = $this->db->fetchAll('SELECT steamid, name, runtimepro AS runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtimepro > 0');
+      $tptimes = $this->db->fetchAll('SELECT steamid, name, runtime, teleports FROM playertimes WHERE mapname = "'.$name.'" AND runtime > 0');
+      $both = array_merge($tptimes, $protimes);
+
+      /**
+       * Loop through the records, convert runtime to float for client side ordering
+       * and set pro time teleports to 0
+       */
+      for ($i = 0; $i < count($both); $i++) {
+        $both[$i]['runtime'] = floatval($both[$i]['runtime']);
+        if (!$both[$i]['teleports'])
+          $both[$i]['teleports'] = 0;
+      }
+
+      return $both;
     }
 
   }

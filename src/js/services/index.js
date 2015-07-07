@@ -3,6 +3,6 @@
 var app = angular.module('kzApp');
 
 app
-  //.service('FrontPageSvc', require('./front'))
-  .service('PlayerSvc', require('./player'));
-  //.service('JumpSvc', require('./jump'));
+  .service('PlayerService', require('./player'))
+  .service('MapService', require('./map'))
+  .service('JumpService', require('./jump'));
