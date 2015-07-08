@@ -1,13 +1,41 @@
-<h1>
-  {{ p.name }} 
-  <img src='{{ p.countrycode | imgPath }}' class='flagico' alt='{{ p.countrycode }}'>
-</h1>
-<b>{{ p.points }}</b> points<br>
-<i>Last seen: {{ p.lastseen }}</i>
+<!-- Player information -->
+<div class='player-info'>
+  <!-- Loading spinner -->
+  <div class="spinner" ng-hide='steamInfo.avatarfull'>
+    <div class="spinner-container container1">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container2">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container3">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+  </div>
+  <a href='{{ steamInfo.profileurl }}' target='_blank'>
+    <img ng-src='{{ steamInfo.avatarfull }}' class='avatar' ng-show='steamInfo' alt='{{ p.name }}'>
+  </a>
+  <h1>
+    {{ p.name }} 
+    <img src='{{ p.countrycode | imgPath }}' class='flagico' alt='{{ p.countrycode }}'>
+  </h1>
+  <b>{{ p.points }}</b> points<br>
+  <i>Last seen: {{ p.lastseen }}</i><br>
+  <a href='{{ steamInfo.profileurl }}'>Steam profile</a>
+</div>
 
 <!-- Jumpstats -->
-<h2>Jumpstats</h2>
-<div class='jumpstats'>
+<div class='stats'>
+  <h2>Jumpstats</h2>
   <span ng-show='p.ljrecord > 0'>Longjump: <a ui-sref='jumps.detail({jumpName: "lj"})'>{{ p.ljrecord }}</a></span>
   <span ng-show='p.bhoprecord > 0'>Bunnyhop: <a ui-sref='jumps.detail({jumpName: "bhop"})'>{{ p.bhoprecord }}</a></span>
   <span ng-show='p.dropbhoprecord > 0'>Drop-bunnyhop: <a ui-sref='jumps.detail({jumpName: "dropbhop"})'>{{ p.dropbhoprecord }}</a></span>
@@ -16,15 +44,15 @@
   <span ng-show='p.ladderjumprecord > 0'>Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.ladderjumprecord }}</a></span>
 </div>
 
-<!-- Records -->
-<h2>Runs</h2>
-<div class='col-md-6' ng-show='records'>
-  <div class='progressblock'>
+<div class='stats'>
+  <h2>Runs</h2>
     TP times <progressbar value='tpcount' max='mapCount' ng-if='mapCount'>{{ tpcount }} / {{ mapCount }}</progressbar>
-  </div>
-  <div class='progressblock'>
     Pro times <progressbar value='procount' max='mapCount' ng-if='mapCount'>{{ procount }} / {{ mapCount }}</progressbar>
-  </div>
+</div>
+
+<!-- Records -->
+<div class='col-md-10' ng-show='records'>
+  <h2>Records</h2>
   <table class='table table-striped'>
     <tr>
       <th>Map</th>

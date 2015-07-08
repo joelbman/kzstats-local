@@ -20,33 +20,34 @@
     // Get jumpstats + rank etc. by given SteamID
     public function getDetail($id) {
       $steamid = $this->convertId($id);
-      $player = [];
 
+      // Basic info
       $rank = $this->db->fetch('SELECT name, points, lastseen, country From playerrank WHERE steamid = "'.$steamid.'"');
       $rank['countrycode'] = $this->countryCode($rank['country']);
 
-      $jumpstats = $this->db->fetch('SELECT multibhoprecord, bhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');
+      // Jumpstats
+      $jumpstats = $this->db->fetch('SELECT multibhoprecord, bhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');      
 
-      if (defined('API_KEY')) {
+      return array_merge($rank, $jumpstats);
+    }
+
+    public function getRecords($id) {
+      $steamid = $this->convertId($id);
+      return $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
+    }
+
+    // Get Steam profile info from Steam API
+    public function getSteamProfile($id) {
+      include(__DIR__.'/../settings.php');
+      if ($apikey) {
         // Calculate 64-bit Steam ID (community ID)
         $idnum = substr($id, 1, 1);
         $accnum = substr($id, 2);
         $comid = bcadd(bcadd(($accnum * 2), '76561197960265728'), $idnum);
 
-        $info = json_decode(file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key='.API_KEY.'&steamids='.$comid));
-        if ($info['response']) {
-          $rank['profileurl'] = '';
-          $rank['profilepic'] = '';
-        }
+        $info = json_decode(file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key='.$apikey.'&steamids='.$comid));
+        return $info->response->players[0];
       }
-
-      return array_merge($player, $rank, $jumpstats);
-    }
-
-    // Get map records by given SteamID
-    public function getRecords($id) {
-      $steamid = $this->convertId($id);
-      return $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
     }
 
     // Searches for a countrycode with given country name

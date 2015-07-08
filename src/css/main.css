@@ -58,6 +58,7 @@ h4 {
 .player-info {
   margin-bottom: 25px;
   min-height: 130px;
+  width: 100%;
 }
 
 .player-info h3 {
@@ -133,6 +134,12 @@ h4 {
   padding-left: 0;
 }
 
-.jumpstats span {
+.stats {
+  display: inline-block;
+  width: 300px;
+  float: left;
+}
+
+.stats span {
   display: block;
 }

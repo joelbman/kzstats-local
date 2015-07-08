@@ -15,6 +15,7 @@ module.exports = function($http) {
     return $http.get('api/map/').then(function(res) { return res.data; });
   };
 
+  // API query for total map count
   this.getCount = function() {
     return $http.get('api/map/count/').then(function(res) { return res.data; });
   };

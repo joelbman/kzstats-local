@@ -15,6 +15,11 @@ module.exports = function($http) {
     return $http.get('api/player/' + id + '/records/').then(function(res) { return res.data; });
   };
 
+  // API query for Steam profile information
+  this.getSteamProfile = function(id) {
+    return $http.get('api/player/' + id + '/steam/').then(function(res) { return res.data; });
+  };
+
   // API query for top players by points
   this.getList = function() {
     return $http.get('api/player/').then(function(res) { return res.data; });

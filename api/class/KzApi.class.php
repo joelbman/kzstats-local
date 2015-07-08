@@ -17,7 +17,9 @@
       if (count($this->args) < 1)
         return $player->getList();
       else {
-        if ($this->args[1] == 'records')
+        if ($this->args[1] == 'steam')
+          return $player->getSteamProfile($this->args[0]);
+        else if ($this->args[1] == 'records')
           return $player->getRecords($this->args[0]);
         else if (!$this->args[1])
           return $player->getDetail($this->args[0]);

@@ -14,9 +14,12 @@
     }
 
     protected function _response($data = []) {
+      if ($data === null)
+        $this->_error('Unknown endpoint', 404);
+
       if ($this->error) {
-        http_response_code($status);
-        echo json_encode(array('error' => $msg));
+        http_response_code($this->status);
+        echo json_encode(array('error' => $this->error));
       }
       else
         echo json_encode($data, JSON_PRETTY_PRINT);
