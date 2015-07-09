@@ -58,4 +58,13 @@
       }
     }
 
+    /**
+     * Banlist endpoints
+     */
+    protected function ban() {
+      $ban = new Ban($this->db);
+      if (count($this->args) === 0)
+        return $ban->getList();
+    }
+
   }
