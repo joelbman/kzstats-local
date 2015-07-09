@@ -1,5 +1,5 @@
 <!-- Player information -->
-<div class='player-info'>
+<div class='player-info' ng-show='p'>
   <!-- Loading spinner -->
   <div class="spinner" ng-hide='steamInfo.avatarfull'>
     <div class="spinner-container container1">
@@ -34,48 +34,58 @@
 </div>
 
 <!-- Jumpstats -->
-<div class='stats'>
-  <h2>Jumpstats</h2>
-  <span ng-show='p.ljrecord > 0'>Longjump: <a ui-sref='jumps.detail({jumpName: "lj"})'>{{ p.ljrecord }}</a></span>
-  <span ng-show='p.bhoprecord > 0'>Bunnyhop: <a ui-sref='jumps.detail({jumpName: "bhop"})'>{{ p.bhoprecord }}</a></span>
-  <span ng-show='p.dropbhoprecord > 0'>Drop-bunnyhop: <a ui-sref='jumps.detail({jumpName: "dropbhop"})'>{{ p.dropbhoprecord }}</a></span>
-  <span ng-show='p.multibhoprecord > 0'>Multi-bunnyhop: <a ui-sref='jumps.detail({jumpName: "mbhop"})'>{{ p.multibhoprecord }}</a></span>
-  <span ng-show='p.wjrecord > 0'>Weirdjump: <a ui-sref='jumps.detail({jumpName: "wj"})'>{{ p.wjrecord }}</a></span>
-  <span ng-show='p.ladderjumprecord > 0'>Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.ladderjumprecord }}</a></span>
+<div ng-show='p'>
+  <div class='stats'>
+    <h2>Jumpstats</h2>
+    <span ng-show='p.ljrecord > 0'>Longjump: <a ui-sref='jumps.detail({jumpName: "lj"})'>{{ p.ljrecord }}</a></span>
+    <span ng-show='p.bhoprecord > 0'>Bunnyhop: <a ui-sref='jumps.detail({jumpName: "bhop"})'>{{ p.bhoprecord }}</a></span>
+    <span ng-show='p.dropbhoprecord > 0'>Drop-bunnyhop: <a ui-sref='jumps.detail({jumpName: "dropbhop"})'>{{ p.dropbhoprecord }}</a></span>
+    <span ng-show='p.multibhoprecord > 0'>Multi-bunnyhop: <a ui-sref='jumps.detail({jumpName: "mbhop"})'>{{ p.multibhoprecord }}</a></span>
+    <span ng-show='p.wjrecord > 0'>Weirdjump: <a ui-sref='jumps.detail({jumpName: "wj"})'>{{ p.wjrecord }}</a></span>
+    <span ng-show='p.ladderjumprecord > 0'>Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.ladderjumprecord }}</a></span>
+  </div>
+
+  <div class='stats'>
+    <h2>Runs</h2>
+      TP times <progressbar value='tpcount' max='mapCount' ng-if='mapCount'>{{ tpcount }} / {{ mapCount }}</progressbar>
+      Pro times <progressbar value='procount' max='mapCount' ng-if='mapCount'>{{ procount }} / {{ mapCount }}</progressbar>
+  </div>
+
+  <!-- Records -->
+  <div class='col-md-12'>
+    <h2>Records</h2>
+    <table class='table table-striped' style='max-width: 700px;'>
+      <tr>
+        <th>Map</th>
+        <th>Time</th>
+        <th>TPs</th>
+        <th>Pro time</th>
+      </tr>
+      <tr ng-repeat='r in records | startFrom: (currentPage-1)*pageSize | limitTo: pageSize'>
+        <td><a href=''>{{ r.mapname }}</a></td>
+        <td>
+          <span ng-show='r.teleports > 0'>{{ r.runtime | convertTime }}</span>
+          <span ng-show='r.teleports < 0'>N/A</span>
+        </td>
+        <td>
+          <span ng-show='r.teleports > 0'>{{ r.teleports }}</span>
+          <span ng-show='r.teleports < 0'>N/A</span>
+        </td>
+        <td>
+          <span ng-show='r.runtimepro > 0'>{{ r.runtimepro | convertTime }}</span>
+          <span ng-show='r.runtimepro < 0'>N/A</span>
+        </td>
+      </tr>
+    </table>
+    <pagination total-items='records.length' max-size='5' ng-model='currentPage'></pagination>
+    <span ng-hide='records'>No runs available.</span>
+  </div>
 </div>
 
-<div class='stats'>
-  <h2>Runs</h2>
-    TP times <progressbar value='tpcount' max='mapCount' ng-if='mapCount'>{{ tpcount }} / {{ mapCount }}</progressbar>
-    Pro times <progressbar value='procount' max='mapCount' ng-if='mapCount'>{{ procount }} / {{ mapCount }}</progressbar>
-</div>
 
-<!-- Records -->
-<div class='col-md-10' ng-show='records'>
-  <h2>Records</h2>
-  <table class='table table-striped'>
-    <tr>
-      <th>Map</th>
-      <th>Time</th>
-      <th>TPs</th>
-      <th>Pro time</th>
-    </tr>
-    <tr ng-repeat='r in records | startFrom: (currentPage-1)*pageSize | limitTo: pageSize'>
-      <td><a href=''>{{ r.mapname }}</a></td>
-      <td>
-        <span ng-show='r.teleports > 0'>{{ r.runtime | convertTime }}</span>
-        <span ng-show='r.teleports < 0'>N/A</span>
-      </td>
-      <td>
-        <span ng-show='r.teleports > 0'>{{ r.teleports }}</span>
-        <span ng-show='r.teleports < 0'>N/A</span>
-      </td>
-      <td>
-        <span ng-show='r.runtimepro > 0'>{{ r.runtimepro | convertTime }}</span>
-        <span ng-show='r.runtimepro < 0'>N/A</span>
-      </td>
-    </tr>
-  </table>
-  <pagination total-items='records.length' max-size='5' ng-model='currentPage'></pagination>
+
+<!-- Error msg -->
+<div ng-hide='p'>
+  <h1>Error - 404</h1>
+  Requested player was not found.
 </div>
-<span ng-hide='records'>No runs available.</span>

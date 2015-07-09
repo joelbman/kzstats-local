@@ -31,16 +31,16 @@ module.exports = function($scope, $stateParams, PlayerService, MapService) {
 
     });
 
-  });
+    var pro = PlayerService.getSteamProfile($stateParams.steamId);
+    pro.then(function(data) {
+      $scope.steamInfo = data;
+    });
 
-  var prom = PlayerService.getSteamProfile($stateParams.steamId);
-  prom.then(function(data) {
-    $scope.steamInfo = data;
-  });
+    var pr = MapService.getCount();
+    pr.then(function(data) {
+      $scope.mapCount = data.count;
+    });
 
-  var pr = MapService.getCount();
-  pr.then(function(data) {
-    $scope.mapCount = data.count;
   });
   
 };
