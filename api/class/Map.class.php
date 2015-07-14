@@ -37,4 +37,9 @@
       return $this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes');
     }
 
+    // Map search
+    public function search($string) {
+      return $this->db->fetchAll('SELECT mapname, min(runtime) AS runtime FROM playertimes WHERE mapname LIKE :search ESCAPE "=" AND runtime > 0 GROUP BY mapname', $string);
+    }
+
   }

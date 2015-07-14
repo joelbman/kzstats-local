@@ -57,20 +57,3 @@
   border: 1px solid #ddd;
   border-radius: 4px;
 }
-
-.arrow {
-  font-size: 16px;
-  background: #F2F2F2;
-}
-
-.arrow:hover {
-  background: #D4793D;
-  color: #fff;
-}
-
-.maplist-search {
-  max-width: 200px;
-  margin-bottom: 25px;
-  margin-left: 5px;
-  display: inline;
-}

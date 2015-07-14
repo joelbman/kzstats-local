@@ -67,4 +67,15 @@
         return $ban->getList();
     }
 
+    protected function search() {
+      $player = new Player($this->db);
+      $map = new Map($this->db);
+      if ($this->args[0]) {
+        $result = [];
+        $result['maps'] = $map->search($this->args[0]);
+        $result['players'] = $player->search($this->args[0]);
+        return $result;
+      }
+    }
+
   }

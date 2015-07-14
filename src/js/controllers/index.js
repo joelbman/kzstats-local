@@ -5,6 +5,8 @@ var app = angular.module('kzApp');
 app
   // Misc controllers
   .controller('FrontPageCtrl', require('./misc/front'))
+  .controller('SearchCtrl', require('./misc/search'))
+  .controller('NavCtrl', require('./misc/nav'))
 
   // Player controllers
   .controller('PlayerListCtrl', require('./player/list'))

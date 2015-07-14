@@ -19,7 +19,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class='navbar'>
+    <nav class='navbar' ng-controller='NavCtrl'>
       <div class='navbar__brand'>
         <a href=''>Server name</a>
       </div>
@@ -43,6 +43,18 @@
         </li>
         <li><a href=''>Bans</a></li>
       </ul>
+      <div class='navbar__search'>
+        <form class='form-inline' ng-submit='search()'>
+          <div class='input-group'>
+            <input type='text' class='form-control' ng-model='searchField' placeholder='Map or player' maxlength='20' autofocus>
+            <div class='input-group-addon' ng-click='search()'>
+              <span class='glyphicon glyphicon-search'></span>
+            </div>
+            <!-- Hidden submit button to allow submitting by enter keypress -->
+            <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+          </div>
+        </form>
+      </div>
       <div class='navbar__footer'>
         Stats provided by<br>
         <a href='https://www.github.com/joelbman/kzstats-local/'>KZStats Local</a>

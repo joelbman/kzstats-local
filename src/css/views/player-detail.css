@@ -1,0 +1,35 @@
+/**
+ * Player detail
+ */
+.avatar {
+  width: 130px;
+  height: 130px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: inline;
+  float: left;
+  margin-right: 15px;
+}
+
+.player-info {
+  margin-bottom: 25px;
+  min-height: 130px;
+  width: 100%;
+}
+
+.player-info h3 {
+  margin-bottom: 3px;
+  margin-top: 3px;
+  font-size: 20px;
+  color: #6E6D6D;
+}
+
+.stats {
+  display: inline-block;
+  width: 300px;
+  float: left;
+}
+
+.stats span {
+  display: block;
+}

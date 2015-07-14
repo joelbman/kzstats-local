@@ -1,4 +1,6 @@
-/* Base tags */
+/**
+ * Basic tags
+ */
 body {
   font-family: 'Oxygen', sans-serif;
   background-color: #F5F8FA;
@@ -24,10 +26,6 @@ h4 {
   font-weight: bold;
 }
 
-.footer a, .footer a:visited {
-  text-decoration: none;
-}
-
 /* Content block */
 .content {
   padding-left: 250px;
@@ -42,104 +40,4 @@ h4 {
   display: inline;
   margin-left: 3px;
   border: 1px solid #000;
-}
-
-/* Player detail view */
-.avatar {
-  width: 130px;
-  height: 130px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  display: inline;
-  float: left;
-  margin-right: 15px;
-}
-
-.player-info {
-  margin-bottom: 25px;
-  min-height: 130px;
-  width: 100%;
-}
-
-.player-info h3 {
-  margin-bottom: 3px;
-  margin-top: 3px;
-  font-size: 20px;
-  color: #6E6D6D;
-}
-
-/* Latest records (front page) */
-.latest {
-  max-width: 700px;
-}
-
-.latest-entry {
-  padding-bottom: 12px;
-  padding-top: 12px;
-  border-bottom: 1px solid #DBDBDB;
-}
-
-.latest-entry:first-child {
-  padding-top: 0;
-}
-
-.latest-entry:last-child {
-  border-bottom: 0;
-}
-
-.latest-footer {
-  text-align: center;
-  padding-top: 10px;
-}
-
-/* Maplist view */
-.maplist {
-  width: 100%;
-  display: block;
-  margin: 0;
-}
-
-.maplist-map {
-  display: inline-block;
-  width: 20%;
-  min-width: 250px;
-  background-color: #fff;
-  padding: 5px 10px 5px 10px;
-}
-
-.maplist-map:nth-child(even) {
-  background-color: #F7FAF5;
-}
-
-.maplist-error {
-  padding-top: 40px;
-  width: 100%;
-  min-height: 100px;
-  text-align: center;
-  font-size: 17px;
-}
-
-/* Tooltips */
-.tooltip-wide {
-  max-width: 400px;
-}
-
-/* Misc */
-.inline-header {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-.col-md-6, .col-md-4, .col-md-12, .col-md-10 {
-  padding-left: 0;
-}
-
-.stats {
-  display: inline-block;
-  width: 300px;
-  float: left;
-}
-
-.stats span {
-  display: block;
 }

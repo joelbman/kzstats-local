@@ -31,6 +31,7 @@
       return array_merge($rank, $jumpstats);
     }
 
+    // Get records by given SteamID
     public function getRecords($id) {
       $steamid = $this->convertId($id);
       return $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
@@ -48,6 +49,17 @@
         $info = json_decode(file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key='.$apikey.'&steamids='.$comid));
         return $info->response->players[0];
       }
+    }
+
+    // Search players
+    public function search($string) {
+      $players = $this->db->fetchAll('SELECT steamid, name, points, lastseen, country FROM playerrank WHERE name LIKE :search ESCAPE "=" ORDER BY points DESC', $string);
+
+      for ($i = 0; $i < count($players); $i++)
+        $players[$i]['countrycode'] = $this->countryCode($players[$i]['country']);
+
+      return $players;
+
     }
 
     // Searches for a countrycode with given country name

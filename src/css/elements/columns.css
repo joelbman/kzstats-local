@@ -1,0 +1,6 @@
+/**
+ * Columns
+ */
+.col-md-6, .col-md-4, .col-md-12, .col-md-10 {
+  padding-left: 0;
+}

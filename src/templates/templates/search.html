@@ -1,0 +1,36 @@
+<h1>Search</h1>
+<!-- Players -->
+<div class='col-md-4' ng-show='players' style='margin-right: 25px;'>
+  <h2>Players <small>{{ players.length }}</small></h2>
+  <table class='table table-striped' ng-show='players'>
+    <tr>
+      <th>Name</th>
+      <th>Points</th>
+      <th>Last seen</th>
+    </tr>
+    <tr ng-repeat='p in players'>
+      <td>{{ p.name }}</td>
+      <td>{{ p.points }}</td>
+      <td>{{ p.lastseen }}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Maps -->
+<div class='col-md-4' ng-show='maps'>
+  <h2>Maps</h2>
+  <table class='table table-striped'>
+    <tr>
+      <th>Name</th>
+      <th>Best time</th>
+    </tr>
+    <tr ng-repeat='m in maps'>
+      <td>{{ m.mapname }}</td>
+      <td>{{ m.runtime | convertTime }}</td>
+    </tr>
+  </table>
+</div>
+
+<div ng-hide='players.length > 0 || maps.length > 0'>
+  No results found.
+</div>

@@ -31,6 +31,13 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
   //   controller: 'BanListCtrl',
   //   resolve: { $title: function() { return 'Bans'; } }
   // })
+  // 
+  .state('search', {
+    url: '/search/:value/',
+    templateUrl: 'templates/search.html',
+    controller: 'SearchCtrl',
+    resolve: { $title: function() { return 'Search'; } }
+  })
 
   // Map states
   .state('maps', {
@@ -57,12 +64,6 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
     url: '/jump/',
     template: '<div ui-view></div>'
   })
-  // .state('jumps.list', {
-  //   url: '',
-  //   templateUrl: 'templates/jumps-list.html',
-  //   controller: 'JumpListCtrl',
-  //   resolve: { $title: function() { return 'Maps'; } }
-  // })
   .state('jumps.detail', {
     url: ':jumpName/',
     templateUrl: 'templates/jumps-detail.html',

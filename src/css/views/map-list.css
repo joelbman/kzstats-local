@@ -1,0 +1,35 @@
+/**
+ * Maplist view
+ */
+.maplist {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.maplist-map {
+  display: inline-block;
+  width: 20%;
+  min-width: 250px;
+  background-color: #fff;
+  padding: 5px 10px 5px 10px;
+}
+
+.maplist-map:nth-child(even) {
+  background-color: #F7FAF5;
+}
+
+.maplist-error {
+  padding-top: 40px;
+  width: 100%;
+  min-height: 100px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.maplist-search {
+  max-width: 200px;
+  margin-bottom: 25px;
+  margin-left: 5px;
+  display: inline;
+}

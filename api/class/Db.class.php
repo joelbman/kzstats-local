@@ -15,11 +15,22 @@
     }
 
     // Fetch all rows from SELECT query result set
-    public function fetchAll($q) {
+    public function fetchAll($q, $var = '') {
       $result = [];
       $stmt = $this->pdo->prepare($q);
+
+      // This is mostly for WHERE ... LIKE queries (searching)
+      if ($var) {
+        // Escape with =
+        $var = str_replace('=', '==', $var);
+        $var = str_replace('%', '=%', $var);
+        $var = str_replace('_', '=_', $var);
+        $stmt->bindValue(':search', '%'.$var.'%');
+      }
+  
       $stmt->execute();
       $result = $stmt->fetchAll(2);
+
       return $result; 
     }
 
