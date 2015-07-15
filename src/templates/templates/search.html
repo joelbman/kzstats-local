@@ -1,7 +1,7 @@
 <h1>Search</h1>
 <!-- Players -->
-<div class='col-md-4' ng-show='players' style='margin-right: 25px;'>
-  <h2>Players <small>{{ players.length }}</small></h2>
+<div class='col-md-4' ng-show='players' style='margin-right: 45px;'>
+  <h2>Players <small>{{ players.length }} found</small></h2>
   <table class='table table-striped' ng-show='players'>
     <tr>
       <th>Name</th>
@@ -9,7 +9,7 @@
       <th>Last seen</th>
     </tr>
     <tr ng-repeat='p in players'>
-      <td>{{ p.name }}</td>
+      <td><a ui-sref='players.detail({ steamId: (p.steamid|numOnly) })'>{{ p.name }}</a> <img ng-src='{{ p.countrycode | imgPath }}' class='flagico'></td>
       <td>{{ p.points }}</td>
       <td>{{ p.lastseen }}</td>
     </tr>
@@ -18,14 +18,14 @@
 
 <!-- Maps -->
 <div class='col-md-4' ng-show='maps'>
-  <h2>Maps</h2>
+  <h2>Maps <small>{{ maps.length }} found</small></h2>
   <table class='table table-striped'>
     <tr>
       <th>Name</th>
       <th>Best time</th>
     </tr>
     <tr ng-repeat='m in maps'>
-      <td>{{ m.mapname }}</td>
+      <td><a ui-sref='maps.detail({ mapName: m.mapname })'>{{ m.mapname }}</a></td>
       <td>{{ m.runtime | convertTime }}</td>
     </tr>
   </table>

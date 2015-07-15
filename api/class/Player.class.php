@@ -53,7 +53,7 @@
 
     // Search players
     public function search($string) {
-      $players = $this->db->fetchAll('SELECT steamid, name, points, lastseen, country FROM playerrank WHERE name LIKE :search ESCAPE "=" ORDER BY points DESC', $string);
+      $players = $this->db->fetchAll('SELECT steamid, name, points, lastseen, country FROM playerrank WHERE name LIKE :search ESCAPE "=" AND points > 0 ORDER BY points DESC', $string);
 
       for ($i = 0; $i < count($players); $i++)
         $players[$i]['countrycode'] = $this->countryCode($players[$i]['country']);
