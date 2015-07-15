@@ -11,6 +11,7 @@ app
   // Player controllers
   .controller('PlayerListCtrl', require('./player/list'))
   .controller('PlayerDetailCtrl', require('./player/detail'))
+  .controller('BanListCtrl', require('./misc/banlist'))
 
   // Map controllers
   .controller('MapListCtrl', require('./map/list'))

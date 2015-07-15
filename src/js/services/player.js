@@ -25,4 +25,9 @@ module.exports = function($http) {
     return $http.get('api/player/').then(function(res) { return res.data; });
   };
 
+  // API query for banned players
+  this.banList = function() {
+    return $http.get('api/ban/').then(function(res) { return res.data; });
+  };
+
 };

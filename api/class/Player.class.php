@@ -62,6 +62,11 @@
 
     }
 
+    // Banlist
+    public function getBans() {
+      return $this->db->fetchAll('SELECT * FROM bans LIMIT 100');
+    }
+
     // Searches for a countrycode with given country name
     private function countryCode($country) {
       include(__DIR__.'/../utils/countrycodes.php');

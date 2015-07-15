@@ -62,11 +62,14 @@
      * Banlist endpoints
      */
     protected function ban() {
-      $ban = new Ban($this->db);
+      $player = new Player($this->db);
       if (count($this->args) === 0)
-        return $ban->getList();
+        return $player->getBans();
     }
 
+    /**
+     * Search endpoints
+     */
     protected function search() {
       $player = new Player($this->db);
       $map = new Map($this->db);

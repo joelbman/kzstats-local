@@ -25,13 +25,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
     controller: 'FrontPageCtrl',
     resolve: { $title: function() { return 'Latest'; } }
   })
-  // .state('banlist', {
-  //   url: '/bans/',
-  //   templateUrl: 'templates/banlist.html',
-  //   controller: 'BanListCtrl',
-  //   resolve: { $title: function() { return 'Bans'; } }
-  // })
-  // 
+  .state('banlist', {
+    url: '/banlist/',
+    templateUrl: 'templates/banlist.html',
+    controller: 'BanListCtrl',
+    resolve: { $title: function() { return 'Banlist'; } }
+  })
   .state('search', {
     url: '/search/:value/',
     templateUrl: 'templates/search.html',
