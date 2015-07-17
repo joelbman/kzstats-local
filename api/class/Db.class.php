@@ -38,8 +38,14 @@
     public function fetch($q) {
       $result = [];
       $stmt = $this->pdo->prepare($q);
-      $stmt->execute();
-      $result = $stmt->fetch(2);
+
+      // Make sure single row fetch doesn't return false
+      if ($stmt->execute()) {
+        $data = $stmt->fetch(2);
+        if ($data != false)
+          $result = $data;
+      }
+      
       return $result; 
     }
 

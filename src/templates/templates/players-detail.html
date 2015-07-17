@@ -1,5 +1,5 @@
 <!-- Player information -->
-<div class='player-info' ng-show='p'>
+<div class='playerinfo' ng-show='p'>
   <!-- Loading spinner -->
   <div class="spinner" ng-hide='steamInfo.avatarfull'>
     <div class="spinner-container container1">
@@ -28,7 +28,7 @@
     {{ p.name }} 
     <img src='{{ p.countrycode | imgPath }}' class='flagico' alt='{{ p.countrycode }}'>
   </h1>
-  <b>{{ p.points }}</b> points<br>
+  <h3>{{ p.points }} points</h3>
   <i>Last seen: {{ p.lastseen }}</i><br>
   <a href='{{ steamInfo.profileurl }}'>Steam profile</a>
 </div>
@@ -37,18 +37,19 @@
 <div ng-show='p'>
   <div class='stats'>
     <h2>Jumpstats</h2>
-    <span ng-show='p.ljrecord > 0'>Longjump: <a ui-sref='jumps.detail({jumpName: "lj"})'>{{ p.ljrecord }}</a></span>
-    <span ng-show='p.bhoprecord > 0'>Bunnyhop: <a ui-sref='jumps.detail({jumpName: "bhop"})'>{{ p.bhoprecord }}</a></span>
-    <span ng-show='p.dropbhoprecord > 0'>Drop-bunnyhop: <a ui-sref='jumps.detail({jumpName: "dropbhop"})'>{{ p.dropbhoprecord }}</a></span>
-    <span ng-show='p.multibhoprecord > 0'>Multi-bunnyhop: <a ui-sref='jumps.detail({jumpName: "mbhop"})'>{{ p.multibhoprecord }}</a></span>
-    <span ng-show='p.wjrecord > 0'>Weirdjump: <a ui-sref='jumps.detail({jumpName: "wj"})'>{{ p.wjrecord }}</a></span>
-    <span ng-show='p.ladderjumprecord > 0'>Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.ladderjumprecord }}</a></span>
+    <span ng-show='p.jump.ljrecord > 0'>Longjump: <a ui-sref='jumps.detail({jumpName: "lj"})'>{{ p.jump.ljrecord }}</a></span>
+    <span ng-show='p.jump.bhoprecord > 0'>Bunnyhop: <a ui-sref='jumps.detail({jumpName: "bhop"})'>{{ p.jump.bhoprecord }}</a></span>
+    <span ng-show='p.jump.dropbhoprecord > 0'>Drop-bunnyhop: <a ui-sref='jumps.detail({jumpName: "dropbhop"})'>{{ p.jump.dropbhoprecord }}</a></span>
+    <span ng-show='p.jump.multibhoprecord > 0'>Multi-bunnyhop: <a ui-sref='jumps.detail({jumpName: "mbhop"})'>{{ p.jump.multibhoprecord }}</a></span>
+    <span ng-show='p.jump.wjrecord > 0'>Weirdjump: <a ui-sref='jumps.detail({jumpName: "wj"})'>{{ p.jump.wjrecord }}</a></span>
+    <span ng-show='p.jump.ladderjumprecord > 0'>Ladderjump: <a ui-sref='jumps.detail({jumpName: "ladderjump"})'>{{ p.jump.ladderjumprecord }}</a></span>
+    <span ng-hide='p.jump'>Player hasn't performed any jumps.</span>
   </div>
 
   <div class='stats'>
     <h2>Runs</h2>
-      TP times <progressbar value='tpcount' max='mapCount' ng-if='mapCount'>{{ tpcount }} / {{ mapCount }}</progressbar>
-      Pro times <progressbar value='procount' max='mapCount' ng-if='mapCount'>{{ procount }} / {{ mapCount }}</progressbar>
+      TP times: {{ tpcount }} / {{ mapCount }} <progressbar value='tpcount' max='mapCount' ng-if='mapCount'></progressbar>
+      Pro times: {{ procount }} / {{ mapCount }} <progressbar value='procount' max='mapCount' ng-if='mapCount'></progressbar>
   </div>
 
   <!-- Records -->

@@ -11,15 +11,15 @@
   margin-right: 15px;
 }
 
-.player-info {
+.playerinfo {
   margin-bottom: 25px;
   min-height: 130px;
   width: 100%;
 }
 
-.player-info h3 {
+.playerinfo h3 {
   margin-bottom: 3px;
-  margin-top: 3px;
+  margin-top: 2px;
   font-size: 20px;
   color: #6E6D6D;
 }

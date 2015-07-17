@@ -19,16 +19,18 @@
 
     // Get jumpstats + rank etc. by given SteamID
     public function getDetail($id) {
+      $player = [];
+
       $steamid = $this->convertId($id);
 
       // Basic info
-      $rank = $this->db->fetch('SELECT name, points, lastseen, country From playerrank WHERE steamid = "'.$steamid.'"');
-      $rank['countrycode'] = $this->countryCode($rank['country']);
+      $player = $this->db->fetch('SELECT name, points, lastseen, country From playerrank WHERE steamid = "'.$steamid.'"');
+      $player['countrycode'] = $this->countryCode($player['country']);
 
       // Jumpstats
-      $jumpstats = $this->db->fetch('SELECT multibhoprecord, bhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');      
+      $player['jump'] = $this->db->fetch('SELECT multibhoprecord, bhoprecord, dropbhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');
 
-      return array_merge($rank, $jumpstats);
+      return $player;
     }
 
     // Get records by given SteamID
@@ -70,7 +72,14 @@
     // Searches for a countrycode with given country name
     private function countryCode($country) {
       include(__DIR__.'/../utils/countrycodes.php');
-      return array_search($country, $countrycodes);
+
+      $result = 'UNK';
+      $search = array_search($country, $countrycodes);
+
+      if ($search)
+        $result = $search;
+
+      return $result;
     }
 
     // Converts SteamID back to STEAM_X:Y:ZZZZZZZZ format
