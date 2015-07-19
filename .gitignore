@@ -7,3 +7,6 @@ public/
 
 # API Settings
 api/settings.php
+
+# NPM debug
+npm-debug.log

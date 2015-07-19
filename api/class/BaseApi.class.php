@@ -6,11 +6,11 @@
     private $status = 200;
 
     protected $args = [];
-    protected $endpoint = '';
+    protected $base = '';
 
     public function __construct($request) {
       $this->args = explode('/', $request);
-      $this->endpoint = preg_replace('/[^a-zA-Z0-9]+/', '', array_shift($this->args));
+      $this->base = preg_replace('/[^a-zA-Z0-9]+/', '', array_shift($this->args));
     }
 
     protected function _response($data = []) {
@@ -31,8 +31,8 @@
     }
 
     public function _process() {
-      if (method_exists($this, $this->endpoint))
-        return $this->_response($this->{$this->endpoint}());
+      if (method_exists($this, $this->base))
+        return $this->_response($this->{$this->base}());
       else
         $this->_error('Unknown endpoint', 404); 
     }
