@@ -84,8 +84,8 @@
   border-top: 1px solid #616161;
   border-bottom: 1px solid #616161;
   padding-left: 10px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .navbar .form-inline {
@@ -128,6 +128,22 @@
   box-shadow: inset 0 0 7px #8A8A8A;
 }
 
+.navbar__server {
+  padding-top: 35px;
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.navbar__server a {
+  color: #CF8338;
+}
+
+.navbar__server b {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
 .navbar__footer {
   bottom: 0;
   position: fixed;
@@ -141,4 +157,10 @@
 
 .navbar__footer a {
   color: #CF8338;
+}
+
+@media screen and (max-height: 605px) {
+  .navbar__footer {
+    display: none;
+  }
 }

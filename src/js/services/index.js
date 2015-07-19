@@ -6,4 +6,5 @@ app
   .service('PlayerService', require('./player'))
   .service('MapService', require('./map'))
   .service('JumpService', require('./jump'))
-  .service('SearchService', require('./search'));
+  .service('SearchService', require('./search'))
+  .service('ServerService', require('./server'));

@@ -55,6 +55,12 @@
           </div>
         </form>
       </div>
+      <div class='navbar__server'>
+        <b>{{ server.name.substring(0, 30) }}</b><br>
+        Players: {{ server.players }}/{{ server.maxplayers }}<br>
+        Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map }}</a><br><br>
+        &raquo; <a href='steam://connect/{{ server.ip }}'>Connect</a>
+      </div>
       <div class='navbar__footer'>
         Stats provided by<br>
         <a href='https://www.github.com/joelbman/kzstats-local/'>KZStats Local</a>

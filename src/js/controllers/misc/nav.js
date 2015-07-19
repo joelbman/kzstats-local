@@ -1,7 +1,7 @@
 'use strict';
 
 // Nav controller
-module.exports = function($scope, $state) {
+module.exports = function($scope, $state, ServerService) {
 
   $scope.toggled = false;
   $scope.searchField = '';
@@ -13,5 +13,8 @@ module.exports = function($scope, $state) {
   $scope.search = function() {
     $state.go('search', {'value': $scope.searchField });
   };
+
+  var promise = ServerService.getInfo();
+  promise.then(function(data) { $scope.server = data; });
 
 };

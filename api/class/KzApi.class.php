@@ -81,4 +81,9 @@
       }
     }
 
+    protected function server() {
+      if (count($this->args) === 0)
+        return Server::getInfo();
+    }
+
   }
