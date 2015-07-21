@@ -24,10 +24,15 @@
 
       $result = array();
       $result['ip'] = $server['ip'].':'.$server['port'];
-      $result['name'] = $info['HostName'];
       $result['players'] = $info['Players'];
       $result['maxplayers'] = $info['MaxPlayers'];
       $result['map'] = $info['Map'];
+
+      if ($server['name'])
+        $result['name'] = $server['name'];
+      else
+        $result['name'] = $info['HostName'];
+
 
       return $result;
 

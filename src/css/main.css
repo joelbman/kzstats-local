@@ -41,3 +41,12 @@ h4 {
   margin-left: 3px;
   border: 1px solid #000;
 }
+
+/* Disclaimer for the demo version */
+.disclaimer {
+  width: 400px;
+  padding-bottom: 15px;
+  font-size: 12px;
+  border-bottom: 1px solid #D1D1D1;
+  margin-bottom: 25px;
+}
