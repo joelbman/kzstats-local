@@ -2,6 +2,7 @@
 <div class='col-md-6' ng-show='jumpType'>
   <table class='table table-striped'>
     <tr>
+      <th>#</th>
       <th>Player</th>
       <th>Length</th>
       <th>Strafes</th>
@@ -10,6 +11,7 @@
       <th>Max</th>
     </tr>
     <tr ng-repeat='j in jumps'>
+      <td>{{ $index + 1}}.</td>
       <td><a ui-sref='players.detail({steamId: (j.steamid|numOnly)})'>{{ j.name }}</a></td>
       <td>{{ j.record }}</td>
       <td>{{ j.strafes }}</td>

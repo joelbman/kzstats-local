@@ -8,12 +8,12 @@
       <th>Teleports</th>
       <th>Date</th>
     </tr>
-    <tr ng-repeat='r in records | orderBy: "date":true'>
+    <tr ng-repeat='r in records | orderBy: "timestamp":true'>
       <td><b><a ui-sref='players.detail({ steamId: (r.runtime|numOnly) })'>{{ r.name }}</a></b></td>
       <td><a ui-sref='maps.detail({ mapName: r.map })'>{{ r.map }}</a></td>
       <td>{{ r.runtime | convertTime }}</td>
       <td>{{ r.teleports }}</td>
-      <td>{{ r.date|kzDate }}</td>
+      <td>{{ r.date }}</td>
     </tr>
   </table>
 </div>

@@ -8,7 +8,6 @@
     <!-- Stylesheets etc. -->
     <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' href='css/bundle.css'>
-    <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
     <link rel='shortcut icon' href='favicon.png'>
     <!--[if lt IE 9]>
@@ -20,6 +19,7 @@
   <body>
     <!-- Navbar -->
     <nav class='navbar' ng-controller='NavCtrl'>
+      <!-- Main navigation menu -->
       <ul class='navbar__menu'>
         <a ui-sref='front'><li>Latest</li></a>
         <a ui-sref='players.list'><li>Players</li></a>
@@ -40,6 +40,7 @@
           </ul>
         </li>
       </ul>
+      <!-- Search -->
       <div class='navbar__search'>
         <form class='form-inline' ng-submit='search()'>
           <div class='input-group'>
@@ -52,12 +53,14 @@
           </div>
         </form>
       </div>
-      <div class='navbar__server'>
+      <!-- Server info -->
+      <div class='navbar__server' ng-show='server'>
         <b>{{ server.name.substring(0, 30) }}</b><br>
         Players: {{ server.players }}/{{ server.maxplayers }}<br>
         Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map }}</a><br><br>
         &raquo; <a href='steam://connect/{{ server.ip }}'>Join server</a>
       </div>
+      <!-- Footer -->
       <div class='navbar__footer'>
         Stats provided by<br>
         <a href='https://www.github.com/joelbman/kzstats-local/'>KZStats Local</a>

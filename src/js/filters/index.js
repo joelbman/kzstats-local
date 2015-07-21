@@ -79,6 +79,7 @@ app.filter('convertTime', function() {
   };
 });
 
+// Timestamp to preformatted datetime
 app.filter('kzDate', function($filter) {
   return function(input) {
     input = input * 1000;
