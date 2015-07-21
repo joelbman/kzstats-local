@@ -154,7 +154,7 @@
   color: #CF8338;
 }
 
-@media screen and (max-height: 605px) {
+@media screen and (max-height: 780px) {
   .navbar__footer {
     display: none;
   }
