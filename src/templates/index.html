@@ -20,12 +20,10 @@
   <body>
     <!-- Navbar -->
     <nav class='navbar' ng-controller='NavCtrl'>
-      <div class='navbar__brand'>
-        <a href=''>Demo</a>
-      </div>
       <ul class='navbar__menu'>
-        <li><a ui-sref='players.list'>Players</a></li>
-        <li><a ui-sref='maps.list'>Maps</a></li>
+        <a ui-sref='front'><li>Latest</li></a>
+        <a ui-sref='players.list'><li>Players</li></a>
+        <a ui-sref='maps.list'><li>Maps</li></a>
         <!-- Jumpstats dropdown -->
         <li ng-class='{navbar__menu__dropdown: toggled}'>
           <a href='' ng-click='toggled = !toggled'>Jumpstats
@@ -41,7 +39,7 @@
             <li><a ui-sref='jumps.detail({jumpName: "ladderjump"})'>Ladderjump</a></li>
           </ul>
         </li>
-        <li><a ui-sref='banlist'>Bans</a></li>
+        <a ui-sref='banlist'><li>Bans</li></a>
       </ul>
       <div class='navbar__search'>
         <form class='form-inline' ng-submit='search()'>
@@ -59,7 +57,7 @@
         <b>{{ server.name.substring(0, 30) }}</b><br>
         Players: {{ server.players }}/{{ server.maxplayers }}<br>
         Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map }}</a><br><br>
-        &raquo; <a href='steam://connect/{{ server.ip }}'>Connect</a>
+        &raquo; <a href='steam://connect/{{ server.ip }}'>Join server</a>
       </div>
       <div class='navbar__footer'>
         Stats provided by<br>

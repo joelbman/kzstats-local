@@ -2,6 +2,7 @@
 
 var app = angular.module('kzApp');
 
+// Strips all but numbers from string, used with SteamIDs
 app.filter('numOnly', function() {
   return function(input) {
     return input.replace(/\D/g, '');
@@ -75,5 +76,12 @@ app.filter('convertTime', function() {
       finalTime = hours + ':' + finalTime;
 
     return finalTime;
+  };
+});
+
+app.filter('kzDate', function($filter) {
+  return function(input) {
+    input = input * 1000;
+    return $filter('date')(input, 'dd.MM.yyyy HH:mm');
   };
 });

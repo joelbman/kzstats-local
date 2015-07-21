@@ -66,7 +66,18 @@
 
     // Banlist
     public function getBans() {
-      return $this->db->fetchAll('SELECT * FROM bans LIMIT 100');
+      if (count($this->args) == 0)
+        return $this->db->fetchAll('SELECT * FROM bans LIMIT 100');
+    }
+
+    // Latest records
+    public function getLatest() {
+      if (count($this->args) == 0) {
+        $results = $this->db->fetchAll('SELECT * FROM latestrecords WHERE (map, runtime) IN (SELECT map, min(runtime) FROM latestrecords GROUP BY map)');
+        for ($i = 0; $i < count($results); $i++)
+          $results[$i]['date'] = strtotime($results[$i]['date']);
+        return $results;
+      }
     }
 
     // Searches for a countrycode with given country name

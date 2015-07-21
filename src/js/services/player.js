@@ -30,4 +30,9 @@ module.exports = function($http) {
     return $http.get('api/ban/').then(function(res) { return res.data; });
   };
 
+  // API query for latest records
+  this.getLatest = function() {
+    return $http.get('api/latest/').then(function(res) { return res.data; });
+  };
+
 };

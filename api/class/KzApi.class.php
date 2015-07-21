@@ -59,7 +59,7 @@
     }
 
     /**
-     * Banlist endpoints
+     * Banlist endpoint
      */
     protected function ban() {
       $player = new Player($this->db);
@@ -68,7 +68,7 @@
     }
 
     /**
-     * Search endpoints
+     * Search endpoint
      */
     protected function search() {
       $player = new Player($this->db);
@@ -81,9 +81,23 @@
       }
     }
 
+    /**
+     * Server info endpoint
+     */
     protected function server() {
       if (count($this->args) === 0)
         return Server::getInfo();
     }
+
+    /**
+     * Server info endpoint
+     */
+    protected function latest() {
+      if (count($this->args) === 0) {
+        $player = new Player($this->db);
+        return $player->getLatest();
+      }
+    }
+
 
   }
