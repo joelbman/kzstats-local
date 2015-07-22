@@ -11,7 +11,8 @@ module.exports = function($scope, $state, ServerService) {
   };
 
   $scope.search = function() {
-    $state.go('search', {'value': $scope.searchField });
+    if ($scope.searchField.length > 1)
+      $state.go('search', {'value': $scope.searchField });
   };
 
   var promise = ServerService.getInfo();

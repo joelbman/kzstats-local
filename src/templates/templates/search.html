@@ -30,7 +30,9 @@
     </tr>
   </table>
 </div>
-
-<div ng-hide='players.length > 0 || maps.length > 0'>
+<div ng-hide='bothcount > 0 || !searched'>
   No results found.
+</div>
+<div ng-hide='searched'>
+  Searching...
 </div>
