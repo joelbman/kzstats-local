@@ -4,6 +4,7 @@
   <div class='panel panel-default'>
     <div class='panel-heading'><h3>Map list</h3></div>
     <div class='panel-body'>
+      <!-- Filter menu -->
       <div class='filters'>
         <h3>Filters</h3>
         <div class='filter-group'>
@@ -15,8 +16,9 @@
           <select ng-model='orderField' ng-options='field.name for field in fields' ng-change='reloadResults()' class='dropdown'></select>
         </div>
       </div>
+      <!-- The list itself -->
       <div class='maplist'>
-        <div ng-repeat='m in maplist' class='maplist-map'>
+        <div ng-repeat='m in filtered = (maplist | filter:search | orderBy:orderField.value)' class='maplist-map'>
           <a ui-sref='maps.detail({mapName: m.mapname})'><b>{{ m.mapname }}</b> ({{ m.runtime | convertTime }})</a>
         </div>
       </div>
