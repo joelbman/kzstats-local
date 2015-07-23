@@ -11,9 +11,10 @@
     // Returns top 25 players based on points
     public function getList() {
       $players = $this->db->fetchAll('SELECT * From playerrank ORDER BY points DESC LIMIT 50');
-      for ($i = 0; $i < count($players); $i++) {
+      
+      for ($i = 0; $i < count($players); $i++)
         $players[$i]['countrycode'] = $this->countryCode($players[$i]['country']);
-      }
+      
       return $players;
     }
 
@@ -34,9 +35,18 @@
     }
 
     // Get records by given SteamID
-    public function getRecords($id) {
+    public function getRecords($id, $merge = true) {
+      $records = [];
       $steamid = $this->convertId($id);
-      return $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
+
+      if (!$merge) {
+        $records['tp'] = $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
+        $records['pro'] = $this->db->fetchAll('SELECT steamid, mapname, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname'); 
+      }
+      else
+        $records = $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
+
+      return $records;
     }
 
     // Get Steam profile info from Steam API
@@ -61,7 +71,6 @@
         $players[$i]['countrycode'] = $this->countryCode($players[$i]['country']);
 
       return $players;
-
     }
 
     // Banlist

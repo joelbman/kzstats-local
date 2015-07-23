@@ -1,19 +1,34 @@
 <!-- Map detail -->
-<h1>Maps &raquo; {{ mapname }}</h1>
-<div class='col-md-4'>
-  <h2>TP times</h2>
-  <table class='table table-striped'>
+<h1><a ui-sref='maps.list'>Maps</a> &raquo; {{ mapname }}</h1>
+<div class='col-md-4' style='margin-right: 45px;'>
+  <h2>TP times <small>{{ records.tp.length }}</small></h2>
+  <table class='table table-striped' ng-show='records.tp'>
     <tr>
       <th>#</th>
       <th>Player</th>
       <th>Time</th>
       <th>TPs</th>
     </tr>
-    <tr ng-repeat='r in records | orderBy:"runtime"'>
+    <tr ng-repeat='r in records.tp | orderBy:"runtime"'>
       <td>{{ $index + 1 }}.</td>
       <td><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name }}</a></td>
       <td>{{ r.runtime | convertTime }}</td>
       <td>{{ r.teleports }}</td>
+    </tr>
+  </table>
+</div>
+<div class='col-md-4'>
+  <h2>Pro times <small>{{ records.pro.length }}</small></h2>
+  <table class='table table-striped' ng-show='records.pro'>
+    <tr>
+      <th>#</th>
+      <th>Player</th>
+      <th>Time</th>
+    </tr>
+    <tr ng-repeat='r in records.pro | orderBy:"runtime"'>
+      <td>{{ $index + 1 }}.</td>
+      <td><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name }}</a></td>
+      <td>{{ r.runtime | convertTime }}</td>
     </tr>
   </table>
 </div>

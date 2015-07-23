@@ -2,10 +2,10 @@
 
 require('angular');
 require('angular-ui-router');
-require('angular-ui-router-title');
+//require('angular-ui-router-title');
 require('angular-bootstrap');
 
-var app = angular.module('kzApp', ['ui.router', 'ui.router.title', 'ui.bootstrap']);
+var app = angular.module('kzApp', ['ui.router', 'ui.bootstrap']);
 
 require('./services');
 require('./controllers');
@@ -23,19 +23,19 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
     url: '/',
     templateUrl: 'templates/front.html',
     controller: 'FrontPageCtrl',
-    resolve: { $title: function() { return 'Latest'; } }
+    //resolve: { $title: function() { return 'Latest'; } }
   })
   .state('banlist', {
     url: '/banlist/',
     templateUrl: 'templates/banlist.html',
     controller: 'BanListCtrl',
-    resolve: { $title: function() { return 'Banlist'; } }
+    // resolve: { $title: function() { return 'Banlist'; } }
   })
   .state('search', {
     url: '/search/:value/',
     templateUrl: 'templates/search.html',
     controller: 'SearchCtrl',
-    resolve: { $title: function() { return 'Search'; } }
+    // resolve: { $title: function() { return 'Search'; } }
   })
 
   // Map states
@@ -48,13 +48,13 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
     url: '',
     templateUrl: 'templates/maps-list.html',
     controller: 'MapListCtrl',
-    resolve: { $title: function() { return 'Maps'; } }
+    // resolve: { $title: function() { return 'Maps'; } }
   })
   .state('maps.detail', {
     url: ':mapName/',
     templateUrl: 'templates/maps-detail.html',
     controller: 'MapDetailCtrl',
-    resolve: { $title: function($stateParams) { return $stateParams.mapName; } }
+    // resolve: { $title: function($stateParams) { return $stateParams.mapName; } }
   })
 
   // Jump states
@@ -67,7 +67,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
     url: ':jumpName/',
     templateUrl: 'templates/jumps-detail.html',
     controller: 'JumpDetailCtrl',
-    resolve: { $title: function($stateParams) { return $stateParams.jumpName; } }
+    // resolve: { $title: function($stateParams) { return $stateParams.jumpName; } }
   })
 
   // Player states
@@ -80,7 +80,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
     url: '',
     templateUrl: 'templates/players-list.html',
     controller: 'PlayerListCtrl',
-    resolve: { $title: function() { return 'Players'; } }
+    // resolve: { $title: function() { return 'Players'; } }
   })
   .state('players.detail', {
     url: ':steamId/',

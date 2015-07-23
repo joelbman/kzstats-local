@@ -4,42 +4,63 @@
 module.exports = function($scope, $stateParams, PlayerService, MapService) {
 
   $scope.p = null;
+  $scope.loaded = false;
   $scope.records = [];
+  $scope.originalRecords = [];
+  $scope.prorecords = [];
+  $scope.tprecords = [];
 
   // Pagination settings
   $scope.currentPage = 1;
-  $scope.pageSize = 10;
+  $scope.pageSize = 20;
   $scope.startPoint = ($scope.currentPage - 1) * $scope.pageSize;
+
+  // Filters
+  $scope.types = [
+    {name: 'Both', value: 'both'},
+    {name: 'TP', value: 'tp'},
+    {name: 'Pro', value: 'pro'}
+  ];
+  $scope.showType = $scope.types[0];
+
+  $scope.reloadResults = function() {
+    switch ($scope.showType.value) {
+      case 'both': $scope.records = $scope.originalRecords; break;
+      case 'tp': $scope.records = $scope.tprecords; break;
+      case 'pro': $scope.records = $scope.prorecords; break;
+      default: break;
+    }
+  };
 
   var promise = PlayerService.getDetail($stateParams.steamId);
   promise.then(function(data) {
     $scope.p = data;
 
-    var prom = PlayerService.getRecords($stateParams.steamId);
-    prom.then(function(data) {
+    var recordPromise = PlayerService.getRecords($stateParams.steamId);
+    recordPromise.then(function(data) {
       $scope.records = data;
-
-      $scope.tpcount = 0;
-      $scope.procount = 0;
+      $scope.originalRecords = data;
 
       for (var i = 0; i < data.length; i++) {
         if (data[i].runtime > 0)
-          $scope.tpcount++;
+          $scope.tprecords.push(data[i]);
         if (data[i].runtimepro > 0)
-          $scope.procount++;
+          $scope.prorecords.push(data[i]);
       }
 
     });
 
-    var pro = PlayerService.getSteamProfile($stateParams.steamId);
-    pro.then(function(data) {
+    var steamPromise = PlayerService.getSteamProfile($stateParams.steamId);
+    steamPromise.then(function(data) {
       $scope.steamInfo = data;
     });
 
-    var pr = MapService.getCount();
-    pr.then(function(data) {
+    var mapPromise = MapService.getCount();
+    mapPromise.then(function(data) {
       $scope.mapCount = data.count;
     });
+
+    $scope.loaded = true;
 
   });
   

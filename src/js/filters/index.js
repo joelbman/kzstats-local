@@ -13,9 +13,7 @@ app.filter('numOnly', function() {
 // Flag icons from http://www.famfamfam.com/lab/icons/flags/
 app.filter('imgPath', function() {
   return function(input) {
-    if (input) {
-      if (input === '??')
-        input = 'UNK';
+    if (typeof input !== 'undefined') {
       var path = 'img/' + input.toLowerCase() + '.png';
       return path;
     }

@@ -10,3 +10,6 @@ api/settings.php
 
 # NPM debug
 npm-debug.log
+
+# Disclaimer style
+src/css/disc.css
