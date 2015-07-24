@@ -5,7 +5,8 @@
     "angular": "~1.2.x",
     "angular-ui-router": "~0.2.11",
     "angular-ui-router-title": "",
-    "angular-bootstrap": "~0.11"
+    "angular-bootstrap": "~0.11",
+    "bootstrap": "~3.3.x"
   },
   "private": true
 }

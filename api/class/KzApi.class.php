@@ -59,15 +59,6 @@
     }
 
     /**
-     * Banlist endpoint
-     */
-    protected function ban() {
-      $player = new Player($this->db);
-      if (count($this->args) === 0)
-        return $player->getBans();
-    }
-
-    /**
      * Search endpoint
      */
     protected function search() {

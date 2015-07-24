@@ -43,8 +43,10 @@
         for ($i = 0 ; $i < count($protimes); $i++) 
           $protimes[$i]['runtime'] = floatval($protimes[$i]['runtime']);
 
-        $records['tp'] = $tptimes;
-        $records['pro'] = $protimes;
+        if ($tptimes || $protimes) {
+          $records['tp'] = $tptimes;
+          $records['pro'] = $protimes;
+        }
       }
 
       return $records;

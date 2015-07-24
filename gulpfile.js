@@ -21,7 +21,8 @@ var config = {
     filename: 'bundle.js'
   },
   templates: {
-    src: './src/templates/**/*.html',
+    src: ['./src/templates/**/*.html', '!./src/templates/index.html'],
+    prodSrc: ['./src/templates/**/*.html', '!./src/templates/index2.html'],
     watch: './src/templates/**/*.html',
     dest: './public/'
   },
@@ -35,6 +36,10 @@ var config = {
     src: './api/**/*.php',
     watch: './api/**/*.php',
     dest: './public/api/'
+  },
+  img: {
+    src: './src/img/**/*',
+    dest: './public/img/'
   }
 };
 
@@ -77,7 +82,14 @@ gulp.task('scripts', function() {
  * ---------
  */
 gulp.task('templates', function() {
-  return gulp.src(config.templates.src)
+  var src;
+
+  if (production)
+    src = gulp.src(config.templates.prodSrc);
+  else
+    src = gulp.src(config.templates.src);
+
+  return src
     .pipe(gulp.dest(config.templates.dest))
     .pipe(livereload());
 });
@@ -90,9 +102,9 @@ gulp.task('styles', function() {
   var src;
 
   if (production)
-    src = gulp.src(config.styles.src);
-  else
     src = gulp.src(config.styles.prodSrc);
+  else
+    src = gulp.src(config.styles.src);
 
   src
     .pipe(concat('bundle.css'))
@@ -114,6 +126,28 @@ gulp.task('api', function() {
 });
 
 /**
+ * Images
+ * ---------
+ */
+gulp.task('img', function() {
+  return gulp.src(config.img.src).pipe(gulp.dest(config.img.dest));
+});
+
+/**
+ * Bootstrap minified css & fonts
+ * ---------
+ */
+gulp.task('bootstrap-css', function() {
+  return gulp.src('./bower_components/bootstrap/dist/css/bootstrap-min.css')
+    .pipe(gulp.dest('./public/css/'));
+});
+
+gulp.task('bootstrap-font', function() {
+  return gulp.src('./bower_components/bootstrap/dist/fonts/*')
+    .pipe(gulp.dest('./public/fonts/'));
+});
+
+/**
  * Watcher
  * ---------
  */
@@ -125,6 +159,7 @@ gulp.task('watch', function() {
   gulp.watch(config.api.watch, ['api']);
 });
 
+gulp.task('bootstrap', ['bootstrap-css', 'bootstrap-font']);
 gulp.task('no-js', ['templates', 'styles']);
 gulp.task('build', ['scripts', 'no-js', 'api']);
 gulp.task('default', ['build', 'watch']);

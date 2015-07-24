@@ -33,8 +33,10 @@
     public function _process() {
       if (method_exists($this, $this->base))
         return $this->_response($this->{$this->base}());
-      else
-        $this->_error('Unknown endpoint', 404); 
+      else {
+        $this->_error('Unknown endpoint', 404);
+        return $this->_response(); 
+      }
     }
 
   }

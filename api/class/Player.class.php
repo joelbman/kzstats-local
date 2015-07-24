@@ -26,11 +26,14 @@
 
       // Basic info
       $player = $this->db->fetch('SELECT name, points, lastseen, country From playerrank WHERE steamid = "'.$steamid.'"');
-      $player['countrycode'] = $this->countryCode($player['country']);
-      $player['lastseen_timestamp'] = strtotime($player['lastseen']);
 
-      // Jumpstats
-      $player['jump'] = $this->db->fetch('SELECT multibhoprecord, bhoprecord, dropbhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');
+      if ($player) {
+        $player['countrycode'] = $this->countryCode($player['country']);
+        $player['lastseen_timestamp'] = strtotime($player['lastseen']);
+
+        // Jumpstats
+        $player['jump'] = $this->db->fetch('SELECT multibhoprecord, bhoprecord, dropbhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');
+      }
 
       return $player;
     }
@@ -72,12 +75,6 @@
         $players[$i]['countrycode'] = $this->countryCode($players[$i]['country']);
 
       return $players;
-    }
-
-    // Banlist
-    public function getBans() {
-      if (count($this->args) == 0)
-        return $this->db->fetchAll('SELECT * FROM bans LIMIT 100');
     }
 
     // Latest records

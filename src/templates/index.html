@@ -55,7 +55,7 @@
       </div>
       <!-- Server info -->
       <div class='navbar__server' ng-show='server'>
-        <b>{{ server.name.substring(0, 30) }}</b><br>
+        <b>{{ server.name }}</b><br>
         Players: {{ server.players }}/{{ server.maxplayers }}<br>
         Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map }}</a><br><br>
         &raquo; <a href='steam://connect/{{ server.ip }}'>Join server</a>
