@@ -20,8 +20,8 @@
     public function getDetail($name, $merge = false) {
       $records = [];
       
-      $protimes = $this->db->fetchAll('SELECT steamid, name, runtimepro AS runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtimepro > 0');
-      $tptimes = $this->db->fetchAll('SELECT steamid, name, teleports, runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtime > 0');
+      $protimes = $this->db->fetchAll('SELECT steamid, name, runtimepro AS runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtimepro > 0 LIMIT 50');
+      $tptimes = $this->db->fetchAll('SELECT steamid, name, teleports, runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtime > 0 LIMIT 50');
 
       if ($merge) {
         $both = array_merge($tptimes, $protimes);

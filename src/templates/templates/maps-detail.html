@@ -1,7 +1,7 @@
 <!-- Map detail -->
 <h1><a ui-sref='maps.list'>Maps</a> &raquo; {{ mapname }}</h1>
 <div class='col-md-4' style='margin-right: 45px;'>
-  <h2>TP times <small>{{ records.tp.length }}</small></h2>
+  <h2>TP times <small>Top 50</small></h2>
   <table class='table table-striped' ng-show='records.tp'>
     <tr>
       <th>#</th>
@@ -17,9 +17,9 @@
     </tr>
   </table>
 </div>
-<div class='col-md-4'>
-  <h2>Pro times <small>{{ records.pro.length }}</small></h2>
-  <table class='table table-striped' ng-show='records.pro'>
+<div class='col-md-4' ng-show='records.pro'>
+  <h2>Pro times <small>Top 50</small></h2>
+  <table class='table table-striped'>
     <tr>
       <th>#</th>
       <th>Player</th>
