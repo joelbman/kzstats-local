@@ -14,7 +14,7 @@ app.filter('numOnly', function() {
 app.filter('imgPath', function() {
   return function(input) {
     if (typeof input !== 'undefined') {
-      var path = 'img/' + input.toLowerCase() + '.png';
+      var path = 'img/flag/' + input.toLowerCase() + '.png';
       return path;
     }
     return;

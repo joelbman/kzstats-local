@@ -160,6 +160,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('bootstrap', ['bootstrap-css', 'bootstrap-font']);
-gulp.task('no-js', ['templates', 'styles']);
+gulp.task('no-js', ['templates', 'styles', 'bootstrap']);
 gulp.task('build', ['scripts', 'no-js', 'api']);
 gulp.task('default', ['build', 'watch']);
