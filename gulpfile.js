@@ -27,6 +27,7 @@ var config = {
   },
   styles: {
     src: './src/css/**/*.css',
+    prodSrc: ['./src/css/**/*.css', '!./src/css/disc.css'],
     watch: './src/css/**/*.css',
     dest: './public/css/'
   },
@@ -86,7 +87,14 @@ gulp.task('templates', function() {
  * ---------
  */
 gulp.task('styles', function() {
-  var src = gulp.src(config.styles.src)
+  var src;
+
+  if (production)
+    src = gulp.src(config.styles.src);
+  else
+    src = gulp.src(config.styles.prodSrc);
+
+  src
     .pipe(concat('bundle.css'))
     .pipe(livereload());
 
@@ -119,4 +127,4 @@ gulp.task('watch', function() {
 
 gulp.task('no-js', ['templates', 'styles']);
 gulp.task('build', ['scripts', 'no-js', 'api']);
-gulp.task('default', ['no-js', 'watch']);
+gulp.task('default', ['build', 'watch']);

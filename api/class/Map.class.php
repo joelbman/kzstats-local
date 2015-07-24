@@ -10,7 +10,10 @@
 
     // Get list of all maps with the best TP run time
     public function getList() {
-      return $this->db->fetchAll('SELECT mapname, min(runtime) AS runtime FROM playertimes WHERE runtime > -1 GROUP BY mapname');
+      $records = $this->db->fetchAll('SELECT mapname, min(runtime) AS runtime FROM playertimes WHERE runtime > -1 GROUP BY mapname');
+      for ($i = 0 ; $i < count($records); $i++) 
+        $records[$i]['runtime'] = floatval($records[$i]['runtime']);
+      return $records;
     }
 
     // Get records by given map name
