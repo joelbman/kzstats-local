@@ -1,7 +1,7 @@
 'use strict';
 
 // Player list controller
-module.exports = function($scope, PlayerService) {
+module.exports = /*@ngInject*/ function($scope, PlayerService) {
   $scope.players = [];
 
   var promise = PlayerService.getList();

@@ -1,7 +1,7 @@
 'use strict';
 
 // Front page controller
-module.exports = function($scope, PlayerService) {
+module.exports = /*@ngInject*/ function($scope, PlayerService) {
 
   $scope.records = [];
 

@@ -3,7 +3,7 @@
 /**
  * Map service
  */
-module.exports = function($http) {
+module.exports = /*@ngInject*/ function($http) {
 
   // API query for records by given map name
   this.getDetail = function(name) {

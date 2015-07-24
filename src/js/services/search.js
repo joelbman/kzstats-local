@@ -3,7 +3,7 @@
 /**
  * Search service
  */
-module.exports = function($http) {
+module.exports = /*@ngInject*/ function($http) {
 
   // API query for searching maps/players
   this.search = function(value) {

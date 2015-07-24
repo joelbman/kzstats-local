@@ -1,7 +1,7 @@
 'use strict';
 
 // Map detail controller
-module.exports = function($scope, $stateParams, MapService) {
+module.exports = /*@ngInject*/ function($scope, $stateParams, MapService) {
 
   $scope.records = [];
   $scope.mapname = $stateParams.mapName;

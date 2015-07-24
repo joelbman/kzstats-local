@@ -1,7 +1,7 @@
 'use strict';
 
 // Search controller
-module.exports = function($scope, $stateParams, SearchService) {
+module.exports = /*@ngInject*/ function($scope, $stateParams, SearchService) {
 
   $scope.players = [];
   $scope.maps = [];

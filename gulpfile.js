@@ -6,6 +6,7 @@ var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
 var livereload  = require('gulp-livereload');
 var gutil       = require('gulp-util');
+var ngAnnotate  = require('gulp-ng-annotate');
 var notifier    = require('node-notifier');
 var minifyCss   = require('gulp-minify-css');
 var source      = require('vinyl-source-stream');
@@ -21,19 +22,17 @@ var config = {
     filename: 'bundle.js'
   },
   templates: {
-    src: ['./src/templates/**/*.html', '!./src/templates/index.html'],
-    prodSrc: ['./src/templates/**/*.html', '!./src/templates/index2.html'],
+    src: './src/templates/**/*.html',
     watch: './src/templates/**/*.html',
     dest: './public/'
   },
   styles: {
     src: './src/css/**/*.css',
-    prodSrc: ['./src/css/**/*.css', '!./src/css/disc.css'],
     watch: './src/css/**/*.css',
     dest: './public/css/'
   },
   api: {
-    src: './api/**/*.php',
+    src: './api/**/*',
     watch: './api/**/*.php',
     dest: './public/api/'
   },
@@ -69,6 +68,7 @@ gulp.task('scripts', function() {
     .bundle()
     .on('error', handleError)
     .pipe(source(config.scripts.filename))
+    .pipe(ngAnnotate())
     .pipe(livereload());
 
   if (production)
@@ -82,12 +82,7 @@ gulp.task('scripts', function() {
  * ---------
  */
 gulp.task('templates', function() {
-  var src;
-
-  if (production)
-    src = gulp.src(config.templates.prodSrc);
-  else
-    src = gulp.src(config.templates.src);
+  var src = gulp.src(config.templates.src);
 
   return src
     .pipe(gulp.dest(config.templates.dest))
@@ -99,14 +94,7 @@ gulp.task('templates', function() {
  * ---------
  */
 gulp.task('styles', function() {
-  var src;
-
-  if (production)
-    src = gulp.src(config.styles.prodSrc);
-  else
-    src = gulp.src(config.styles.src);
-
-  src
+  var src = gulp.src(config.styles.src)
     .pipe(concat('bundle.css'))
     .pipe(livereload());
 
@@ -138,7 +126,7 @@ gulp.task('img', function() {
  * ---------
  */
 gulp.task('bootstrap-css', function() {
-  return gulp.src('./bower_components/bootstrap/dist/css/bootstrap-min.css')
+  return gulp.src('./bower_components/bootstrap/dist/css/bootstrap.min.css')
     .pipe(gulp.dest('./public/css/'));
 });
 

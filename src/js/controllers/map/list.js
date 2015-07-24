@@ -1,7 +1,7 @@
 'use strict';
 
 // Map list controller
-module.exports = function($scope, MapService) {
+module.exports = /*@ngInject*/ function($scope, MapService) {
 
   $scope.maplist = [];
 

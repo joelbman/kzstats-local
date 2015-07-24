@@ -1,7 +1,7 @@
 'use strict';
 
 // Jump detail controller
-module.exports = function($scope, $stateParams, JumpService) {
+module.exports = /*@ngInject*/ function($scope, $stateParams, JumpService) {
 
   $scope.jumps = [];
   $scope.jumpType = '';

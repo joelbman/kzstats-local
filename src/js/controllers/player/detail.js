@@ -1,7 +1,7 @@
 'use strict';
 
 // Player detail controller
-module.exports = function($scope, $stateParams, PlayerService, MapService) {
+module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, MapService) {
 
   $scope.p = null;
   $scope.loaded = false;

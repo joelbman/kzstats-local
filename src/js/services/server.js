@@ -3,7 +3,7 @@
 /**
  * Server service
  */
-module.exports = function($http) {
+module.exports = /*@ngInject*/ function($http) {
 
   // API query for server info
   this.getInfo = function() {

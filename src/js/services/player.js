@@ -3,7 +3,7 @@
 /**
  * Player service
  */
-module.exports = function($http) {
+module.exports = /*@ngInject*/ function($http) {
 
   // API query for jumpstats, rank etc. by SteamID
   this.getDetail = function(id) {

@@ -1,7 +1,7 @@
 'use strict';
 
 // Nav controller
-module.exports = function($scope, $state, ServerService) {
+module.exports = /*@ngInject*/ function($scope, $state, ServerService) {
 
   $scope.toggled = false;
   $scope.searchField = '';
