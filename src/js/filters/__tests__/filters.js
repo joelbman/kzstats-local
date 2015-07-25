@@ -21,4 +21,11 @@ describe('filters', function() {
     }));
   });
 
+  describe('numOnly', function() {
+    it('should strip all but numbers from given string', inject(function($filter) {
+      assert.equal($filter('numOnly')('abcfg.{4343}_?'), '4343');
+    }));
+  });
+
+
 });
