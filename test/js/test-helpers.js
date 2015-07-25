@@ -11,9 +11,10 @@ global.window.afterEach = afterEach;
 
 global.navigator = window.navigator = {};
 
-require('../bower_components/angular');
-require('../bower_components/angular-mocks');
+require('../../bower_components/angular');
+require('../../bower_components/angular-mocks');
 
 global.angular = window.angular;
+global.location = window.location;
 global.inject = global.angular.mock.inject;
 global.ngModule = global.angular.mock.module;
