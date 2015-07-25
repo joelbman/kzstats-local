@@ -2,14 +2,14 @@
 
 require('angular');
 require('angular-ui-router');
-//require('angular-ui-router-title');
 require('angular-bootstrap');
 
-var app = angular.module('kzApp', ['ui.router', 'ui.bootstrap']);
+require('./filters');
+
+var app = angular.module('kzApp', ['ui.router', 'ui.bootstrap', 'kzApp.filters']);
 
 require('./services');
 require('./controllers');
-require('./filters');
 
 app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function($stateProvider, $urlRouterProvider, $compileProvider) {
 
@@ -22,20 +22,17 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
   .state('front', {
     url: '/',
     templateUrl: 'templates/front.html',
-    controller: 'FrontPageCtrl',
-    //resolve: { $title: function() { return 'Latest'; } }
+    controller: 'FrontPageCtrl'
   })
   .state('banlist', {
     url: '/banlist/',
     templateUrl: 'templates/banlist.html',
-    controller: 'BanListCtrl',
-    // resolve: { $title: function() { return 'Banlist'; } }
+    controller: 'BanListCtrl'
   })
   .state('search', {
     url: '/search/:value/',
     templateUrl: 'templates/search.html',
-    controller: 'SearchCtrl',
-    // resolve: { $title: function() { return 'Search'; } }
+    controller: 'SearchCtrl'
   })
 
   // Map states
@@ -47,14 +44,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
   .state('maps.list', {
     url: '',
     templateUrl: 'templates/maps-list.html',
-    controller: 'MapListCtrl',
-    // resolve: { $title: function() { return 'Maps'; } }
+    controller: 'MapListCtrl'
   })
   .state('maps.detail', {
     url: ':mapName/',
     templateUrl: 'templates/maps-detail.html',
-    controller: 'MapDetailCtrl',
-    // resolve: { $title: function($stateParams) { return $stateParams.mapName; } }
+    controller: 'MapDetailCtrl'
   })
 
   // Jump states
@@ -66,8 +61,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
   .state('jumps.detail', {
     url: ':jumpName/',
     templateUrl: 'templates/jumps-detail.html',
-    controller: 'JumpDetailCtrl',
-    // resolve: { $title: function($stateParams) { return $stateParams.jumpName; } }
+    controller: 'JumpDetailCtrl'
   })
 
   // Player states
@@ -79,19 +73,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
   .state('players.list', {
     url: '',
     templateUrl: 'templates/players-list.html',
-    controller: 'PlayerListCtrl',
-    // resolve: { $title: function() { return 'Players'; } }
+    controller: 'PlayerListCtrl'
   })
   .state('players.detail', {
     url: ':steamId/',
     templateUrl: 'templates/players-detail.html',
-    controller: 'PlayerDetailCtrl',
-    // resolve: {
-    //   player: function(PlayerService, $stateParams) {
-    //     return PlayerService.getPlayerName($stateParams.steamId);
-    //   },
-    //   $title: function(player) { return player; }
-    // }
+    controller: 'PlayerDetailCtrl'
   });
 
   // Add Steam URLs to whitelist

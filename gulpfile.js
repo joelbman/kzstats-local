@@ -12,6 +12,7 @@ var minifyCss   = require('gulp-minify-css');
 var phpunit     = require('gulp-phpunit');
 var source      = require('vinyl-source-stream');
 var streamify   = require('gulp-streamify');
+var mocha       = require('gulp-mocha');
 
 var production = process.env.NODE_ENV === 'production';
 
@@ -141,7 +142,12 @@ gulp.task('bootstrap-font', function() {
  * ---------
  */
 gulp.task('phpunit', function() {
-    return gulp.src('./test/api/*.php').pipe(phpunit());
+    return gulp.src('./test/phpunit.xml').pipe(phpunit());
+});
+
+gulp.task('mocha', function() {
+  return gulp.src('./src/js/filters/__tests__/**/*.js', {read: false})
+    .pipe(mocha({reporter: 'nyan'}));
 });
 
 /**

@@ -1,9 +1,9 @@
 'use strict';
 
-var app = angular.module('kzApp');
+var module = angular.module('kzApp.filters', []);
 
 // Strips all but numbers from string, used with SteamIDs
-app.filter('numOnly', function() {
+module.filter('numOnly', function() {
   return function(input) {
     return input.replace(/\D/g, '');
   };
@@ -11,7 +11,7 @@ app.filter('numOnly', function() {
 
 // Returns full image path, used with flag icons
 // Flag icons from http://www.famfamfam.com/lab/icons/flags/
-app.filter('imgPath', function() {
+module.filter('imgPath', function() {
   return function(input) {
     if (typeof input !== 'undefined') {
       var path = 'img/flag/' + input.toLowerCase() + '.png';
@@ -22,7 +22,7 @@ app.filter('imgPath', function() {
 });
 
 // Pagination start point
-app.filter('startFrom', function() {
+module.filter('startFrom', function() {
   return function(input, startPoint) {
     if (!input) return;
     startPoint = parseInt(startPoint, 10);
@@ -31,7 +31,7 @@ app.filter('startFrom', function() {
 });
 
 // Time conversion from ss.ms to HH:mm:ss.ms
-app.filter('convertTime', function() {
+module.filter('convertTime', function() {
   return function(time) {
 
     var seconds =  0,
@@ -78,7 +78,7 @@ app.filter('convertTime', function() {
 });
 
 // Timestamp to preformatted datetime
-app.filter('kzDate', function($filter) {
+module.filter('kzDate', function($filter) {
   return function(input) {
     input = input * 1000;
     return $filter('date')(input, 'dd.MM.yyyy HH:mm');
