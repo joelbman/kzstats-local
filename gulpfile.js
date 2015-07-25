@@ -9,6 +9,7 @@ var gutil       = require('gulp-util');
 var ngAnnotate  = require('gulp-ng-annotate');
 var notifier    = require('node-notifier');
 var minifyCss   = require('gulp-minify-css');
+var phpunit     = require('gulp-phpunit');
 var source      = require('vinyl-source-stream');
 var streamify   = require('gulp-streamify');
 
@@ -133,6 +134,14 @@ gulp.task('bootstrap-css', function() {
 gulp.task('bootstrap-font', function() {
   return gulp.src('./bower_components/bootstrap/dist/fonts/*')
     .pipe(gulp.dest('./public/fonts/'));
+});
+
+/**
+ * PHPUnit
+ * ---------
+ */
+gulp.task('phpunit', function() {
+    return gulp.src('./test/api/*.php').pipe(phpunit());
 });
 
 /**

@@ -9,7 +9,7 @@
       <th>Date</th>
     </tr>
     <tr ng-repeat='r in records | orderBy: "timestamp":true'>
-      <td><b><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name }}</a></b></td>
+      <td><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name }}</a></td>
       <td><a ui-sref='maps.detail({ mapName: r.map })'>{{ r.map }}</a></td>
       <td>{{ r.runtime | convertTime }}</td>
       <td>{{ r.teleports }}</td>

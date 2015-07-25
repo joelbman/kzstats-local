@@ -1,5 +1,14 @@
 <!-- Map detail -->
 <h1><a ui-sref='maps.list'>Maps</a> &raquo; {{ mapname }}</h1>
+
+<!-- Best time -->
+<div class='col-md-8'>
+  <h2>Best time</h2>
+  {{ best.runtime|convertTime }}
+  {{ best.player}}
+</div>
+
+<!-- TP -->
 <div class='col-md-4' style='margin-right: 45px;'>
   <h2>TP times <small>Top 50</small></h2>
   <table class='table table-striped' ng-show='records.tp'>
@@ -17,6 +26,8 @@
     </tr>
   </table>
 </div>
+
+<!-- Pro -->
 <div class='col-md-4' ng-show='records.pro'>
   <h2>Pro times <small>Top 50</small></h2>
   <table class='table table-striped'>

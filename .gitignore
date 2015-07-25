@@ -1,6 +1,7 @@
-# Node & bower packages
+# Node, bower and composer packages
 node_modules/
 bower_components/
+vendor/
 
 # Public folder
 public/
