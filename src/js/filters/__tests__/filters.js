@@ -15,9 +15,9 @@ describe('filters', function() {
 
   beforeEach(ngModule('kzApp.filters'));
 
-  describe('kzDate', function() {
-    it('should convert given date in to dd.MM.yyyy HH:mm format', inject(function($filter) {
-      assert.equal($filter('kzDate')('12-12-1990'), '12.12.1990 00:00');
+  describe('convertTime', function() {
+    it('should convert given runtime into dd.MM.yyyy HH:mm:ss.ms format', inject(function($filter) {
+      assert.equal($filter('convertTime')('23.23'), '00:23.23');
     }));
   });
 
