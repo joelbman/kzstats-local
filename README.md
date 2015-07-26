@@ -41,6 +41,10 @@ npm run mocha
 I couldn't get the frontend unit tests running on Windows.
 Building contextify seems to be very problematic, so I recommend using a *nix system for running the frontend tests. 
 
+## TODO
+
+I'm probably going to rework the API completely using a suitable framework in a later release.
+
 ## Credits
 
 * [riku](https://github.com/rikukissa/) - Setting up the mocha testing environment among other frontend help.
