@@ -27,5 +27,18 @@ describe('filters', function() {
     }));
   });
 
+  describe('startFrom', function() {
+    it('should return an array starting from given point', inject(function($filter) {
+      assert.equal($filter('startFrom')(['asd', 'qwe', 'abc', '123', 'moo'], 3), ['123', 'moo']);
+    }));
+  });
+
+  describe('imgPath', function() {
+    it('should return full image path for given flag countrycode', inject(function($filter) {
+      assert.equal($filter('imgPath')('uk'), 'img/flag/uk.png');
+    }));
+  });
+
+
 
 });
