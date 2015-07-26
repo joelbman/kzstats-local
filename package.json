@@ -5,10 +5,10 @@
   "author": "Joel Bergman",
   "main": "gulpfile.js",
   "scripts": {
-    "prepublish": "bower install",
+    "prepublish": "bower install && composer install",
     "start": "gulp",
     "build": "gulp build",
-    "test": "mocha src/js/**/__tests__/*.js",
+    "mocha": "mocha src/js/**/__tests__/*.js",
     "phpunit": "gulp phpunit"
   },
   "keywords": [

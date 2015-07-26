@@ -141,7 +141,15 @@ gulp.task('bootstrap-font', function() {
  * ---------
  */
 gulp.task('phpunit', function() {
-    return gulp.src('./test/phpunit.xml').pipe(phpunit());
+  return gulp.src('./test/phpunit.xml').pipe(phpunit());
+});
+
+/**
+ * SourceQuery
+ */
+gulp.task('sq', function() {
+  return gulp.src('./vendor/xpaw/php-source-query-class/SourceQuery/*')
+    .pipe(gulp.dest('./public/api/class/SourceQuery/'));
 });
 
 /**
@@ -158,5 +166,5 @@ gulp.task('watch', function() {
 
 gulp.task('bootstrap', ['bootstrap-css', 'bootstrap-font']);
 gulp.task('no-js', ['templates', 'styles', 'bootstrap']);
-gulp.task('build', ['scripts', 'no-js', 'api', 'img']);
+gulp.task('build', ['scripts', 'no-js', 'api', 'img', 'sq']);
 gulp.task('default', ['build', 'watch']);

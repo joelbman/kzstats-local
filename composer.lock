@@ -4,8 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f32c8add4698b90cb15b6a749bc66425",
-    "packages": [],
+    "hash": "b4a8d59f31e84744dfa8c8321c69433b",
+    "packages": [
+        {
+            "name": "xpaw/php-source-query-class",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xPaw/PHP-Source-Query.git",
+                "reference": "380e6db5e40f6a0d9c0ac75611c92977198a7eeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xPaw/PHP-Source-Query/zipball/380e6db5e40f6a0d9c0ac75611c92977198a7eeb",
+                "reference": "380e6db5e40f6a0d9c0ac75611c92977198a7eeb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "SourceQuery/SourceQuery.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "description": "PHP library to query and send RCON commands to servers based on \"Source Engine Query\" protocol",
+            "homepage": "https://github.com/xPaw/PHP-Source-Query",
+            "keywords": [
+                "counter-strike",
+                "minecraft",
+                "rcon",
+                "team fortress"
+            ],
+            "time": "2015-07-24 12:47:57"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -960,7 +998,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "xpaw/php-source-query-class": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

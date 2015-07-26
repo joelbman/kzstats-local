@@ -1,5 +1,8 @@
 {
-    "require-dev": {
-        "phpunit/phpunit": "4.7.*"
-    }
+  "require": {
+    "xpaw/php-source-query-class": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.7.*"
+  }
 }
