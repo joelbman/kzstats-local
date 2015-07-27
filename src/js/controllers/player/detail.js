@@ -35,6 +35,8 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
 
   var promise = PlayerService.getDetail($stateParams.steamId);
   promise.then(function(data) {
+    $scope.loaded = true;
+
     if (data.name)
       $scope.p = data;
     else
@@ -63,8 +65,6 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
     mapPromise.then(function(data) {
       $scope.mapCount = data.count;
     });
-
-    $scope.loaded = true;
 
   });
   
