@@ -21,6 +21,7 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
     {name: 'TP', value: 'tp'},
     {name: 'Pro', value: 'pro'}
   ];
+
   $scope.showType = $scope.types[0];
 
   $scope.reloadResults = function() {
@@ -34,7 +35,10 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
 
   var promise = PlayerService.getDetail($stateParams.steamId);
   promise.then(function(data) {
-    $scope.p = data;
+    if (data.name)
+      $scope.p = data;
+    else
+      return;
 
     var recordPromise = PlayerService.getRecords($stateParams.steamId);
     recordPromise.then(function(data) {

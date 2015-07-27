@@ -1,6 +1,6 @@
 <h1>Search</h1>
 <!-- Players -->
-<div class='col-md-4' ng-show='players' style='margin-right: 45px;'>
+<div class='col-md-4' ng-show='players.length > 0' style='margin-right: 45px;'>
   <h2>Players <small>{{ players.length }} found</small></h2>
   <table class='table table-striped' ng-show='players'>
     <tr>
@@ -17,7 +17,7 @@
 </div>
 
 <!-- Maps -->
-<div class='col-md-4' ng-show='maps'>
+<div class='col-md-4' ng-show='maps.length > 0'>
   <h2>Maps <small>{{ maps.length }} found</small></h2>
   <table class='table table-striped'>
     <tr>
