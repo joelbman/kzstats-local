@@ -48,6 +48,7 @@ I'm probably going to rework the API completely using a suitable framework in a 
 ## Credits
 
 * [riku](https://github.com/rikukissa/) - Setting up the mocha testing environment among other frontend help.
+* [versaceLORD](http://www.climblounge.com/) - Providing sample data from climbLOUNGE servers for testing and demo.
 
 ## License
 
