@@ -28,7 +28,7 @@
 </div>
 
 <!-- Pro -->
-<div class='col-md-4' ng-show='records.pro'>
+<div class='col-md-4' ng-show='records.pro.length > 0'>
   <h2>Pro times <small>Top 50</small></h2>
   <table class='table table-striped'>
     <tr>
@@ -44,7 +44,7 @@
   </table>
 </div>
 
-<div ng-hide='records.tp.length > 0 && records.pro.length > 0'>
+<div ng-hide='records.tp.length + records.pro.length > 0 || !loaded'>
   <h1>Error - 404</h1>
   Requested map was not found or does not have any records yet.</span>
 </div>

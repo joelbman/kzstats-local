@@ -21,6 +21,9 @@
         <div ng-repeat='m in filtered = (maplist | filter:search | orderBy:orderField.value)' class='maplist-map'>
           <a ui-sref='maps.detail({mapName: m.mapname})'><b>{{ m.mapname }}</b> ({{ m.runtime | convertTime }})</a>
         </div>
+        <div ng-hide='filtered.length > 0'>
+          No maps found.
+        </div>
       </div>
     </div>
   </div>
