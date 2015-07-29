@@ -1,7 +1,7 @@
 {
   "name": "kzstats-local",
-  "version": "0.0.1",
-  "description": "KZStats for KZ server owners",
+  "version": "0.3",
+  "description": "Web statistics for CS:GO Kreedz server owners",
   "author": "Joel Bergman",
   "main": "gulpfile.js",
   "scripts": {
