@@ -41,16 +41,11 @@
     }
 
     // Get records by given SteamID
-    public function getRecords($id, $merge = true) {
+    public function getRecords($id) {
       $records = [];
       $steamid = $this->convertId($id);
 
-      if (!$merge) {
-        $records['tp'] = $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
-        $records['pro'] = $this->db->fetchAll('SELECT steamid, mapname, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname'); 
-      }
-      else
-        $records = $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
+      $records = $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
 
       return $records;
     }

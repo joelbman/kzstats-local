@@ -17,36 +17,21 @@
     }
 
     // Get records by given map name
-    public function getDetail($name, $merge = false) {
+    public function getDetail($name) {
       $records = [];
       
       $protimes = $this->db->fetchAll('SELECT steamid, name, runtimepro AS runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtimepro > 0 LIMIT 50');
       $tptimes = $this->db->fetchAll('SELECT steamid, name, teleports, runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtime > 0 LIMIT 50');
 
-      if ($merge) {
-        $both = array_merge($tptimes, $protimes);
-        /**
-         * Loop through the records, convert runtime to float for client side ordering
-         * and set pro time teleports to 0
-         */
-        for ($i = 0; $i < count($both); $i++) {
-          $both[$i]['runtime'] = floatval($both[$i]['runtime']);
-          if (!$both[$i]['teleports'])
-            $both[$i]['teleports'] = 0;
-        }
-        $records = $both;
-      }
-      else {
-        // Float converisons
-        for ($i = 0 ; $i < count($tptimes); $i++) 
-          $tptimes[$i]['runtime'] = floatval($tptimes[$i]['runtime']);
-        for ($i = 0 ; $i < count($protimes); $i++) 
-          $protimes[$i]['runtime'] = floatval($protimes[$i]['runtime']);
+      // Float converisons
+      for ($i = 0 ; $i < count($tptimes); $i++) 
+        $tptimes[$i]['runtime'] = floatval($tptimes[$i]['runtime']);
+      for ($i = 0 ; $i < count($protimes); $i++) 
+        $protimes[$i]['runtime'] = floatval($protimes[$i]['runtime']);
 
-        if ($tptimes || $protimes) {
-          $records['tp'] = $tptimes;
-          $records['pro'] = $protimes;
-        }
+      if ($tptimes || $protimes) {
+        $records['tp'] = $tptimes;
+        $records['pro'] = $protimes;
       }
 
       return $records;

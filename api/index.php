@@ -1,17 +1,30 @@
 <?php
 
-  
   error_reporting(E_ALL & ~E_NOTICE);
 
-  // Slim
+  // Switch to true for development, false for production
+  $debug = false;
+
+  $db = null;
+
+  /**
+   * Slim
+   * ---------
+   */
   require 'class/Slim/Slim.php';
   \Slim\Slim::registerAutoloader();
   $app = new \Slim\Slim();
+  $app->config('debug', $debug);
 
   // Autoloader for other classes
-  require('autoload.php');
+  require('utils/autoload.php');
 
-  $db = null;
+  // JSON response
+  function response($data) {
+    header('Content-type: application/json');
+    echo json_encode($data, JSON_PRETTY_PRINT);
+    exit;
+  }
 
   // Database connection
   function dbConnect() {
@@ -32,16 +45,23 @@
       return $db;
     }
     catch (PDOException $e) {
-      die();
+      return;
     }
   }
 
-  // JSON response
-  function response($data) {
-    header('Content-type: application/json');
-    echo json_encode($data, JSON_PRETTY_PRINT);
-    exit;
-  }
+  /**
+   * Latest records endpoint
+   * ---------
+   */
+  $app->error(function(Exception $e) {
+    http_response_code(500);
+    response(array('error' => $e));
+  });
+
+  $app->notFound(function() {
+    http_response_code(404);
+    response(array('error' => 'not found'));
+  });
 
   /**
    * Latest records endpoint
@@ -151,6 +171,7 @@
     $result = [];
     $result['maps'] = $map->search($value);
     $result['players'] = $player->search($value);
+
     response($result);
   });
 
