@@ -2,13 +2,10 @@
 
   abstract class Server {
 
+    // Server information query
     public static function getInfo() {
-      /*
-        Using SourceQuery class by xPaw
-        to get the server info.
-        
-        https://github.com/xPaw/PHP-Source-Query-Class/
-      */
+      
+      // Using SourceQuery class by xPaw
       require './class/SourceQuery/SourceQuery.class.php';
       require './settings.php';
 
@@ -28,11 +25,14 @@
       $result['maxplayers'] = $info['MaxPlayers'];
       $result['map'] = $info['Map'];
 
+      /*
+        If settings file has a server name use it.
+         Otherwise take the name from the query.
+      */
       if ($server['name'])
         $result['name'] = $server['name'];
       else
         $result['name'] = $info['HostName'];
-
 
       return $result;
 
