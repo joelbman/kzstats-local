@@ -47,9 +47,4 @@
       return $this->db->fetchAll($q);
     }
 
-    // Get top results from all jump categories
-    public function getAll() {
-
-    }
-
   }
