@@ -79,8 +79,14 @@
           <span ng-show='r.runtimepro < 0'>N/A</span>
         </td>
       </tr>
+      <tr ng-hide='records.length > 0'>
+        <td>No records found.</td>
+        <td> </td>
+        <td ng-show='showType.value != "pro"'> </td>
+        <td ng-show='showType.value == "both"'> </td>
+      </tr>
     </table>
-    <pagination total-items='records.length' max-size='5' ng-model='currentPage' items-per-page='pageSize' ng-show='records'></pagination>
+    <pagination total-items='records.length' max-size='5' ng-model='currentPage' items-per-page='pageSize' ng-show='records.length > 0'></pagination>
     <br><span ng-hide='records'>No runs available.</span>
   </div>
 </div>
