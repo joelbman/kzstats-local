@@ -23,25 +23,3 @@
 .table-striped > tbody > tr:nth-child(odd) > td {
    background-color: #F7FAF5;
  }
-
-.special {
-  color: #CF8338;
- }
-
-.ban-player {
-  font-weight: bold;
-  color: #D92323;
-}
-
-.record-headers th {
-  cursor: pointer;
-  font-weight: normal;
-}
-
-.record-headers th:hover {
-  font-weight: bold;
-}
-
-.record-headers .current {
-  text-decoration: underline;
-}

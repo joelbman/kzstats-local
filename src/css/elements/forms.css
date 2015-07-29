@@ -36,24 +36,3 @@
   display: inline;
   margin-bottom: 10px;
 }
-
-.search-input {
-  max-width: 150px;
-}
-
-.checkbox-group {
-  display: block;
-}
-
-.checkbox {
-  display: inline;
-}
-
-.dropdown-inline {
-  width: 50px;
-  display: inline;
-  background: #EBEBEB;
-  margin-left: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
