@@ -5,6 +5,7 @@ It's designed to be used by CS:GO KZ server owners.
 
 The instructions in this README are for setting up the development environment.
 If you aren't looking to build the software yourself, please visit the documentation found here: (coming soon)
+Or alternatively, just download the latest release here: (coming soon)
 
 ## Prerequisities
 
@@ -40,10 +41,6 @@ npm run mocha
 
 I couldn't get the frontend unit tests running on Windows.
 Building contextify seems to be very problematic, so I recommend using a *nix system for running the frontend tests. 
-
-## TODO
-
-I'm probably going to rework the API completely using a suitable framework in a later release.
 
 ## Credits
 
