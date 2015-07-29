@@ -1,23 +1,34 @@
 <?php
 
-  class Db {
+  class Db extends PDO {
+  
+    protected $_config = array();
+    protected $_connected = false;
 
-    private $pdo;
+    public function __construct($dsn, $user = null, $pass = null, $options = null) {
+      $this->_config = array(
+        'dsn' => $dsn,
+        'user' => $user,
+        'pass' => $pass,
+        'options' => $options
+      );
+    }
 
-    public function __construct() {
-      require(__DIR__.'/../settings.php');
-      $this->pdo = new PDO(
-        'mysql:host='.$dbhost.';
-        dbname='.$dbname.';
-        port='.$dbport.';
-        charset='.$dbcharset, 
-        $dbuser, $dbpass);
+    public function checkConnection() {
+      if (!$this->_connected) {
+        extract($this->_config);
+        parent::__construct($dsn, $user, $pass, $options);
+        $this->_connected = true;
+      }
     }
 
     // Fetch all rows from SELECT query result set
     public function fetchAll($q, $var = '') {
+      $this->checkConnection();
+
       $result = [];
-      $stmt = $this->pdo->prepare($q);
+
+      $stmt = parent::prepare($q);
 
       // This is mostly for WHERE ... LIKE queries (searching)
       if ($var) {
@@ -36,8 +47,11 @@
 
     // Fetch next row from SELECT query result set
     public function fetch($q) {
+      $this->checkConnection();
+
       $result = [];
-      $stmt = $this->pdo->prepare($q);
+
+      $stmt = parent::prepare($q);
 
       // Make sure single row fetch doesn't return false
       if ($stmt->execute()) {
@@ -50,11 +64,15 @@
     }
 
     public function count($q) {
+      $this->checkConnection();
+
       $result = [];
-      $stmt = $this->pdo->prepare($q);
+
+      $stmt = parent::prepare($q);
       $stmt->execute();
       $count = $stmt->fetch(PDO::FETCH_NUM);
       $result['count'] = $count[0];
+
       return $result;
     }
 

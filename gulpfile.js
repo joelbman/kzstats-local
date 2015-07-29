@@ -1,17 +1,17 @@
 'use strict';
 
 var browserify  = require('browserify');
-var gulp        = require('gulp');
 var concat      = require('gulp-concat');
-var uglify      = require('gulp-uglify');
-var livereload  = require('gulp-livereload');
+var gulp        = require('gulp');
 var gutil       = require('gulp-util');
+var livereload  = require('gulp-livereload');
+var minifyCss   = require('gulp-minify-css');
 var ngAnnotate  = require('gulp-ng-annotate');
 var notifier    = require('node-notifier');
-var minifyCss   = require('gulp-minify-css');
 var phpunit     = require('gulp-phpunit');
 var source      = require('vinyl-source-stream');
 var streamify   = require('gulp-streamify');
+var uglify      = require('gulp-uglify');
 
 var production = process.env.NODE_ENV === 'production';
 
@@ -115,6 +115,22 @@ gulp.task('api', function() {
 });
 
 /**
+ * SourceQuery
+ */
+gulp.task('sq', function() {
+  return gulp.src('./vendor/xpaw/php-source-query-class/SourceQuery/*')
+    .pipe(gulp.dest('./public/api/class/SourceQuery/'));
+});
+
+/**
+ * Slim
+ */
+gulp.task('slim', function() {
+  return gulp.src('./vendor/slim/slim/Slim/**/*')
+    .pipe(gulp.dest('./public/api/class/Slim/'));
+});
+
+/**
  * Images
  * ---------
  */
@@ -145,14 +161,6 @@ gulp.task('phpunit', function() {
 });
 
 /**
- * SourceQuery
- */
-gulp.task('sq', function() {
-  return gulp.src('./vendor/xpaw/php-source-query-class/SourceQuery/*')
-    .pipe(gulp.dest('./public/api/class/SourceQuery/'));
-});
-
-/**
  * Watcher
  * ---------
  */
@@ -166,5 +174,5 @@ gulp.task('watch', function() {
 
 gulp.task('bootstrap', ['bootstrap-css', 'bootstrap-font']);
 gulp.task('no-js', ['templates', 'styles', 'bootstrap']);
-gulp.task('build', ['scripts', 'no-js', 'api', 'img', 'sq']);
+gulp.task('build', ['scripts', 'no-js', 'api', 'img', 'sq', 'slim']);
 gulp.task('default', ['build', 'watch']);

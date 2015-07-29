@@ -10,7 +10,7 @@
 
     // Returns top 25 players based on points
     public function getList() {
-      $players = $this->db->fetchAll('SELECT * From playerrank ORDER BY points DESC LIMIT 50');
+      $players = $this->db->fetchAll('SELECT steamid, name, country, points, lastseen From playerrank ORDER BY points DESC LIMIT 50');
       
       for ($i = 0; $i < count($players); $i++)
         $players[$i]['countrycode'] = $this->countryCode($players[$i]['country']);
@@ -81,12 +81,10 @@
 
     // Latest records
     public function getLatest() {
-      if (count($this->args) == 0) {
-        $results = $this->db->fetchAll('SELECT * FROM latestrecords WHERE (map, runtime) IN (SELECT map, min(runtime) FROM latestrecords GROUP BY map)');
-        for ($i = 0; $i < count($results); $i++)
-          $results[$i]['timestamp'] = strtotime($results[$i]['date']);
-        return $results;
-      }
+      $results = $this->db->fetchAll('SELECT * FROM latestrecords WHERE (map, runtime) IN (SELECT map, min(runtime) FROM latestrecords GROUP BY map)');
+      for ($i = 0; $i < count($results); $i++)
+        $results[$i]['timestamp'] = strtotime($results[$i]['date']);
+      return $results;
     }
 
     // Searches for a countrycode with given country name

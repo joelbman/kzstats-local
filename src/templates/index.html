@@ -54,7 +54,7 @@
         </form>
       </div>
       <!-- Server info -->
-      <div class='navbar__server' ng-show='server'>
+      <div class='navbar__server' ng-show='server.name'>
         <b>{{ server.name }}</b><br>
         Players: {{ server.players }}/{{ server.maxplayers }}<br>
         Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map }}</a><br><br>
