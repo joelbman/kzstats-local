@@ -8,7 +8,7 @@
   $db = null;
 
   /**
-   * Slim
+   * Slim setup
    * ---------
    */
   require 'class/Slim/Slim.php';
@@ -50,7 +50,7 @@
   }
 
   /**
-   * Latest records endpoint
+   * Error handling
    * ---------
    */
   $app->error(function(Exception $e) {
