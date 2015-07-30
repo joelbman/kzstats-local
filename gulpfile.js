@@ -2,6 +2,7 @@
 
 var browserify  = require('browserify');
 var concat      = require('gulp-concat');
+var es          = require('event-stream');
 var gulp        = require('gulp');
 var gutil       = require('gulp-util');
 var livereload  = require('gulp-livereload');
@@ -33,7 +34,7 @@ var config = {
     dest: './public/css/'
   },
   api: {
-    src: './api/**/*',
+    src: './api/**/*.php',
     watch: './api/**/*.php',
     dest: './public/api/'
   },
@@ -107,27 +108,41 @@ gulp.task('styles', function() {
 });
 
 /**
+ * Bootstrap minified css & fonts
+ * ---------
+ */
+gulp.task('bootstrap', function() {
+  return es.concat(
+    gulp.src('./bower_components/bootstrap/dist/css/bootstrap.min.css')
+      .pipe(gulp.dest('./public/css/')),
+    gulp.src('./bower_components/bootstrap/dist/fonts/*')
+      .pipe(gulp.dest('./public/fonts/'))
+  );
+});
+
+/**
  * API
  * ---------
  */
 gulp.task('api', function() {
-  return gulp.src(config.api.src).pipe(gulp.dest(config.api.dest));
+  return es.concat(
+    gulp.src(config.api.src)
+      .pipe(gulp.dest(config.api.dest)),
+    gulp.src('./api/.htaccess')
+      .pipe(gulp.dest(config.api.dest))
+  );
 });
 
 /**
- * SourceQuery
+ * SourceQuery & Slim
  */
-gulp.task('sq', function() {
-  return gulp.src('./vendor/xpaw/php-source-query-class/SourceQuery/*')
-    .pipe(gulp.dest('./public/api/class/SourceQuery/'));
-});
-
-/**
- * Slim
- */
-gulp.task('slim', function() {
-  return gulp.src('./vendor/slim/slim/Slim/**/*')
-    .pipe(gulp.dest('./public/api/class/Slim/'));
+gulp.task('api-lib', function() {
+  return es.concat(
+    gulp.src('./vendor/xpaw/php-source-query-class/SourceQuery/*')
+      .pipe(gulp.dest('./public/api/class/SourceQuery/')),
+    gulp.src('./vendor/slim/slim/Slim/**/*')
+      .pipe(gulp.dest('./public/api/class/Slim/'))
+  );
 });
 
 /**
@@ -139,21 +154,7 @@ gulp.task('img', function() {
 });
 
 /**
- * Bootstrap minified css & fonts
- * ---------
- */
-gulp.task('bootstrap-css', function() {
-  return gulp.src('./bower_components/bootstrap/dist/css/bootstrap.min.css')
-    .pipe(gulp.dest('./public/css/'));
-});
-
-gulp.task('bootstrap-font', function() {
-  return gulp.src('./bower_components/bootstrap/dist/fonts/*')
-    .pipe(gulp.dest('./public/fonts/'));
-});
-
-/**
- * PHPUnit
+ * PHPUnit tests
  * ---------
  */
 gulp.task('phpunit', function() {
@@ -172,7 +173,5 @@ gulp.task('watch', function() {
   gulp.watch(config.api.watch, ['api']);
 });
 
-gulp.task('bootstrap', ['bootstrap-css', 'bootstrap-font']);
-gulp.task('no-js', ['templates', 'styles', 'bootstrap']);
-gulp.task('build', ['scripts', 'no-js', 'api', 'img', 'sq', 'slim']);
+gulp.task('build', ['scripts', 'templates', 'styles', 'bootstrap', 'api', 'api-lib', 'img']);
 gulp.task('default', ['build', 'watch']);
