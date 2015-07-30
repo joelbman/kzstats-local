@@ -1,0 +1,48 @@
+body {
+  font-family: 'Oxygen', sans-serif;
+}
+
+h2 {
+  margin-top: 30px;
+}
+
+label {
+  margin-top: 15px;
+  display: block;
+}
+
+.input-group {
+  max-width: 400px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.input-group .form-control {
+  margin-bottom: 5px;
+  display: block;
+  border-radius: 3px;
+}
+
+.btn-primary {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.help-block {
+  font-size: 12px;
+}
+
+.note {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.error {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.error h1 {
+  color: red;
+}

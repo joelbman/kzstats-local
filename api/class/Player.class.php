@@ -62,6 +62,8 @@
         $info = json_decode(file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key='.$apikey.'&steamids='.$comid));
         return $info->response->players[0];
       }
+      else
+        return array();
     }
 
     // Search players
