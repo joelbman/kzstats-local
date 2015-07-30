@@ -68,15 +68,15 @@
         <td><a ui-sref='maps.detail({mapName: r.mapname })'>{{ r.mapname }}</a></td>
         <td ng-show='showType.value !== "pro"'>
           <span ng-show='r.teleports > 0'>{{ r.runtime | convertTime }}</span>
-          <span ng-show='r.teleports < 0'>N/A</span>
+          <span ng-show='r.teleports < 0'>-</span>
         </td>
         <td ng-show='showType.value !== "pro"'>
           <span ng-show='r.teleports > 0'>{{ r.teleports }}</span>
-          <span ng-show='r.teleports < 0'>N/A</span>
+          <span ng-show='r.teleports < 0'>-</span>
         </td>
         <td ng-show='showType.value !== "tp"'>
           <span ng-show='r.runtimepro > 0'>{{ r.runtimepro | convertTime }}</span>
-          <span ng-show='r.runtimepro < 0'>N/A</span>
+          <span ng-show='r.runtimepro < 0'>-</span>
         </td>
       </tr>
       <tr ng-hide='records.length > 0'>
