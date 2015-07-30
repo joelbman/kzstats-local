@@ -10,7 +10,7 @@
 
     // Check if all the fields have values
     foreach ($_POST as $key => $value) {
-      if ($key != 'steamapi' && !$value)
+      if ($key != 'apikey' && !$value)
         $error = 'Please fill out all the fields.';
     }
 
