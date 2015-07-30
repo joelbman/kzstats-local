@@ -5,6 +5,8 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
 
   $scope.p = null;
   $scope.loaded = false;
+  $scope.steamError = false;
+
   $scope.records = [];
   $scope.originalRecords = [];
   $scope.prorecords = [];
@@ -58,7 +60,12 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
 
     var steamPromise = PlayerService.getSteamProfile($stateParams.steamId);
     steamPromise.then(function(data) {
-      $scope.steamInfo = data;
+      if (!data.error)
+        $scope.steamInfo = data;
+      else
+        $scope.steamError = true;
+    }, function() {
+      $scope.steamError = true;
     });
 
     var mapPromise = MapService.getCount();

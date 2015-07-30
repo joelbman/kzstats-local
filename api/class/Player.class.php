@@ -60,10 +60,11 @@
         $comid = bcadd(bcadd(($accnum * 2), '76561197960265728'), $idnum);
 
         $info = json_decode(file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key='.$apikey.'&steamids='.$comid));
+
         return $info->response->players[0];
       }
       else
-        return array();
+        return array('error' => 'API key not defined');
     }
 
     // Search players

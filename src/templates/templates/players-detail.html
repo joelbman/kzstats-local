@@ -1,7 +1,7 @@
 <!-- Player information -->
 <div class='playerinfo' ng-show='p'>
   <!-- Loading spinner -->
-  <div class="spinner" ng-hide='steamInfo.avatarfull'>
+  <div class="spinner" ng-hide='steamInfo.avatarfull || steamError'>
     <div class="spinner-container container1">
       <div class="circle1"></div>
       <div class="circle2"></div>
@@ -30,7 +30,7 @@
   </h1>
   <h3>{{ p.points }} points</h3>
   <i>Last seen: {{ p.lastseen }}</i><br>
-  <a href='{{ steamInfo.profileurl }}'>Steam profile</a>
+  <a href='{{ steamInfo.profileurl }}' ng-show='steamInfo.profileurl'>Steam profile</a>
 </div>
 
 <div ng-show='p'>
