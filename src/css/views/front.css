@@ -1,0 +1,23 @@
+/* Latest records (front page) */
+.latest {
+  max-width: 700px;
+}
+
+.latest__entry {
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.latest__entry:first-child {
+  padding-top: 0;
+}
+
+.latest__entry:last-child {
+  border-bottom: 0;
+}
+
+.latest__footer {
+  text-align: center;
+  padding-top: 10px;
+}
