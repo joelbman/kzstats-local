@@ -7,9 +7,9 @@
 }
 
 .filters .filter-group {
-  display: inline-block;
+  display: block;
   margin-right: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .filters label {
