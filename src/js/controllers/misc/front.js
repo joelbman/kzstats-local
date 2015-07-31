@@ -1,7 +1,7 @@
 'use strict';
 
 // Front page controller
-module.exports = /*@ngInject*/ function($scope, PlayerService) {
+module.exports = /*@ngInject*/ function($scope, PlayerService, ServerService) {
 
   $scope.records = [];
   $scope.startPoint = 0;
@@ -12,5 +12,8 @@ module.exports = /*@ngInject*/ function($scope, PlayerService) {
 
   var promise = PlayerService.getLatest();
   promise.then(function(data) { $scope.records = data; });
+
+  var p = ServerService.getInfo();
+  p.then(function(data) { $scope.serverName = data.name; });
 
 };
