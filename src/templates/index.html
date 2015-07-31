@@ -5,10 +5,11 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!-- Stylesheets etc. -->
+    <!-- Stylesheets & fonts -->
     <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' href='css/bundle.css'>
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oxygen'>
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700&subset=latin,latin-ext'>
     <!-- Favicons -->
     <link rel='apple-touch-icon' sizes='57x57' href='img/favicon/apple-touch-icon-57x57.png'>
     <link rel='apple-touch-icon' sizes='60x60' href='img/favicon/apple-touch-icon-60x60.png'>
@@ -38,6 +39,14 @@
   <body>
     <!-- Navbar -->
     <nav class='navbar' ng-controller='NavCtrl'>
+      <!-- Server info -->
+      <div class='navbar__server' ng-show='server.name'>
+        <b>{{ server.name }}</b>
+        <span ng-show='server.players'>Players: {{ server.players }}/{{ server.maxplayers }}</span>
+        <span ng-show='server.map'>Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map }}</a></span>
+        <span ng-show='!server.ip'>Server data unavailable</span>
+        <button class='btn btn-success' ng-click='joinServer(server.ip)'>Connect</button>
+      </div>
       <!-- Main navigation menu -->
       <ul class='navbar__menu'>
         <a ui-sref='front'><li>Latest</li></a>
@@ -71,13 +80,6 @@
             <input type='submit' style='position: absolute; left: -9999px; width: 1px; height: 1px;'>
           </div>
         </form>
-      </div>
-      <!-- Server info -->
-      <div class='navbar__server' ng-show='server.name'>
-        <b>{{ server.name }}</b><br>
-        Players: {{ server.players }}/{{ server.maxplayers }}<br>
-        Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map }}</a><br><br>
-        &raquo; <a href='steam://connect/{{ server.ip }}'>Join server</a>
       </div>
       <!-- Footer -->
       <div class='navbar__footer'>

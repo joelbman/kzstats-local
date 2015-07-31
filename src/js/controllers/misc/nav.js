@@ -15,6 +15,10 @@ module.exports = /*@ngInject*/ function($scope, $state, ServerService) {
       $state.go('search', {'value': $scope.searchField });
   };
 
+  $scope.joinServer = function(ip) {
+    window.location.href = 'steam://connect/' + ip;
+  };
+
   var promise = ServerService.getInfo();
   promise.then(function(data) {
     $scope.server = data;

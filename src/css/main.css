@@ -2,7 +2,7 @@
  * Basic tags
  */
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   background-color: #F5F8FA;
 }
 
@@ -41,3 +41,7 @@ h4 {
   margin-left: 3px;
   border: 1px solid #000;
 }
+
+/* Disable focus outlines for Firefox */
+:focus { outline: none !important; }
+::-moz-focus-inner { border: 0 !important; }

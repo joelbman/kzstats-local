@@ -8,22 +8,13 @@
 .spinner {
   width: 130px;
   height: 130px;
-  border: 1px solid #000;
+  border: 2px solid #8F8F8F;
   border-radius: 5px;
   display: inline;
   float: left;
   margin-right: 15px;
   position: relative;
   background: #ADB0B3;
-}
-
-.server-spinner {
-  float: none;
-  border: 0;
-  background: #F5F8FA;
-  display: block;
-  margin: 100px auto;
-  margin-top: 150px;
 }
 
 .container1 > div, .container2 > div, .container3 > div {
@@ -37,17 +28,6 @@
   /* Prevent first frame from flickering when animation starts */
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-}
-
-.server-spinner .container1 > div, .server-spinner .container2 > div, .server-spinner .container3 > div {
-  background-color: #000;
-}
-
-.spinner-text {
-  font-size: 12px;
-  padding: 0;
-  margin: 0;
-  margin-top: 30px;
 }
 
 .spinner .spinner-container {

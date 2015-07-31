@@ -14,15 +14,6 @@
   box-shadow: inset -5px 1px 7px 0px rgba(0,0,0,0.75);
 }
 
-.navbar__menu {
-  list-style: none;
-  z-index: 999;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 25px;
-  margin-top: 25px;
-}
-
 .navbar a {
   color: #F0F0F0;
   text-decoration: none;
@@ -31,6 +22,46 @@
 .navbar a:hover {
   color: #F0F0F0;
   text-decoration: none;
+}
+
+.navbar__server {
+  font-size: 13px;
+  padding-top: 25px;
+  padding-left: 5px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #616161;
+}
+
+.navbar__server a {
+  color: #CF8338;
+}
+
+.navbar__server b {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.navbar__server button {
+  margin-top: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background: #13751E;
+  border: 1px solid #666;
+}
+
+.navbar__server span {
+  display: block;
+}
+
+.navbar__menu {
+  list-style: none;
+  z-index: 999;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 25px;
+  margin-top: 15px;
+  font-family: 'Oxygen', sans-serif;
 }
 
 .navbar__menu li {
@@ -123,22 +154,6 @@
   box-shadow: inset 0 0 7px #8A8A8A;
 }
 
-.navbar__server {
-  padding-top: 35px;
-  font-size: 12px;
-  padding-left: 5px;
-}
-
-.navbar__server a {
-  color: #CF8338;
-}
-
-.navbar__server b {
-  font-size: 14px;
-  display: block;
-  margin-bottom: 5px;
-}
-
 .navbar__footer {
   bottom: 0;
   position: fixed;
@@ -154,7 +169,7 @@
   color: #CF8338;
 }
 
-@media screen and (max-height: 780px) {
+@media screen and (max-height: 600px) {
   .navbar__footer {
     display: none;
   }
