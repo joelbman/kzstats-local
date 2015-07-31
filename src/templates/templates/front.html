@@ -8,7 +8,7 @@
     <div>
       <div class='latest__entry' ng-repeat='r in records | orderBy:"-timestamp" | startFrom: startPoint | limitTo: pageSize'>
         <h4><a ui-sref='maps.detail({mapName: r.map})'>{{ r.map }}</a> <small>[{{ r.runtime | convertTime }}]</small></h4>
-        by <b><a ui-sref='players.detail({steamId: (r.steamid|numOnly)})'>{{ r.name }}</a></b><br>
+        by <a ui-sref='players.detail({steamId: (r.steamid|numOnly)})'>{{ r.name }}</a><br>
         <i>{{ r.date }}</i>
       </div>
     </div>

@@ -49,11 +49,11 @@
       </div>
       <!-- Main navigation menu -->
       <ul class='navbar__menu'>
-        <a ui-sref='front'><li>Latest</li></a>
-        <a ui-sref='players.list'><li>Players</li></a>
-        <a ui-sref='maps.list'><li>Maps</li></a>
+        <li ui-sref-active='navActive'><a ui-sref='front'>Latest</a></li>
+        <li ng-class='{navActive: isActive("players")}'><a ui-sref='players.list'>Players</a></li>
+        <li ng-class='{navActive: isActive("maps")}'><a ui-sref='maps.list'>Maps</a></li>
         <!-- Jumpstats dropdown -->
-        <li ng-class='{navbar__menu__dropdown: toggled}'>
+        <li class='noHover' ng-class='{navbar__menu__dropdown: toggled}'>
           <a href='' ng-click='toggled = !toggled'>Jumpstats
             <span class='navbar__menu__dropdown__arrow' ng-show='toggled'>&#9650;</span>
             <span class='navbar__menu__dropdown__arrow' ng-show='!toggled'>&#9660;</span>

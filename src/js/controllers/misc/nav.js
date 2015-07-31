@@ -6,9 +6,9 @@ module.exports = /*@ngInject*/ function($scope, $state, ServerService) {
   $scope.toggled = false;
   $scope.searchField = '';
 
-  // $scope.isActive = function(state) {
-  //   return $state.includes(state);
-  // };
+  $scope.isActive = function(state) {
+    return $state.includes(state);
+  };
 
   $scope.search = function() {
     if ($scope.searchField.length > 1)
