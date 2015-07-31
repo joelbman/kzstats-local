@@ -1,5 +1,10 @@
-<h1>{{ serverName }}</h1>
-Welcome to the stats page of {{ serverName }}.
+<div ng-show='server.name'>
+  <h1>{{ server.name }}</h1>
+  Welcome to the stats page of {{ server.name }}.<br>
+  Server IP: {{ server.ip }}
+</div>
+
+<h1 ng-hide='server.name'>KZStats Local</h1>
 
 <div class='panel panel-default latest'>
   <div class='panel-heading'>
@@ -13,7 +18,10 @@ Welcome to the stats page of {{ serverName }}.
         <i>{{ r.date }}</i>
       </div>
     </div>
-    <div class='latest__footer'>
+    <div class='latest__entry' ng-hide='records.length > 0'>
+      No records available.
+    </div>
+    <div class='latest__footer' ng-show='records.length > pageSize'>
       <button class='btn btn-default arrow' ng-click='showPrev()' ng-disabled='startPoint < 5'>&larr;</button>
       <button class='btn btn-default arrow' ng-click='showNext()' ng-disabled='startPoint > 9'>&rarr;</button>
     </div>

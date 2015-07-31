@@ -6,7 +6,6 @@ module.exports = /*@ngInject*/ function($scope, PlayerService, ServerService) {
   $scope.records = [];
   $scope.startPoint = 0;
   $scope.pageSize = 10;
-  $scope.serverName = 'Unknown';
 
   $scope.showNext = function() { $scope.startPoint += $scope.pageSize; };
   $scope.showPrev = function() { $scope.startPoint -= $scope.pageSize; };
@@ -15,6 +14,6 @@ module.exports = /*@ngInject*/ function($scope, PlayerService, ServerService) {
   promise.then(function(data) { $scope.records = data; });
 
   var p = ServerService.getInfo();
-  p.then(function(data) { $scope.serverName = data.name; });
+  p.then(function(data) { $scope.server = data; });
 
 };
