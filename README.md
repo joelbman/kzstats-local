@@ -1,7 +1,7 @@
 # KZStats-Local
 
-- [Homepage](https://www.kzstats.com/local/)
-- [Demo](https://www.kzstats.com/local/demo/)
+- [Homepage](http://www.kzstats.com/local/)
+- [Demo](http://www.kzstats.com/local/demo/)
 
 This is the local version of my [KZStats (global)](https://github.com/joelbman/kzstats/) software.
 It's designed to be used by CS:GO KZ server owners.
