@@ -1,10 +1,12 @@
 # KZStats-Local
 
+[Homepage](https://www.kzstats.com/local/) - [Demo](https://www.kzstats.com/local/demo/)
+
 This is the local version of my [KZStats (global)](https://github.com/joelbman/kzstats/) software.
 It's designed to be used by CS:GO KZ server owners.
 
 The instructions in this README are for setting up the development environment.
-If you aren't looking to build the software yourself, please visit this [page](https://github.com/joelbman/kzstats-local/releases/).
+If you aren't looking to build the software yourself, please visit this [page](https://www.kzstats.com/local/).
 
 ## Prerequisities
 
