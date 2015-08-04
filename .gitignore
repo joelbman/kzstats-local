@@ -11,7 +11,3 @@ api/settings.php
 
 # NPM debug
 npm-debug.log
-
-# Disclaimer stuff
-src/css/disc.css
-src/templates/index2.html

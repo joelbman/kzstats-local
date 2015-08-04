@@ -12,6 +12,7 @@
   -webkit-box-shadow: inset -5px 1px 7px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: inset -5px 1px 7px 0px rgba(0,0,0,0.75);
   box-shadow: inset -5px 1px 7px 0px rgba(0,0,0,0.75);
+  overflow: hidden;
 }
 
 .navbar a {
