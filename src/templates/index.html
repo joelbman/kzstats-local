@@ -42,9 +42,9 @@
       <!-- Server info -->
       <div class='navbar__server' ng-show='server.name'>
         <b>{{ server.name }}</b>
-        <span ng-show='server.players'>Players: {{ server.players }}/{{ server.maxplayers }}</span>
-        <span ng-show='server.map'>Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map }}</a></span>
-        <span ng-show='!server.ip'>Server data unavailable</span>
+        <span ng-show='server.map'>Players: {{ server.players }}/{{ server.maxplayers }}</span>
+        <span ng-show='server.map'>Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map | stripSlashes }}</a></span>
+        <span ng-show='!server.map'>Server data unavailable</span>
         <button class='btn btn-success' ng-click='joinServer(server.ip)'>Connect</button>
       </div>
       <!-- Main navigation menu -->

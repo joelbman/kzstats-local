@@ -84,3 +84,11 @@ module.filter('kzDate', function($filter) {
     return $filter('date')(input, 'dd.MM.yyyy HH:mm');
   };
 });
+
+// Strips slashes, useful for workshop maps
+module.filter('stripSlashes', function() {
+  return function(input) {
+    var split = input.split('/');
+    return split[split.length-1];
+  };
+});
