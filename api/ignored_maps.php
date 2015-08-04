@@ -12,4 +12,4 @@
   // ...
   // ------------------------------------------------------------------------------
 
-  $mapignore[] = 'kz_example_ignored_map';
+  $mapignore[] = 'kz_ignored_map_example';

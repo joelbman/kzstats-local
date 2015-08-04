@@ -83,9 +83,12 @@
 
     // Latest records
     public function getLatest() {
-      $results = $this->db->fetchAll('SELECT * FROM latestrecords WHERE (map, runtime) IN (SELECT map, min(runtime) FROM latestrecords GROUP BY map)');
+      $results = $this->db->fetchAll('SELECT * FROM latestrecords WHERE (map, runtime) IN '.
+        '(SELECT map, min(runtime) FROM latestrecords WHERE map NOT IN ('.$this->ignored.') GROUP BY map)');
+
       for ($i = 0; $i < count($results); $i++)
         $results[$i]['timestamp'] = strtotime($results[$i]['date']);
+      
       return $results;
     }
 
