@@ -13,9 +13,14 @@
   <div class='panel-body'>
     <div>
       <div class='latest__entry' ng-repeat='r in records | orderBy:"-timestamp" | startFrom: startPoint | limitTo: pageSize'>
-        <h4><a ui-sref='maps.detail({mapName: r.map})'>{{ r.map }}</a> <small>[{{ r.runtime | convertTime }}]</small></h4>
-        by <a ui-sref='players.detail({steamId: (r.steamid|numOnly)})'>{{ r.name }}</a><br>
-        <i>{{ r.date }}</i>
+        <h4>
+          <span class='tag tp' ng-show='r.teleports > 0'>TP</span>
+          <span class='tag pro' ng-show='r.teleports == 0'>Pro</span>
+          <a ui-sref='maps.detail({mapName: r.map})'>{{ r.map }}</a> 
+          <small> - {{ r.runtime | convertTime }}</small>
+        </h4>
+        Runner: <b><a ui-sref='players.detail({steamId: (r.steamid|numOnly)})'>{{ r.name }}</a></b><br>
+        Date: {{ r.date }}
       </div>
     </div>
     <div class='latest__entry' style='border: 0;' ng-hide='records.length > 0'>

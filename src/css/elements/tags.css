@@ -1,0 +1,23 @@
+/**
+ * Tags (latest records)
+ */
+
+.tag {
+  margin-right: 3px;
+  border: 1px solid #3d3d3d;
+  border-radius: 3px;
+  padding: 1px 5px 1px 5px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.pro {
+  border-color: #C94340;
+  background: #C94340;
+}
+
+.tp {
+  border-color: #6F85DE;
+  background: #6F85DE;
+}
