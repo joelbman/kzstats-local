@@ -1,15 +1,8 @@
 <!-- Map detail -->
 <h1 ng-show='records.tp.length > 0 || records.pro.length > 0'><a ui-sref='maps.list'>Maps</a> &raquo; {{ mapname }}</h1>
 
-<!-- Best time
-<div class='col-md-8'>
-  <h2>Best time</h2>
-  {{ best.runtime|convertTime }}
-  {{ best.player}}
-</div> -->
-
 <!-- TP -->
-<div class='col-md-4' style='margin-right: 45px;' ng-show='records.tp'>
+<div class='col-md-4' style='margin-right: 45px;' ng-show='records.tp.length > 0'>
   <h2>TP times <small>Top 50</small></h2>
   <table class='table table-striped'>
     <tr>
@@ -20,7 +13,7 @@
     </tr>
     <tr ng-repeat='r in records.tp | orderBy:"runtime"'>
       <td>{{ $index + 1 }}.</td>
-      <td><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name }}</a></td>
+      <td><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name|emptyCheck }}</a></td>
       <td>{{ r.runtime | convertTime }}</td>
       <td>{{ r.teleports }}</td>
     </tr>
@@ -38,7 +31,7 @@
     </tr>
     <tr ng-repeat='r in records.pro | orderBy:"runtime"'>
       <td>{{ $index + 1 }}.</td>
-      <td><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name }}</a></td>
+      <td><a ui-sref='players.detail({ steamId: (r.steamid|numOnly) })'>{{ r.name|emptyCheck }}</a></td>
       <td>{{ r.runtime | convertTime }}</td>
     </tr>
   </table>

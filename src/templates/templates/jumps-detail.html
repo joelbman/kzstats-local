@@ -12,7 +12,7 @@
     </tr>
     <tr ng-repeat='j in jumps'>
       <td>{{ $index + 1}}.</td>
-      <td><a ui-sref='players.detail({steamId: (j.steamid|numOnly)})'>{{ j.name }}</a></td>
+      <td><a ui-sref='players.detail({steamId: (j.steamid|numOnly)})'>{{ j.name|emptyCheck }}</a></td>
       <td>{{ j.record }}</td>
       <td>{{ j.strafes }}</td>
       <td>{{ j.sync }}%</td>

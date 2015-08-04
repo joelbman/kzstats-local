@@ -13,8 +13,10 @@
 
     // Get list of all maps with the best TP run time
     public function getList() {
-      $q = 'SELECT mapname, min(runtime) AS runtime FROM playertimes '.
-           'WHERE runtime > -1 AND mapname NOT IN ('.$this->ignored.') GROUP BY mapname';
+      $q = 'SELECT mapname, min(runtime) as runtime FROM (SELECT mapname, min(runtime) AS runtime FROM playertimes '.
+           'WHERE runtime > -1 AND mapname NOT IN ('.$this->ignored.') GROUP BY mapname '.
+           'UNION SELECT mapname, min(runtimepro) AS runtime FROM playertimes '.
+           'WHERE runtimepro > -1 AND mapname NOT IN ('.$this->ignored.') GROUP BY mapname) as t1 GROUP BY mapname';
 
       $records = $this->db->fetchAll($q);
 

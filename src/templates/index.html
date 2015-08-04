@@ -42,7 +42,7 @@
       <!-- Server info -->
       <div class='navbar__server' ng-show='server.name'>
         <b>{{ server.name }}</b>
-        <span ng-show='server.map'>Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map | stripSlashes }}</a></span>
+        <span ng-show='server.map'>Map: <a ui-sref='maps.detail({mapName: server.map })'>{{ server.map | stripWorkshop }}</a></span>
         <span ng-show='server.map'>Players: {{ server.players }}/{{ server.maxplayers }}</span>
         <span>IP: {{ server.ip }}</span>
         <span ng-show='!server.map'>Server data unavailable</span>

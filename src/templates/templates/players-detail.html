@@ -25,7 +25,7 @@
     <img ng-src='{{ steamInfo.avatarfull }}' class='avatar' ng-show='steamInfo' alt='{{ p.name }}'>
   </a>
   <h1>
-    {{ p.name }} 
+    {{ p.name|emptyCheck }} 
     <img src='{{ p.countrycode | imgPath }}' class='flagico' alt='{{ p.countrycode }}'>
   </h1>
   <h3>{{ p.points }} points</h3>
