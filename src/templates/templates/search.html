@@ -9,7 +9,7 @@
       <th>Last seen</th>
     </tr>
     <tr ng-repeat='p in players'>
-      <td><a ui-sref='players.detail({ steamId: (p.steamid|numOnly) })'>{{ p.name|stripUniSpaces }}</a> <img ng-src='{{ p.countrycode | imgPath }}' class='flagico'></td>
+      <td><a ui-sref='players.detail({ steamId: (p.steamid|numOnly) })'>{{ p.name|emptyCheck }}</a> <img ng-src='{{ p.countrycode | imgPath }}' class='flagico'></td>
       <td>{{ p.points }}</td>
       <td>{{ p.lastseen }}</td>
     </tr>
