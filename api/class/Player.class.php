@@ -3,8 +3,11 @@
   class Player {
 
     private $db;
+    private $ignored;
 
     public function __construct($db) {
+      include_once('utils/mapignore.php');
+      $this->ignored = ignoredMaps();
       $this->db = $db;
     }
 
@@ -45,7 +48,8 @@
       $records = [];
       $steamid = $this->convertId($id);
 
-      $records = $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes WHERE steamid = "'.$steamid.'" ORDER BY mapname');
+      $records = $this->db->fetchAll('SELECT steamid, mapname, runtime, teleports, runtimepro FROM playertimes '.
+        'WHERE steamid = "'.$steamid.'" AND mapname NOT IN ('.$this->ignored.') ORDER BY mapname');
 
       return $records;
     }

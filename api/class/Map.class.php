@@ -6,7 +6,7 @@
     private $ignored = '';
 
     public function __construct($db) {
-      include('utils/mapignore.php');
+      include_once('utils/mapignore.php');
       $this->ignored = ignoredMaps();
       $this->db = $db;
     }
