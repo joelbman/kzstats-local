@@ -66,14 +66,11 @@
     public function count($q) {
       $this->checkConnection();
 
-      $result = [];
-
       $stmt = parent::prepare($q);
       $stmt->execute();
       $count = $stmt->fetch(PDO::FETCH_NUM);
-      $result['count'] = $count[0];
 
-      return $result;
+      return $count[0];
     }
 
   }

@@ -48,7 +48,12 @@
 
     // Count every unique map in playertimes table
     public function getCount() {
-      return $this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes WHERE mapname NOT IN ('.$this->ignored.')');
+      $result = array();
+
+      $result['normal'] = $this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes WHERE mapname NOT IN ('.$this->ignored.') AND mapname NOT LIKE "prokz%"');
+      $result['prokz'] = $this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes WHERE mapname NOT IN ('.$this->ignored.') AND mapname LIKE "prokz%"');
+      
+      return $result;
     }
 
     // Map search
