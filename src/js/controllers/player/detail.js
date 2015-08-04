@@ -70,7 +70,8 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
 
     var mapPromise = MapService.getCount();
     mapPromise.then(function(data) {
-      $scope.mapCount = data.count;
+      $scope.tpMapCount = data.normal;
+      $scope.proMapCount = data.normal + data.prokz;
     });
 
   });
