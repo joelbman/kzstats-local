@@ -41,8 +41,13 @@ npm run mocha
 
 ## Known issues
 
-I couldn't get the frontend unit tests running on Windows.
-Building contextify seems to be very problematic, so I recommend using a *nix system for running the frontend tests. 
+Dev packages might not install correctly on Windows.
+This is due to some C++ compiling thing going of with the contextify package.
+You need to have Python 2.x folder in your PATH env variable and Visual C++ 2010 or later. (and it still might not work)
+I recommend using a *nix system for building/testing.
+
+## Bug reports & suggestions
+For bugs you can file an issue on Github. You can also alternatively contact me by adding me on [Steam](http://steamcommunity.com/id/so0le/).
 
 ## Credits
 
