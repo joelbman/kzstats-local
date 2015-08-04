@@ -89,6 +89,6 @@ module.filter('kzDate', function($filter) {
 module.filter('stripSlashes', function() {
   return function(input) {
     var split = input.split('/');
-    return split[split.length-1];
+    return split[split.length-1].substring(0, 20);
   };
 });

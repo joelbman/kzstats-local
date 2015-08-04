@@ -18,8 +18,8 @@
         <i>{{ r.date }}</i>
       </div>
     </div>
-    <div class='latest__entry' ng-hide='records.length > 0'>
-      No records available.
+    <div class='latest__entry' style='border: 0;' ng-hide='records.length > 0'>
+      No latest records available.
     </div>
     <div class='latest__footer' ng-show='records.length > pageSize'>
       <button class='btn btn-default arrow' ng-click='showPrev()' ng-disabled='startPoint < 5'>&larr;</button>

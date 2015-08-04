@@ -106,8 +106,8 @@
 }
 
 .navbar__menu__dropdown__list li {
-  padding-top: 5px;
-  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-bottom: 5px;
 }
 
 .navbar__menu__dropdown__list li:hover {
