@@ -3,16 +3,24 @@
   class Map {
 
     private $db;
+    private $ignored = '';
 
     public function __construct($db) {
+      include('utils/mapignore.php');
+      $this->ignored = ignoredMaps();
       $this->db = $db;
     }
 
     // Get list of all maps with the best TP run time
     public function getList() {
-      $records = $this->db->fetchAll('SELECT mapname, min(runtime) AS runtime FROM playertimes WHERE runtime > -1 GROUP BY mapname');
+      $q = 'SELECT mapname, min(runtime) AS runtime FROM playertimes '.
+           'WHERE runtime > -1 AND mapname NOT IN ('.$this->ignored.') GROUP BY mapname';
+
+      $records = $this->db->fetchAll($q);
+
       for ($i = 0 ; $i < count($records); $i++) 
         $records[$i]['runtime'] = floatval($records[$i]['runtime']);
+
       return $records;
     }
 
@@ -26,6 +34,7 @@
       // Float converisons
       for ($i = 0 ; $i < count($tptimes); $i++) 
         $tptimes[$i]['runtime'] = floatval($tptimes[$i]['runtime']);
+
       for ($i = 0 ; $i < count($protimes); $i++) 
         $protimes[$i]['runtime'] = floatval($protimes[$i]['runtime']);
 
@@ -39,12 +48,14 @@
 
     // Count every unique map in playertimes table
     public function getCount() {
-      return $this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes');
+      return $this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes WHERE mapname NOT IN ('.$this->ignored.')');
     }
 
     // Map search
     public function search($string) {
-      return $this->db->fetchAll('SELECT mapname, min(runtime) AS runtime FROM playertimes WHERE mapname LIKE :search ESCAPE "=" AND runtime > 0 GROUP BY mapname LIMIT 100', $string);
+      $q = 'SELECT mapname, min(runtime) AS runtime FROM playertimes '.
+           'WHERE mapname LIKE :search ESCAPE "=" AND runtime > 0 AND mapname NOT IN ('.$this->ignored.') GROUP BY mapname LIMIT 100';
+      return $this->db->fetchAll($q, $string);
     }
 
   }

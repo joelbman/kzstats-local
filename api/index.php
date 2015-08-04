@@ -4,7 +4,7 @@
   header('Content-type: application/json; charset=utf-8');
 
   // Switch to true for development, false for production
-  $debug = false;
+  $debug = true;
 
   require('routes.php');
   
