@@ -52,8 +52,8 @@
     public function getCount() {
       $result = array();
 
-      $result['normal'] = (int)$this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes WHERE mapname NOT IN ('.$this->ignored.') AND mapname NOT LIKE "prokz%"');
-      $result['prokz'] = (int)$this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes WHERE mapname NOT IN ('.$this->ignored.') AND mapname LIKE "prokz%"');
+      $result['normal'] = (int)$this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes WHERE mapname NOT IN ('.$this->ignored.') AND mapname NOT LIKE "prokz% OR mapname NOT LIKE "kzpro%"');
+      $result['prokz'] = (int)$this->db->count('SELECT COUNT(DISTINCT mapname) FROM playertimes WHERE mapname NOT IN ('.$this->ignored.') AND mapname LIKE "prokz%" OR mapname LIKE "kzpro%"');
 
       return $result;
     }
