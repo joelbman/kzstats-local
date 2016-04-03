@@ -55,16 +55,17 @@
 
   <!-- Records -->
   <div class='col-md-12'>
-    <h2>Records</h2>
-    Show: <select ng-model='showType' ng-options='type.name for type in types' ng-change='reloadResults()'></select><br>
-    <table class='table table-striped' style='max-width: 700px;' ng-show='records'>
+    <h2 style='margin-bottom: 15px;'>Records</h2>
+    Filter: <input type='text' ng-model='searchField' style='margin-right: 10px;'>
+    Runtype: <select ng-model='showType' ng-options='type.name for type in types' ng-change='reloadResults()'></select><br>
+    <table class='table table-striped' style='max-width: 700px; margin-top: 20px;' ng-show='records'>
       <tr>
         <th>Map</th>
         <th ng-show='showType.value !== "pro"'>Time</th>
         <th ng-show='showType.value !== "pro"'>TPs</th>
         <th ng-show='showType.value !== "tp"'>Pro time</th>
       </tr>
-      <tr ng-repeat='r in records | startFrom: (currentPage-1)*pageSize | limitTo: pageSize'>
+      <tr ng-repeat='r in filtered = (records | filter: searchField | startFrom: (currentPage-1)*pageSize | limitTo: pageSize)'>
         <td><a ui-sref='maps.detail({mapName: r.mapname })'>{{ r.mapname }}</a></td>
         <td ng-show='showType.value !== "pro"'>
           <span ng-show='r.teleports > 0'>{{ r.runtime | convertTime }}</span>
@@ -79,15 +80,15 @@
           <span ng-show='r.runtimepro < 0'>-</span>
         </td>
       </tr>
-      <tr ng-hide='records.length > 0'>
+      <tr ng-hide='filtered.length > 0'>
         <td>No records found.</td>
         <td> </td>
         <td ng-show='showType.value != "pro"'> </td>
         <td ng-show='showType.value == "both"'> </td>
       </tr>
     </table>
-    <pagination total-items='records.length' max-size='5' ng-model='currentPage' items-per-page='pageSize' ng-show='records.length > 0'></pagination>
-    <br><span ng-hide='records'>No runs available.</span>
+    <pagination total-items='records.length' max-size='5' ng-model='currentPage' items-per-page='pageSize' ng-show='records.length > pageSize && !searchField'></pagination>
+    <br><span ng-show='!records && loaded'>No runs available.</span>
   </div>
 </div>
 
