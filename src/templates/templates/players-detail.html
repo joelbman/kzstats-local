@@ -28,7 +28,7 @@
     {{ p.name|emptyCheck }} 
     <img src='{{ p.countrycode | imgPath }}' class='flagico' alt='{{ p.countrycode }}'>
   </h1>
-  <h3>{{ p.points }} points</h3>
+  <h3>{{ p.rank }} [{{ p.points }} points]</h3>
   <i>Last seen: {{ p.lastseen }}</i><br>
   <a href='{{ steamInfo.profileurl }}' ng-show='steamInfo.profileurl'>Steam profile</a>
 </div>

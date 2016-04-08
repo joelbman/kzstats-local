@@ -35,8 +35,7 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
     }
   };
 
-  var promise = PlayerService.getDetail($stateParams.steamId);
-  promise.then(function(data) {
+  PlayerService.getDetail($stateParams.steamId).then(function(data) {
     $scope.loaded = true;
 
     if (data.name)
@@ -44,8 +43,7 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
     else
       return;
 
-    var recordPromise = PlayerService.getRecords($stateParams.steamId);
-    recordPromise.then(function(data) {
+    PlayerService.getRecords($stateParams.steamId).then(function(data) {
       $scope.records = data;
       $scope.originalRecords = data;
 
@@ -58,8 +56,7 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
 
     });
 
-    var steamPromise = PlayerService.getSteamProfile($stateParams.steamId);
-    steamPromise.then(function(data) {
+    PlayerService.getSteamProfile($stateParams.steamId).then(function(data) {
       if (!data.error)
         $scope.steamInfo = data;
       else
@@ -68,10 +65,37 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, PlayerService, Map
       $scope.steamError = true;
     });
 
-    var mapPromise = MapService.getCount();
-    mapPromise.then(function(data) {
+    MapService.getCount().then(function(data) {
       $scope.tpMapCount = data.normal;
       $scope.proMapCount = data.normal + data.prokz;
+
+      // Rank calculations
+      var maxPointsFromMaps = $scope.proMapCount * 1300;
+      var maxPointsFromJumps = 7 * 500;
+
+      var skillGroups = [
+        {name: 'PRO', percentage: 0.25},
+        {name: 'SEMIPRO', percentage: 0.16},
+        {name: 'EXPERT', percentage: 0.12},
+        {name: 'SKILLED', percentage: 0.05},
+        {name: 'REGULAR', percentage: 0.017},
+        {name: 'CASUAL', percentage: 0.01},
+        {name: 'TRAINEE', percentage: 0.003},
+        {name: 'SCRUB', percentage: 0.00005}
+      ];
+
+      for (var i = 0; i < skillGroups.length; i++) {
+        var group = skillGroups[i];
+        var pointLimit = group.percentage * (maxPointsFromMaps + maxPointsFromJumps);
+
+        if (pointLimit < $scope.p.points) {
+          $scope.p.rank = group.name;
+          break;
+        }
+      }
+        
+      if (!$scope.p.rank)
+        $scope.p.rank = 'NEWB';
     });
 
   });
