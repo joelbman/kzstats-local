@@ -118,6 +118,7 @@
       case 'mbhop': $api->response($jump->getMbhop()); break;
       case 'wj': $api->response($jump->getWj()); break;
       case 'ladderjump': $api->response($jump->getLadderjump()); break;
+      case 'cj': $api->response($jump->getCountjump()); break;
       default: break;
     }
 

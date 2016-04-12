@@ -53,4 +53,11 @@
       return $this->db->fetchAll($q);
     }
 
+    // Countjumps
+    public function getCountjump() {
+      $q = 'SELECT steamid, name, cjrecord AS record, cjpre AS pre, cjmax AS max, cjstrafes AS strafes, cjsync AS sync, cjheight AS height '.
+           'FROM playerjumpstats3 WHERE cjrecord > 100 ORDER BY cjrecord DESC LIMIT 20';
+      return $this->db->fetchAll($q);
+    }
+
   }

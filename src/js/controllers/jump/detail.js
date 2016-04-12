@@ -13,12 +13,12 @@ module.exports = /*@ngInject*/ function($scope, $stateParams, JumpService) {
     case 'mbhop': $scope.jumpType = 'Multi-bunnyhop'; break;
     case 'wj': $scope.jumpType = 'Weirdjump'; break;
     case 'ladderjump': $scope.jumpType = 'Ladderjump'; break;
+    case 'cj': $scope.jumpType = 'Countjump'; break;
     default: $scope.jumpType = ''; break;
   }
 
   if ($scope.jumpType) {
-    var promise = JumpService.getDetail($stateParams.jumpName);
-    promise.then(function(data) {
+    JumpService.getDetail($stateParams.jumpName).then(function(data) {
       $scope.jumps = data;
     });
   }
