@@ -35,7 +35,7 @@
         $player['lastseen_timestamp'] = strtotime($player['lastseen']);
 
         // Jumpstats
-        $js = $this->db->fetch('SELECT multibhoprecord, bhoprecord, dropbhoprecord, ljrecord, ladderjumprecord, wjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');
+        $js = $this->db->fetch('SELECT multibhoprecord, bhoprecord, dropbhoprecord, ljrecord, ladderjumprecord, wjrecord, cjrecord FROM playerjumpstats3 WHERE steamid = "'.$steamid.'"');
         if (count($js) > 0)
           $player['jump'] = $js; 
       }
