@@ -30,8 +30,8 @@
     public function getDetail($name) {
       $records = [];
       
-      $protimes = $this->db->fetchAll('SELECT steamid, name, runtimepro AS runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtimepro > 0 LIMIT 50');
-      $tptimes = $this->db->fetchAll('SELECT steamid, name, teleports, runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtime > 0 LIMIT 50');
+      $protimes = $this->db->fetchAll('SELECT steamid, name, runtimepro AS runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtimepro > 0 ORDER By runtime DESC  LIMIT 50');
+      $tptimes = $this->db->fetchAll('SELECT steamid, name, teleports, runtime FROM playertimes WHERE mapname = "'.$name.'" AND runtime > 0 ORDER By runtime DESC LIMIT 50');
 
       // Float converisons
       for ($i = 0 ; $i < count($tptimes); $i++) 

@@ -91,7 +91,8 @@
     </nav>
     <!-- Main content -->
     <div class='content'>
-      <div ui-view></div>
+      <div ng-hide='loading' ui-view></div>
+      <div ng-show='loading'>Loading...</div>
     </div>
     <script src='js/bundle.js'></script>
   </body>

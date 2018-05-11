@@ -10,8 +10,9 @@ var app = angular.module('kzApp', ['ui.router', 'ui.bootstrap', 'kzApp.filters']
 
 require('./services');
 require('./controllers');
+require('./directives');
 
-app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function($stateProvider, $urlRouterProvider, $compileProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $compileProvider, $httpProvider) {
 
   // Redirect to front page if a state doesn't exist
   $urlRouterProvider.otherwise('/');
@@ -83,5 +84,30 @@ app.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', function
 
   // Add Steam URLs to whitelist
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|steam):/);
+
+  // HTTP interceptor, handles the 'loading' status
+  $httpProvider.interceptors.push(function($q, $injector, $rootScope) {
+    var connections = 0;
+
+    return {
+      'request': function(config) {
+        connections++;
+        $rootScope.$broadcast('loader_show');
+        return config || $q.when(config);
+      },
+      'response': function(res) {
+        if ((--connections) === 0)
+          $rootScope.$broadcast('loader_hide');
+
+        return $q.resolve(res) || $q.when(res);
+      },
+      'responseError': function(res) {
+        if (!(--connections))
+          $rootScope.$broadcast('loader_hide');
+
+        return $q.reject(res);
+      }
+    };
+  });
 
 }]);

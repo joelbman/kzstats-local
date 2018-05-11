@@ -1,0 +1,896 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"send",
+				"sendResetLinkEmail"
+			],
+			[
+				"admin-pd",
+				"admin-pdftemplate-select"
+			],
+			[
+				"admin-p",
+				"admin-pdftemplate-select"
+			],
+			[
+				"product",
+				"product_id"
+			],
+			[
+				"glyphicon",
+				"glyphicon-trash"
+			],
+			[
+				"is_",
+				"is_array"
+			],
+			[
+				"Pdf",
+				"PdfFont"
+			],
+			[
+				"max",
+				"maxlength\tAttr"
+			],
+			[
+				"select",
+				"selectStr"
+			],
+			[
+				"glyp",
+				"glyphicon-plus"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"find",
+				"findOrFail"
+			],
+			[
+				"pdf",
+				"pdfAjax"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"PdfTempl",
+				"PdfTemplateField"
+			],
+			[
+				"Produ",
+				"ProductImage"
+			],
+			[
+				"curren",
+				"currency-form"
+			],
+			[
+				"request",
+				"Request"
+			],
+			[
+				"Product",
+				"ProductController"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"form",
+				"formData"
+			],
+			[
+				"pre",
+				"preventDefault"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"seriali",
+				"serializeArray"
+			],
+			[
+				"price",
+				"pricetier-container"
+			],
+			[
+				"orga",
+				"organizedArray"
+			],
+			[
+				"desc",
+				"db2_escape_string"
+			],
+			[
+				"cartt",
+				"cartTableToggle"
+			],
+			[
+				"cartTable",
+				"cartTableToggle"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"Cart",
+				"CartProduct"
+			],
+			[
+				"passw",
+				"passwordValidator"
+			],
+			[
+				"show",
+				"showEditForm"
+			],
+			[
+				"valida",
+				"validateVoucher"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"http",
+				"httpResponse"
+			],
+			[
+				"globalc",
+				"globalRecords"
+			],
+			[
+				"getre",
+				"getRecordsByType"
+			],
+			[
+				"replace",
+				"str_replace"
+			],
+			[
+				"chi",
+				"child_congregation"
+			],
+			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"nav",
+				"navCollapsed"
+			],
+			[
+				"border-b",
+				"border-bottom-right-radius"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"bacgkrou",
+				"background-color"
+			],
+			[
+				"his",
+				"historyTable"
+			],
+			[
+				"kzstats_",
+				"kzstats_history128_pro"
+			],
+			[
+				"kzstats",
+				"kzstats_history128_pro"
+			],
+			[
+				"CONTIN",
+				"continentCodes"
+			],
+			[
+				"continen",
+				"continentCodes"
+			],
+			[
+				"kzstats_records",
+				"kzstats_records128_pro"
+			],
+			[
+				"total",
+				"totalRunCount"
+			],
+			[
+				"player",
+				"playercountrycode"
+			],
+			[
+				"where",
+				"whereObj"
+			],
+			[
+				"map",
+				"mapName"
+			],
+			[
+				"diff",
+				"difficulties"
+			],
+			[
+				"reques",
+				"requestTypes"
+			],
+			[
+				"d",
+				"dblocal"
+			],
+			[
+				"searc",
+				"searchField"
+			],
+			[
+				"search",
+				"searchPlayers"
+			],
+			[
+				"View",
+				"viewType"
+			],
+			[
+				"se",
+				"searchField"
+			],
+			[
+				"sync",
+				"syncQuery"
+			],
+			[
+				"Front",
+				"FrontService"
+			],
+			[
+				"state",
+				"stateParams"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"pl",
+				"playercountrycode"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"spl_auto",
+				"spl_autoload_register"
+			],
+			[
+				"pro",
+				"production"
+			],
+			[
+				"float",
+				"floatval"
+			],
+			[
+				"Sea",
+				"SearchService"
+			],
+			[
+				"Player",
+				"PlayerService"
+			],
+			[
+				"Mpa",
+				"MapService"
+			],
+			[
+				"list-s",
+				"list-style-type"
+			],
+			[
+				"defer",
+				"deferred"
+			],
+			[
+				"tem",
+				"templateUrl"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"border-bot",
+				"border-bottom-right-radius"
+			],
+			[
+				"border-bo",
+				"border-bottom-left-radius"
+			],
+			[
+				"boredr-bott",
+				"border-bottom-left-radius"
+			],
+			[
+				"border-bottom",
+				"border-bottom-color"
+			],
+			[
+				"to",
+				"toLowerCase"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"jshin",
+				"JSHint: Set Plugin Options"
+			],
+			[
+				"",
+				"JSHint: Set Linting Preferences"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instap",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"enabl",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"syntax",
+				"Set Syntax: Jade"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/XAMPP/htdocs/kzstatslocal"
+	],
+	"file_history":
+	[
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/product/detail-form.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/product/customform-modal.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/config/sales.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/order/review.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/mail/customer-order-recieved.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/mail/fkfdkaf.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/mail/sales-order-recieved.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/product/pdf-modal.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/admin/pdftemplate.js",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/admin/category.js",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/sass/app.scss",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/sass/themes/mkb.scss",
+		"/D/XAMPP/htdocs/mediegenerator/resources/lang/i18n/en.json",
+		"/D/XAMPP/htdocs/mediegenerator/resources/lang/i18n/sv.json",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/ProductController.php",
+		"/D/XAMPP/htdocs/mediegenerator/config/queue.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/OrderController.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/product/copy-modal.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/PDFController.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/admin/customform.js",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/misc/privacy-policy.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/misc/faq.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/misc/tos.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/misc/logo.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/product/detail.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Helpers/CustomFields.php",
+		"/D/XAMPP/htdocs/mediegenerator/.env.example",
+		"/D/XAMPP/htdocs/mediegenerator/README.md",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_08_17_033220_create_product_pdftemplate_field_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2018_03_22_101855_add_fontcolor_to_pdftemplatefields.php",
+		"/F/Vankilanimigeneraattori/Vankilanimigeneraattori/Vankilanimigenerator muse/muse/scripts/main.js",
+		"/F/Vankilanimigeneraattori/Vankilanimigeneraattori/Vankilanimigenerator muse/muse/index.html",
+		"/F/Vankilanimigeneraattori/Vankilanimigeneraattori/Vankilanimigenerator muse/original/index.html",
+		"/D/XAMPP/htdocs/mediegenerator/app/Models/User.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Notifications/MailResetPasswordToken.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/vendor/notifications/email.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/lang/sv.json",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/product/index.js",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/admin/pricetier.js",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/admin/product.js",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/order/detail.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/order/detail.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/Auth/RegisterController.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/user/list.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Mail/CustomerActivated.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/mail/customer-user-activated.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/Auth/ForgotPasswordController.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/UserController.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/user/edit.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/routes/web.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/order/list.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/vendor/laravel/framework/src/Illuminate/Foundation/Auth/SendsPasswordResetEmails.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/lang/sv/passwords.php",
+		"/D/XAMPP/htdocs/mediegenerator/vendor/laravel/framework/src/Illuminate/Support/Facades/Password.php",
+		"/D/XAMPP/htdocs/mediegenerator/.env",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/user/profile.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/auth/register.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/mail/customer-user-registered.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Mail/CustomerRegistered.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/product/list.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Mail/SalesOrderRecieved.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Traits/AddressTrait.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Mail/ManufacturerOrderProcessed.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/CartController.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/cart/index.js",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/mail/manufacturer-order-processed.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/misc/tos/sv.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/misc/tos/en.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_08_17_030323_create_products_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/cart/modal.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Models/Address.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Models/Product.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/seeds/DatabaseSeeder.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Models/PdfTemplate.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/layouts/app.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_08_17_033220_create_product_pdftemplate_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/vendor/tecnickcom/tcpdf/tcpdf.php",
+		"/D/XAMPP/htdocs/mediegenerator/vendor/setasign/fpdf/fpdf.php",
+		"/D/XAMPP/htdocs/mediegenerator/vendor/setasign/fpdi/fpdi.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/CategoryController.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/ManufacturerController.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Mail/CustomerOrderRecieved.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Models/Customergroup.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/CustomergroupController.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/customergroup/form-modal.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Middleware/Admin.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/app.js",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/admin/user.js",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_07_01_000000_create_users_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_11_23_062449_create_customergroups_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/LanguageController.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/D/XAMPP/htdocs/mediegenerator/.jshintrc",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/errors/404.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_07_14_163105_create_orders_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/customergroup/list.blade.php",
+		"/C/Users/Joel/Desktop/test.php",
+		"/D/XAMPP/htdocs/mediegenerator/public/js/i18n/sv.json",
+		"/G/Steam/userdata/87067280/730/local/cfg/config.cfg",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/product/special-modal.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/config/mail.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Models/CustomerGroup.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/category/list.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/user/customergroup-modal.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_11_23_062449_create_customergroup_product_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_09_08_051255_create_category_product_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/product/list.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/pagination/default.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/factories/ModelFactory.php",
+		"/D/XAMPP/htdocs/mediegenerator/database/seeds/BulkSeeder.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/assets/js/order/index.js",
+		"/D/XAMPP/htdocs/mediegenerator/database/migrations/2017_08_21_120233_create_addresses_table.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/order/list.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/lang/en/validation.php",
+		"/D/XAMPP/htdocs/mediegenerator/public/js/i18n/en.json",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/product/font-modal.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Helpers/FlashHelper.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/Auth/LoginController.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/admin/user/add.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/lang/sv/validation.php",
+		"/D/XAMPP/htdocs/mediegenerator/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php",
+		"/D/XAMPP/htdocs/mediegenerator/config/app.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/Controller.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Http/Controllers/MiscController.php",
+		"/D/XAMPP/htdocs/mediegenerator/app/Providers/FlashServiceProvider.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/misc/faq/sv.blade.php",
+		"/D/XAMPP/htdocs/mediegenerator/resources/views/misc/faq/en.blade.php",
+		"/G/Steam/userdata/26817068/730/local/cfg/config.cfg"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			"D:\\XAMPP\\htdocs\\mediegenerator\\resources\\assets\\js",
+			"D:\\XAMPP\\htdocs\\mediegenerator\\resources\\assets\\js\\admin",
+			"F:\\XAMPP\\htdocs\\mediegenerator\\public\\css",
+			"F:\\XAMPP\\htdocs\\kzstats-rework\\src\\styles",
+			"F:\\XAMPP\\htdocs\\apifelestadroot\\vendor\\league\\oauth2-client\\src",
+			"F:\\XAMPP\\htdocs\\kzstats-rework\\src\\styles",
+			"F:\\XAMPP\\htdocs\\kzstats-rework\\src\\js",
+			"F:\\XAMPP\\htdocs\\kzstats-rework\\src\\styles\\elements",
+			"F:\\XAMPP\\htdocs\\kzstats-rework\\src\\templates\\templates",
+			"F:\\XAMPP\\htdocs\\kzstats-rework\\src\\styles",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sales",
+			"label",
+			"salesorder",
+			"filename",
+			"save",
+			"notify",
+			"template",
+			"copy",
+			"field",
+			"draw",
+			"\nPlease fill",
+			"required fields",
+			"please",
+			"console.log",
+			"hello",
+			"active",
+			"list",
+			"processed",
+			"pending",
+			"image",
+			"deta",
+			"salesorder",
+			"mobile",
+			"copy",
+			"template",
+			"copy",
+			"mobile",
+			"general",
+			"valida",
+			"req",
+			"$new",
+			"remove",
+			"name",
+			"template-id",
+			"template",
+			"valign",
+			"$valign",
+			"multicell",
+			"html",
+			"cell",
+			"multicell",
+			"font",
+			"deta",
+			"name",
+			"customergr",
+			"search",
+			"searchp",
+			"file",
+			"text",
+			"NAME",
+			"\"",
+			"pricetier",
+			"price",
+			"makefont(",
+			"fpdi",
+			"html",
+			"form",
+			"hidden",
+			"\\$a->",
+			"<div class=\"col-md-6\">",
+			" class=\"col-md-4 control-label\"",
+			"\\$this->",
+			"$this->",
+			"class=\"col-md-4 control-label\"",
+			"postObj",
+			"#cart_",
+			"a5a7aa",
+			"3d3d",
+			"class",
+			"h2",
+			"customform",
+			"visitkort",
+			"ignored",
+			"input-group",
+			"array",
+			"\"",
+			"t11",
+			"maps",
+			"EXALTED",
+			"museum",
+			"museum map",
+			"sorcerer boots",
+			"gems",
+			"maps",
+			"map",
+			"cards",
+			"#logo",
+			"model",
+			"tranq",
+			"anarchy",
+			"rare",
+			"chance",
+			"socketgroup",
+			"RBG",
+			"sceptre",
+			"scepter",
+			"amu",
+			"charm",
+			"core",
+			"login",
+			"Amulet",
+			"charm",
+			"%ilvl%",
+			"ilvl",
+			"badge",
+			"chisel",
+			"httpclient",
+			"HttpClient",
+			"guzzle",
+			"eternal orb",
+			"To-toned",
+			"MAP",
+			"DIVINATION CARDS",
+			"scept",
+			"separated",
+			"maps",
+			"0503",
+			"fossilised",
+			"hide",
+			"sorcerer boots",
+			"1005",
+			"map",
+			"DIVINATION CARDS",
+			"RAIN OF CHAOS",
+			"update",
+			"rimraf",
+			"sidebar",
+			"text"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"'",
+			"$address->",
+			"",
+			"Route::",
+			" ",
+			"c8cace",
+			"label",
+			"form-group",
+			"'",
+			"data",
+			"data['",
+			",\\n",
+			"navbar-nav",
+			"navbar-default",
+			"talismans",
+			"maplist__map",
+			"maplist__pagination",
+			"maplist__error",
+			"maplist__map",
+			"db",
+			"bPromise",
+			"originalId",
+			"",
+			"router",
+			"",
+			"'",
+			"",
+			"'",
+			"\"",
+			"'",
+			"p."
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 120.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "kzstats-local.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\XAMPP\\htdocs\\kzstats-rework\\kz.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 371.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
