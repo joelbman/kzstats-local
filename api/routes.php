@@ -10,6 +10,13 @@
    */
   require 'class/Slim/Slim.php';
   \Slim\Slim::registerAutoloader();
+  /**
+   * A bit of sanitization
+   */
+  \Slim\Route::setDefaultConditions(array(
+    'name' => '[A-Za-z0-9\_]{3,}',
+    'id' => '[0-9]{5,}'
+  ));
   $app = new \Slim\Slim();
   $app->config('debug', $debug);
 
@@ -137,15 +144,19 @@
    * ---------
    */
   $app->get('/search/:value/', function($value) use ($api) {
-    $db = $api->dbConnect();
-    $map = new Map($db);
-    $player = new Player($db);
-
-    $result = [];
-    $result['maps'] = $map->search($value);
-    $result['players'] = $player->search($value);
-
-    $api->response($result);
+    if (empty($value)) {
+      $api->response([]);
+    } else {
+      $db = $api->dbConnect();
+      $map = new Map($db);
+      $player = new Player($db);
+  
+      $result = [];
+      $result['maps'] = $map->search($value);
+      $result['players'] = $player->search($value);
+  
+      $api->response($result);
+    }
   });
 
   $app->run();
